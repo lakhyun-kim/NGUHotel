@@ -1,0 +1,18 @@
+create table h_payment(
+    pay_num varchar2(50) not null,
+    mem_id varchar2(15) not null,
+    pay_cardtype varchar2(20) not null,
+    pay_cardnum varchar2(50) not null,
+    pay_cell varchar2(15) not null,
+    pay_lastname varchar2(15) not null,
+    pay_firstname varchar2(15) not null,
+    pay_email varchar2(50) not null,
+    res_num number not null,
+    din_res_cancel number(2),
+    
+    constraint h_payment_pk primary key (pay_num),
+    constraint h_payment_fk1 foreign key (mem_id) references h_member (mem_id),
+    constraint h_payment_fk2 foreign key (res_num) references h_reservation (res_num)
+);
+
+create sequence payment_seq;

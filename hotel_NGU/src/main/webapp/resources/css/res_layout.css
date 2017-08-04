@@ -1,0 +1,114 @@
+@CHARSET "UTF-8";
+
+
+div.res_wrap{
+	width:100%;
+	position: relative;	
+	background:#f1f1f1;
+	padding:50px 25px;
+	margin-bottom:30px;
+	text-align:center;
+	
+	
+	
+}
+
+div.res_wrap .res_person{
+	display:inline;
+	margin-right:45px;
+	height:auto;
+	
+}
+
+.rsv_num{
+	background:#f1f1f1;
+}
+
+.surface{
+	text-align:center;
+}
+
+.list{
+	display:none;
+	text-align:center;
+}
+
+ul{
+	list-style:none;
+}
+
+.note_first{
+	
+	float:left;
+	width:50%;
+	
+}
+
+.note_last{
+	float:left;
+	width:50%;
+}
+
+.step_back{
+	float:left;
+}
+.rsv_success{
+	float:right;
+}
+
+.check_info{
+	float:right;
+}
+.step2_info{
+	margin:10px;
+	padding:10px;
+}
+
+.step2_info_guest{
+	background:#f1f1f1;
+	margin:10px;
+	padding:10px;
+}
+
+.guest_info{
+	float:left;
+	width:50%;
+}
+
+.payment_info{
+	float:left;
+	width:50%;
+}
+
+ul li{
+	padding-bottom:5px; 
+}
+
+
+
+/* 개인정보 수집이용 동의 */
+.info_agree{
+	
+	margin:10px;
+	padding:10px;
+}
+
+.info_agree_text1{
+	float:left;
+	margin:5px;
+	padding:5px;
+}
+.info_agree_text2{
+	float:left;
+	margin:5px;
+	padding:5px;
+}
+.trans_btn{
+	margin:10px;
+	padding:10px;
+}
+
+
+
+
+
