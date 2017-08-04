@@ -15,5 +15,8 @@ public interface MemberService {
 	public void update(MemberCommand member);
 	
 	public void delete(String mem_id);
+
+	// 비밀번호 변경
+	public void updatePwd(MemberCommand member);
 	
 }

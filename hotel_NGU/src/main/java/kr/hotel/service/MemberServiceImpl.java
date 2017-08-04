@@ -32,6 +32,12 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public void delete(String mem_id) {
 		memberMapper.delete(mem_id);
+		memberMapper.deleteDetail(mem_id);
+	}
+
+	@Override
+	public void updatePwd(MemberCommand member) {
+		memberMapper.updatePwd(member);
 	}
 
 }

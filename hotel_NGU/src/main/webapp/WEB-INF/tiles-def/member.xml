@@ -15,4 +15,52 @@
     	<put-attribute name="body" value="/WEB-INF/views/member/memberLogin.jsp"/>
     </definition>
     
+    <definition name="memberWriteCheck" extends="main">
+    	<put-attribute name="title" value="약관동의"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberWriteCheck.jsp"/>
+    </definition>
+    
+    <definition name="memberWriteSuccess" extends="main">
+    	<put-attribute name="title" value="회원가입완료"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberWriteSuccess.jsp"/>
+    </definition>
+    
+    <definition name="memberMyLevel" extends="main">
+    	<put-attribute name="title" value="마이페이지(등급 및 포인트)"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberMyLevel.jsp"/>
+    </definition>
+    
+    <definition name="memberUpdateCheck" extends="main">
+    	<put-attribute name="title" value="마이페이지(프로필 수정)"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberUpdateCheck.jsp"/>
+    </definition>
+    
+    <definition name="memberUpdate" extends="main">
+    	<put-attribute name="title" value="마이페이지(프로필 수정)"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberUpdate.jsp"/>
+    </definition>
+    
+    <definition name="memberPwdUpdate" extends="main">
+    	<put-attribute name="title" value="마이페이지(비밀번호 변경)"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberPwdUpdate.jsp"/>
+    </definition>
+    
+    <definition name="memberDeleteCheck" extends="main">
+    	<put-attribute name="title" value="마이페이지(탈퇴요청)"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberDeleteCheck.jsp"/>
+    </definition>
+    
+    <definition name="memberDelete" extends="main">
+    	<put-attribute name="title" value="마이페이지(탈퇴요청)"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberDelete.jsp"/>
+    </definition>
+    
+    <definition name="memberPointList" extends="main">
+    	<put-attribute name="title" value="마이페이지(포인트조회)"/>
+    	<put-attribute name="body" value="/WEB-INF/views/member/memberPointList.jsp"/>
+    </definition>
+    
+    
+    
+    
 </tiles-definitions>

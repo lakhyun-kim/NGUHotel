@@ -1,5 +1,5 @@
-@CHARSET "UTF-8";
-/*레이아웃*/
+/* @CHARSET "UTF-8";
+레이아웃
 body{
 	font-size:10pt;
 	font-family:"맑은 고딕";
@@ -57,7 +57,7 @@ div.page-error-style{
 .align-right{
 	text-align:right;
 }
-/*회원관리*/
+회원관리
 form ul{
 	list-style:none;
 	padding:0;
@@ -82,7 +82,7 @@ form#register_form input#id{
 .error-color{
 	color:red;
 }
-/*게시판*/
+게시판
 ul.search{
 	width:300px;
 	list-style:none;
@@ -164,3 +164,4 @@ form#mre_form{
 
 
 
+ */

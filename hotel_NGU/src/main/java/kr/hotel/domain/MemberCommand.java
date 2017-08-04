@@ -14,26 +14,19 @@ public class MemberCommand {
 	private int mem_num;
 	@Size(min=4,max=10)
 	private String mem_pw;
-	@NotEmpty
 	private String mem_lastname;
-	@NotEmpty
 	private String mem_firstname;
-	@NotEmpty
 	private String mem_birth;
-	@NotEmpty
 	private String mem_email;
-	@NotEmpty
 	private String mem_p_cell;
 	private String mem_h_cell;
-	@NotEmpty
 	private String mem_zipcode;
-	@NotEmpty
 	private String mem_addr1;
-	@NotEmpty
 	private String mem_addr2;
 	private Date reg_date;
 	private int mem_point;
 	private int mem_lev_num;
+	private String mem_lev_name;
 
 	// 비밀번호 일치 여부 체크
 	// auth가 0이면 탈퇴회원이므로 로그인, 탈퇴가 불가능
@@ -44,6 +37,12 @@ public class MemberCommand {
 		return false;
 	}
 
+	public String getMem_lev_name() {
+		return mem_lev_name;
+	}
+	public void setMem_lev_name(String mem_lev_name) {
+		this.mem_lev_name = mem_lev_name;
+	}
 	public String getMem_id() {
 		return mem_id;
 	}

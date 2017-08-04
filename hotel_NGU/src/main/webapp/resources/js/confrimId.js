@@ -3,9 +3,9 @@ $(document).ready(function() {
 	
 	// 아이디 중복 체크
 	$('#confirmId').click(function() {
-		if($('#id').val() == '') {
+		if($('#mem_id').val() == '') {
 			alert('아이디를 입력하세요!');
-			$('#id').focus();
+			$('#mem_id').focus();
 			return;
 		}
 		
@@ -17,7 +17,7 @@ $(document).ready(function() {
 		$.ajax({
 			url:'confirmId.do',
 			type:'post',
-			data:{id:$('#id').val()},
+			data:{mem_id:$('#mem_id').val()},
 			dataType:'json',
 			cache:false,
 			timeout:30000,
@@ -30,7 +30,7 @@ $(document).ready(function() {
 					checkIdDuplicated = 1;
 				} else if(data.result == 'idDuplicated') {
 					$('#message_id').css('color', 'red').text('중복된ID');
-					$('#id').val('').focus();
+					$('#mem_id').val('').focus();
 					checkIdDuplicated = 0;
 				} else {
 					alert('ID 중복체크 오류!');
@@ -46,17 +46,17 @@ $(document).ready(function() {
 	});
 	
 	// 아이디 중복 안내 메시지 초기화 및 아이디 중복 값 초기화
-	$('#register_form #id').keyup(function() {
+	$('#register_form #mem_id').keyup(function() {
 		checkIdDuplicated = 0;
 		$('#message_id').text('');
 	});
 	
-	// submit 이벤트 발생시 아이디 중복 체크 여부 확인
+	// submit 이벤트 발생시 아이디 중복 체크 여부 확인 및 유효성 체크
 	$('#register_form').submit(function() {
 		if(checkIdDuplicated == 0) {
 			alert('아이디 중복 체크 필수!');
-			if($('#id').val() == '') {
-				$('#id').focus();
+			if($('#mem_id').val() == '') {
+				$('#mem_id').focus();
 			} else {
 				$('#confirmId').focus();
 			}
