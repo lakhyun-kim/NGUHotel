@@ -9,7 +9,6 @@
 		고객님의 정보를 언제든지 확인, 변경하실 수 있습니다.
 	</div>
 	<form action="pwdUpdate.do" id="pwdUpdate_form" method="post">
-	<form:errors element="div" cssClass="error-color" /><!-- 글로벌 에러처리 -->
 		<table>
 			<tr>
 				<th><label for="mem_pw">현재 비밀번호</label></th>

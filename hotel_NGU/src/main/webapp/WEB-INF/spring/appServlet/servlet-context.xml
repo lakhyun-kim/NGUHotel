@@ -26,6 +26,7 @@
 	   			<!-- 설정파일 여러개 일 경우 아래 태그를 여러개 나열 -->
 	   			<beans:value>/WEB-INF/tiles-def/main.xml</beans:value>
 	   			<beans:value>/WEB-INF/tiles-def/member.xml</beans:value>
+	   			<beans:value>/WEB-INF/tiles-def/reservation.xml</beans:value>
 	   		</beans:list>
 	   	</beans:property>
 	</beans:bean>
@@ -82,14 +83,24 @@
 	<!-- 메인 페이지 설정 -->
 	<view-controller path="/main/main.do" view-name="main"/>
 	   
-	<!-- 인터셉터를 활용한 로그인 체크 -->
-	<!-- /update.do, /delete.do 를 호출할 때 LoginCheckInterceptor를 들려서 로그인되어있는지 확인한다. -->
 	<interceptors>
+		<!-- 인터셉터를 활용한 로그인 체크 -->
 		<interceptor>
-			<mapping path="/member/detail.do"/>
+			<mapping path="/member/myLevel.do"/>
+			<mapping path="/member/updateCheck.do"/>
 			<mapping path="/member/update.do"/>
+			<mapping path="/member/pwdUpdate.do"/>
+			<mapping path="/member/deleteCheck.do"/>
 			<mapping path="/member/delete.do"/>
+			<mapping path="/member/pointList.do"/>
+			<mapping path="/member/memResConfirm.do"/>
+			<mapping path="/member/qnaList.do"/>
 			<beans:bean class="kr.hotel.interceptor.LoginCheckInterceptor" />
+		</interceptor>
+		<!-- 관리자 체크 -->
+		<interceptor>
+			<mapping path="/member/memberList.do"/>
+			<beans:bean class="kr.hotel.interceptor.AdminCheckInterceptor" />
 		</interceptor>
 	</interceptors>
 	

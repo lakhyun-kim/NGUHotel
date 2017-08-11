@@ -81,7 +81,7 @@
 		예약을 원하시는 날짜, 인원을 선택 후 검색 버튼을 눌러주세요.	
 	</div>
 	
-	<div class="list">
+	<%-- <div class="list">
 		<div class="room_list">
 			<c:forEach var="article" items="${list}">
 			<tr>
@@ -91,11 +91,11 @@
 				<td>${article.regdate}</td>
 				<td>${article.hit}</td>			
 			</tr>
-			<input type="submit" value="선택">
 		</c:forEach>
 			
 		</div>
-	</div>
+	</div> --%>
+			<input type="submit" value="선택">
 
 </form>
 

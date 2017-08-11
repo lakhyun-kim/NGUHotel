@@ -23,7 +23,7 @@ public class MemberCommand {
 	private String mem_zipcode;
 	private String mem_addr1;
 	private String mem_addr2;
-	private Date reg_date;
+	private Date mem_regdate;
 	private int mem_point;
 	private int mem_lev_num;
 	private String mem_lev_name;
@@ -121,11 +121,11 @@ public class MemberCommand {
 	public void setMem_addr2(String mem_addr2) {
 		this.mem_addr2 = mem_addr2;
 	}
-	public Date getReg_date() {
-		return reg_date;
+	public Date getMem_regdate() {
+		return mem_regdate;
 	}
-	public void setReg_date(Date reg_date) {
-		this.reg_date = reg_date;
+	public void setMem_regdate(Date mem_regdate) {
+		this.mem_regdate = mem_regdate;
 	}
 	public int getMem_point() {
 		return mem_point;
@@ -139,13 +139,15 @@ public class MemberCommand {
 	public void setMem_lev_num(int mem_lev_num) {
 		this.mem_lev_num = mem_lev_num;
 	}
+
 	@Override
 	public String toString() {
 		return "MemberCommand [mem_id=" + mem_id + ", auth=" + auth + ", mem_num=" + mem_num + ", mem_pw=" + mem_pw
 				+ ", mem_lastname=" + mem_lastname + ", mem_firstname=" + mem_firstname + ", mem_birth=" + mem_birth
 				+ ", mem_email=" + mem_email + ", mem_p_cell=" + mem_p_cell + ", mem_h_cell=" + mem_h_cell
 				+ ", mem_zipcode=" + mem_zipcode + ", mem_addr1=" + mem_addr1 + ", mem_addr2=" + mem_addr2
-				+ ", reg_date=" + reg_date + ", mem_point=" + mem_point + ", mem_lev_num=" + mem_lev_num + "]";
+				+ ", mem_regdate=" + mem_regdate + ", mem_point=" + mem_point + ", mem_lev_num=" + mem_lev_num
+				+ ", mem_lev_name=" + mem_lev_name + "]";
 	}
 	
 }

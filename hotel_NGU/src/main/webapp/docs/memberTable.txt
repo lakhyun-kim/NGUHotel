@@ -36,3 +36,21 @@ create table h_member_detail(
 );
 
 create sequence h_member_seq;
+
+create table h_point(
+    mem_poi_num number not null,
+    mem_poi_usesave varchar2(20) not null,
+    mem_poi_history varchar2(20) not null,
+    mem_poi_price number not null,
+    mem_poi_usepoint number,
+    mem_poi_savepoint number,
+    mem_poi_regdate date,
+    mem_id varchar2(15) not null,
+    constraint h_point_pk primary key (mem_poi_num),
+    constraint h_point_fk foreign key (mem_id) references h_member_detail (mem_id)
+);
+
+insert into h_point values(h_point_seq.nextval, '적립', '객실', 12000, 0, 12000, sysdate, 'rlgus');
+insert into h_point values(h_point_seq.nextval, '적립', '레스토랑', 50000, 0, 50000, sysdate, 'fkrgus');
+
+create sequence h_point_seq;

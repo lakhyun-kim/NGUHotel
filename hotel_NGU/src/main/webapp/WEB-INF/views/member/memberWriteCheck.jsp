@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/member.css" type="text/css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -41,19 +42,19 @@
 	}
 </script>
 <div class="page-main-style">
-	<h1>N.G.U Hotel 가입</h1>
-	<div>
-		N.G.U 호텔에 오신 것을 환영합니다.
-		※ 약관 및 개인정보 수집·이용 사항을 확인하시고 동의여부에 체크해주시기 바랍니다.
+	<h1 class="color">N.G.U Hotel 가입</h1>
+	<div class="align-center" style="padding:20px">
+		<strong class="color">N.G.U 호텔에 오신 것을 환영합니다.</strong><br>
+		<span style="font-size:small">※ 약관 및 개인정보 수집·이용 사항을 확인하시고 동의여부에 체크해주시기 바랍니다.</span>
 	</div>
 	<div>
-		약관동의
-		<hr>
+		<strong>약관동의</strong>
+		<hr width="100%" class="color" style="border:solid 2px">
 	</div>
 	<table>
 		<tr>
 			<td>
-				회원약관에 동의하십니까?(필수)<br>
+				<strong>회원약관에 동의하십니까?(필수)</strong><br>
 				<textarea rows="10" cols="150">&lt;회원약관에 대한 동의&gt;
 제1조 멤버십 규정 일반 
 1.	본 약관은 주식회사 호텔신라(이하 “회사”)의 호텔 멤버십 프로그램인 Shilla Rewards의 이용에 관한 기본적인 사항을 정함을 목적으로 합니다.
@@ -108,13 +109,13 @@
 2.	회원 가입과 동시에 실버 회원 자격이 부여됩니다.
 3.	회원 등급의 유지 및 승급에는 회사가 규정한 조건을 충족해야 합니다.
 4.	회사는 회원의 1년간 이용실적(객실 및 식음 영업장 이용횟수와 결제금액)을 점수로 산출하여 다음의 기준에 따라 회원 등급을 조정합니다.</textarea><br>
-				<label><input type="radio" name="req" id="req" class="all" value="yes">동의함</label>
-				<label><input type="radio" name="req" value="no" checked>동의하지않음</label>
+				<label style="font-size:small"><input type="radio" name="req" id="req" class="all" value="yes">동의함</label>
+				<label style="font-size:small"><input type="radio" name="req" value="no" checked>동의하지않음</label>
 			</td>
 		</tr>
 		<tr>
-			<td>
-				필수적인 개인정보 수집이용에 동의하십니까?(필수)<br>
+			<td><br>
+				<strong>필수적인 개인정보 수집이용에 동의하십니까?(필수)</strong><br>
 				<textarea rows="10" cols="150">&lt;필수적인 개인정보 수집.이용에 대한 동의&gt;
 1. 수집∙이용 항목 
 성명(국∙영문), 생년월일, 성별, 전자우편주소, 휴대전화번호, 자택전화번호, 자택 주소, 구매 및 예약 내역, 투숙기간
@@ -122,13 +123,13 @@
 본인 식별, 신라 리워즈 서비스 제공 및 민원처리
 3. 보유∙이용 기간
 수집∙이용 동의일로부터 회원 탈퇴 시까지</textarea>
-				<label><input type="radio" name="req2" id="req2" class="all" value="yes">동의함</label>
-				<label><input type="radio" name="req2" value="no" checked>동의하지않음</label>
+				<label style="font-size:small"><input type="radio" name="req2" id="req2" class="all" value="yes">동의함</label>
+				<label style="font-size:small"><input type="radio" name="req2" value="no" checked>동의하지않음</label>
 			</td>
 		</tr>
 		<tr>
-			<td>
-				선택적 개인정보 수집이용에 동의하십니까? (선택)<br>
+			<td><br>
+				<strong>선택적 개인정보 수집이용에 동의하십니까? (선택)</strong><br>
 				<textarea rows="10" cols="150">&lt;선택적인 개인정보 수집.이용에 대한 동의&gt;
 1. 수집∙이용 항목
 성명(국∙영문), 생년월일, 성별, 전자우편주소, 휴대전화번호, 자택전화번호, 자택 주소, 구매 및 예약 내역, 투숙기간
@@ -137,17 +138,17 @@
 3. 보유∙이용 기간
 수집∙이용 동의일로부터 회원 탈퇴 시까지
 ※위 사항에 대한 동의를 거부할 수 있으나, 이에 대한 동의가 없을 경우 개인형 맞춤 상품 안내등 유용한 상품안내를 받아 보실 수 없습니다.</textarea>
-				 <label><input type="radio" name="req3" id="req3"  class="all" value="yes">동의함</label>
-				<label><input type="radio" name="req3" value="no" checked>동의하지않음</label>
+				 <label style="font-size:small"><input type="radio" name="req3" id="req3"  class="all" value="yes">동의함</label>
+				<label style="font-size:small"><input type="radio" name="req3" value="no" checked>동의하지않음</label>
 			</td>
 		</tr>
 	</table>
-	<div>
-		 <label><input type="radio" name="req4" class="req-all">전체동의</label><br>
+	<div style="font-size:small"><br> 
+		 <label ><input type="radio" name="req4" class="req-all">전체동의</label><br>
 		※ 전체동의는 선택사항(동의 내용을 확인한후 개별동의 가능)이며 전체동의 버튼을 체크하면 선택적 수집동의도 동시 진행됩니다.
 	</div>
-	<div>
-		<input id="reqCheck" type="button" value="다음" onclick="checkBtn();">
-		<input type="button" value="홈으로" onclick="location.href='${pageContext.request.contextPath}/main/main.do'">
+	<div class="align-center"><br>
+		<input id="reqCheck" type="button" value="다음" onclick="checkBtn();" class="myButton">
+		<input type="button" value="홈으로" onclick="location.href='${pageContext.request.contextPath}/main/main.do'" class="myButton">
 	</div>
 </div>

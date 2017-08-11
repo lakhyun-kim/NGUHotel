@@ -1,5 +1,75 @@
 $(document).ready(function() {
 
+	// 로그인 - part1 : 회원 , part2 : 비회원(예약확인)
+	$('#part1').click(function() {
+		$('#login_form').show();
+		$('#resConfirm_form').hide();
+	});
+	$('#part2').click(function() {
+		$('#login_form').hide();
+		$('#resConfirm_form').show();
+	});
+
+	// 로그인 - 비회원(예약확인) 유효성 체크
+	$('#resConfirm_form').submit(function() {
+		if($('#res_num').val() == '') {
+			alert('예약번호를 입력하세요!');
+			$('#res_num').focus();
+			return false;
+		}
+		if($('#mem_lastname').val() == '') {
+			alert('성을 입력하세요!');
+			$('#mem_lastname').focus();
+			return false;
+		}
+		if($('#mem_firstname').val() == '') {
+			alert('이름을 입력하세요!');
+			$('#mem_firstname').focus();
+			return false;
+		}
+	});
+	// 아이디 찾기 유효성 체크
+	$('#findId_form').submit(function() {
+		if($('#mem_lastname').val() == '') {
+			alert('성을 입력하세요!');
+			$('#mem_lastname').focus();
+			return false;
+		}
+		if($('#mem_firstname').val() == '') {
+			alert('이름을 입력하세요!');
+			$('#mem_firstname').focus();
+			return false;
+		}
+		if($('#mem_email').val() == '') {
+			alert('이메일을 입력하세요!');
+			$('#mem_email').focus();
+			return false;
+		}
+	});
+
+	// 비밀번호 찾기 유효성 체크
+	$('#findPwd_form').submit(function() {
+		if($('#mem_id').val() == '') {
+			alert('아이디를 입력하세요!');
+			$('#mem_id').focus();
+			return false;
+		}
+		if($('#mem_lastname').val() == '') {
+			alert('성을 입력하세요!');
+			$('#mem_lastname').focus();
+			return false;
+		}
+		if($('#mem_firstname').val() == '') {
+			alert('이름을 입력하세요!');
+			$('#mem_firstname').focus();
+			return false;
+		}
+		if($('#mem_email').val() == '') {
+			alert('이메일을 입력하세요!');
+			$('#mem_email').focus();
+			return false;
+		}
+	});
 	// submit 이벤트 발생시 유효성 체크
 	$('#register_form, #update_form').submit(function() {
 		// 회원가입 유효성 체크
@@ -138,8 +208,9 @@ $(document).ready(function() {
 		}
 	});
 	
+	// 비밀번호 변경 폼 유효성 체크
 	$('#pwdUpdate_form').submit(function() {
-
+		
 		if($('#mem_pw').val() == '') {
 			alert('현재 비밀번호를 입력하세요!');
 			$('#mem_pw').focus();
@@ -168,7 +239,12 @@ $(document).ready(function() {
 		
 	});
 	
-	
+	// 상단 예약확인 누를시 비회원이면 로그인part2 비회원(예약확인)으로 이동
+	if(getQuerystring('resvYn') == 'Y') {
+		$('#part2').prop('checked', true);
+		$('#login_form').hide();
+		$('#resConfirm_form').show();
+	}
 });
 
 // input 태그에서 숫자만 입력함
@@ -191,9 +267,16 @@ function onlyEngOrKor(obj) {
 		$(this).val($(this).val().replace(/[^ㄱ-ㅎ가-힣a-zA-Z]/g,""));
 	}); 
 }
+// url?key=value -> 파라미터로 key값을 입력하면 return으로 value가 나오는 함수
+function getQuerystring(paramName){ 
 
-// 수정 버튼 클릭 시
-function resultSuccess() {
-	alert('정상적으로 수정되었습니다.');
+	var _tempUrl = window.location.search.substring(1); //url에서 처음부터 '?'까지 삭제
+	var _tempArray = _tempUrl.split('&'); // '&'을 기준으로 분리하기
+
+	for(var i = 0; _tempArray.length; i++) { 
+		var _keyValuePair = _tempArray[i].split('='); // '=' 을 기준으로 분리하기
+		if(_keyValuePair[0] == paramName){ // _keyValuePair[0] : 파라미터 명 // _keyValuePair[1] : 파라미터 값 
+			return _keyValuePair[1];
+		}
+	}
 }
-

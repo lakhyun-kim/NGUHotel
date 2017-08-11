@@ -26,7 +26,7 @@ $(document).ready(function() {
 				$('#loading').hide();
 				
 				if(data.result == 'idNotFound') {
-					$('#message_id').css('color', '#000').text('등록가능ID');
+					$('#message_id').css('color', 'blue').text('등록가능ID');
 					checkIdDuplicated = 1;
 				} else if(data.result == 'idDuplicated') {
 					$('#message_id').css('color', 'red').text('중복된ID');

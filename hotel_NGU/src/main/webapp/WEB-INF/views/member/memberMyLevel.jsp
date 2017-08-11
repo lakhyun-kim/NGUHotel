@@ -1,38 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/member.css" type="text/css">
 <div class="page-main-style">
-	<div>
-		<h2>마이페이지</h2>
-		<ul>
-			<li>
-				<a>N.G.U 등급 및 포인트</a>
-			</li>
-			<li>
-				<a>예약 확인/취소</a>
-			</li>
-			<li>
-				N.G.U 등급 및 포인트
-				<ul>
-					<li><a href="${pageContext.request.contextPath}/member/pointList.do">포인트 조회</a></li>
-				</ul>
-			</li>
-			<li>
-				개인정보
-				<ul>
-					<li><a href="${pageContext.request.contextPath}/member/updateCheck.do">프로필 수정</a></li>
-					<li><a href="${pageContext.request.contextPath}/member/pwdUpdate.do">비밀번호 변경</a></li>
-					<li><a href="${pageContext.request.contextPath}/member/deleteCheck.do">N.G.U 탈퇴 요청</a></li>
-				</ul>
-			</li>
-			<li>
-				<a>문의내역</a>
-			</li>
-		</ul>
-	</div>
 
-
-	<h1>N.G.U 등급 및 포인트</h1>
+	<h1 class="color">N.G.U 등급 및 포인트</h1>
+	<hr width="100%" class="color" style="border:solid 2px">
 	<div>
 		${member.mem_lastname} ${member.mem_firstname}님의 N.G.U 등급 및 포인트에 대한 안내입니다.
 	</div>
@@ -83,26 +56,6 @@
 				</li>
 			</c:if>
 		</ul>
-	</div>
-	<div>
-		<table>
-			<tr>
-				<th>구분</th>
-				<th>이용내역</th>
-				<th>금액</th>
-				<th>적립 포인트</th>
-				<th>사용 포인트</th>
-				<th>날짜</th>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</table>
 	</div>
 	
 </div>
