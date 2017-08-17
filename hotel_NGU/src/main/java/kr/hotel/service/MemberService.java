@@ -41,6 +41,6 @@ public interface MemberService {
 	@Transactional(readOnly=true)
 	public List<MemberPointCommand> getMemberPointList(Map<String, Object> map);
 	@Transactional(readOnly=true)
-	public int getMemberPointCount();
+	public int getMemberPointCount(String mem_id);
 	
 }

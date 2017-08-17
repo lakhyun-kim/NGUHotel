@@ -347,7 +347,7 @@ public class MemberController {
 		// 자기 아이디에서만 뽑아옴
 		map.put("mem_id", user_id);
 		
-		int count = memberService.getMemberPointCount();
+		int count = memberService.getMemberPointCount(user_id);
 		
 		PagingUtil page = new PagingUtil(currentPage, count, rowCount, pageCount, "memberPointList.do");
 

@@ -46,8 +46,8 @@ public interface MemberMapper {
 	
 	// 포인트 목록
 	public List<MemberPointCommand> getMemberPointList(Map<String, Object> map);
-	@Select("SELECT count(*) FROM h_point")
-	public int getMemberPointCount();
+	@Select("SELECT count(*) FROM h_point WHERE mem_id=#{mem_id}")
+	public int getMemberPointCount(String mem_id);
 	
 	// 포인트 목록 삭제 - 회원 삭제하기위해 자식이 남아있으면 안됨
 	@Delete("DELETE FROM h_point WHERE mem_id=#{mem_id}")

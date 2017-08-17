@@ -194,13 +194,12 @@
 		    <artifactId>mail</artifactId>
 		    <version>1.4.7</version>
 		</dependency>
-		<dependency><!-- 메일전송 -->
+		<dependency><!-- 메일전송 --> 
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
 			<version>${org.springframework-version}</version>
 			<!-- <version>4.0.9.RELEASE</version> -->
 		</dependency>
-   
 		<!-- 라이브러리 추가 -->
 	
 		<!-- Test -->

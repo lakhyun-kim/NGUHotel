@@ -9,6 +9,13 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/daumAddress.js"></script>
 <div class="page-main-style">
 	<h1 class="color">회원가입</h1>
+	<div class="align-center">
+		<ul class="ulWrite"> 
+			<li style="border-bottom:2px solid #865009; border-right:1px solid #cccac1">약관동의</li>
+			<li style="font-weight:bold; border-right:1px solid #cccac1; border-bottom:5px solid #865009">회원정보입력</li>
+			<li style="border-bottom:2px solid #865009">가입완료</li>
+		</ul>
+	</div><br><br>
 	<div>
 		<strong>회원정보입력</strong>
 		<hr width="100%" class="color" style="border:solid 2px">

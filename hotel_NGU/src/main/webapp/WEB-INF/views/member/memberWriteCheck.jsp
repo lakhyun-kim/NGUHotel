@@ -43,8 +43,15 @@
 </script>
 <div class="page-main-style">
 	<h1 class="color">N.G.U Hotel 가입</h1>
+	<div class="align-center">
+		<ul class="ulWrite">
+			<li style="font-weight:bold; border-bottom:5px solid #865009; border-right:1px solid #cccac1">약관동의</li>
+			<li style="border-right:1px solid #cccac1; border-bottom:2px solid #865009">회원정보입력</li>
+			<li style="border-bottom:2px solid #865009">가입완료</li>
+		</ul>
+	</div>
 	<div class="align-center" style="padding:20px">
-		<strong class="color">N.G.U 호텔에 오신 것을 환영합니다.</strong><br>
+		<h1 class="color">N.G.U 호텔에 오신 것을 환영합니다.</h1><br>
 		<span style="font-size:small">※ 약관 및 개인정보 수집·이용 사항을 확인하시고 동의여부에 체크해주시기 바랍니다.</span>
 	</div>
 	<div>
@@ -55,7 +62,7 @@
 		<tr>
 			<td>
 				<strong>회원약관에 동의하십니까?(필수)</strong><br>
-				<textarea rows="10" cols="150">&lt;회원약관에 대한 동의&gt;
+				<textarea rows="10" cols="125">&lt;회원약관에 대한 동의&gt;
 제1조 멤버십 규정 일반 
 1.	본 약관은 주식회사 호텔신라(이하 “회사”)의 호텔 멤버십 프로그램인 Shilla Rewards의 이용에 관한 기본적인 사항을 정함을 목적으로 합니다.
 2.	본 프로그램의 이용약관 및 멤버십 운영에 관련한 각종 혜택 및 서비스의 적용 범위는 다음과 같습니다.
@@ -116,7 +123,7 @@
 		<tr>
 			<td><br>
 				<strong>필수적인 개인정보 수집이용에 동의하십니까?(필수)</strong><br>
-				<textarea rows="10" cols="150">&lt;필수적인 개인정보 수집.이용에 대한 동의&gt;
+				<textarea rows="10" cols="125">&lt;필수적인 개인정보 수집.이용에 대한 동의&gt;
 1. 수집∙이용 항목 
 성명(국∙영문), 생년월일, 성별, 전자우편주소, 휴대전화번호, 자택전화번호, 자택 주소, 구매 및 예약 내역, 투숙기간
 2. 수집∙이용 목적
@@ -130,7 +137,7 @@
 		<tr>
 			<td><br>
 				<strong>선택적 개인정보 수집이용에 동의하십니까? (선택)</strong><br>
-				<textarea rows="10" cols="150">&lt;선택적인 개인정보 수집.이용에 대한 동의&gt;
+				<textarea rows="10" cols="125">&lt;선택적인 개인정보 수집.이용에 대한 동의&gt;
 1. 수집∙이용 항목
 성명(국∙영문), 생년월일, 성별, 전자우편주소, 휴대전화번호, 자택전화번호, 자택 주소, 구매 및 예약 내역, 투숙기간
 2. 수집∙이용 목적
