@@ -1,0 +1,22 @@
+create table h_gpackage(
+   gpa_seq number not null primary key,
+   gpa_filename varchar2(100) not null,
+   gpa_upload blob not null,
+   gpa_title varchar2(30) not null,
+   gpa_term varchar2(50) not null,
+   gpa_money varchar2(50) not null,
+   gpa_demain blob not null,
+   gpa_depro blob not null,
+   gpa_reterm blob not null,
+   gpa_dmname varchar2(100) not null,
+   gpa_dpname varchar2(100) not null,
+   gpa_rtname varchar2(100) not null,
+   mem_id varchar2(15) not null,
+   norr number(5),
+   cnt1 varchar2(200),
+   cnt2 varchar2(200),
+   cnt3 varchar2(200),   
+   constraint din_hotel_fk1 foreign key(mem_id) references h_member(mem_id)
+);
+
+create sequence gpackage_seq;

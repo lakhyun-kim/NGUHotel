@@ -25,42 +25,42 @@
     	<put-attribute name="body" value="/WEB-INF/views/member/memberWriteSuccess.jsp"/>
     </definition>
     
-    <definition name="memberMyLevel" extends="main2">
+    <definition name="memberMyLevel" extends="memMain">
     	<put-attribute name="title" value="마이페이지(등급 및 포인트)"/>
     	<put-attribute name="body" value="/WEB-INF/views/member/memberMyLevel.jsp"/>
     </definition>
     
-    <definition name="memberUpdateCheck" extends="main2">
+    <definition name="memberUpdateCheck" extends="memMain">
     	<put-attribute name="title" value="마이페이지(프로필 수정)"/>
     	<put-attribute name="body" value="/WEB-INF/views/member/memberUpdateCheck.jsp"/>
     </definition>
     
-    <definition name="memberUpdate" extends="main2">
+    <definition name="memberUpdate" extends="memMain">
     	<put-attribute name="title" value="마이페이지(프로필 수정)"/>
     	<put-attribute name="body" value="/WEB-INF/views/member/memberUpdate.jsp"/>
     </definition>
     
-    <definition name="memberPwdUpdate" extends="main2">
+    <definition name="memberPwdUpdate" extends="memMain">
     	<put-attribute name="title" value="마이페이지(비밀번호 변경)"/>
     	<put-attribute name="body" value="/WEB-INF/views/member/memberPwdUpdate.jsp"/>
     </definition>
     
-    <definition name="memberDeleteCheck" extends="main2">
+    <definition name="memberDeleteCheck" extends="memMain">
     	<put-attribute name="title" value="마이페이지(탈퇴요청)"/>
     	<put-attribute name="body" value="/WEB-INF/views/member/memberDeleteCheck.jsp"/>
     </definition>
     
-    <definition name="memberDelete" extends="main2">
+    <definition name="memberDelete" extends="memMain">
     	<put-attribute name="title" value="마이페이지(탈퇴요청)"/>
     	<put-attribute name="body" value="/WEB-INF/views/member/memberDelete.jsp"/>
     </definition>
     
-    <definition name="memberPointList" extends="main2">
+    <definition name="memberPointList" extends="memMain">
     	<put-attribute name="title" value="마이페이지(포인트조회)"/>
     	<put-attribute name="body" value="/WEB-INF/views/member/memberPointList.jsp"/>
     </definition>
     
-    <definition name="memberResConfirm" extends="main2">
+    <definition name="memberResConfirm" extends="memMain">
     	<put-attribute name="title" value="마이페이지(예약확인/취소)"/>
     	<put-attribute name="body" value="/WEB-INF/views/member/memberResConfirm.jsp"/>
     </definition>
@@ -75,7 +75,7 @@
     	<put-attribute name="body" value="/WEB-INF/views/member/memberList.jsp"/>
     </definition>
     
-    <definition name="memberQnaList" extends="main2">
+    <definition name="memberQnaList" extends="memMain">
     	<put-attribute name="title" value="마이페이지(문의내역)"/>
     	<put-attribute name="body" value="/WEB-INF/views/member/memberQnaList.jsp"/>
     </definition>

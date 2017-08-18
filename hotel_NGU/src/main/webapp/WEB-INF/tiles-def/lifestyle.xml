@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="lifestyleList" extends="main5">
+      	<put-attribute name="title" value="게시판목록"/>
+      	<put-attribute name="body" value="/WEB-INF/views/lifestyle/lifestyleList.jsp"/>
+    </definition>
+    
+    <definition name="lifestyleWrite" extends="main5">
+      	<put-attribute name="title" value="글쓰기"/>
+      	<put-attribute name="body" value="/WEB-INF/views/lifestyle/lifestyleWrite.jsp"/>
+    </definition>
+    
+    <definition name="lifestyleView" extends="main5">
+      	<put-attribute name="title" value="게시글 상세정보"/>
+      	<put-attribute name="body" value="/WEB-INF/views/lifestyle/lifestyleView.jsp"/>
+    </definition>
+
+	<definition name="lifestyleModify" extends="main5">
+      	<put-attribute name="title" value="글 수정"/>
+      	<put-attribute name="body" value="/WEB-INF/views/lifestyle/lifestyleModify.jsp"/>
+    </definition>
+
+</tiles-definitions>

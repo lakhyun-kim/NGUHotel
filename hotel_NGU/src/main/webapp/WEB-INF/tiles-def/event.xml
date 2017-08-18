@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>    
+	<definition name="event_list" extends="event"><!-- main 상속 -->
+    	<put-attribute name="title" value="이벤트게시판 목록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/event/event_list.jsp"/>
+    </definition> 
+    
+    
+    <definition name="event_write" extends="event"><!-- main 상속 -->
+    	<put-attribute name="title" value="이벤트게시판 등록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/event/event_write.jsp"/>
+    </definition>
+       
+    <definition name="event_detail" extends="event"><!-- main 상속 -->
+    	<put-attribute name="title" value="이벤트게시판 상세목록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/event/event_detail.jsp"/>
+    </definition>
+    
+    <definition name="event_update" extends="event"><!-- main 상속 -->
+    	<put-attribute name="title" value="이벤트게시판 상세목록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/event/event_update.jsp"/>
+    </definition>  
+    
+</tiles-definitions>

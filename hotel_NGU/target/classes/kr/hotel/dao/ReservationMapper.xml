@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+    
+<mapper namespace="kr.hotel.dao.ReservationMapper"> 
+
+   <insert id="insertReservation" parameterType="ReservationCommand"> 
+        INSERT 
+        INTO 
+            h_reservation( 
+                            res_num, 
+                            gue_num, 
+                            res_in,
+                            res_out,
+                            res_adult,
+                            res_child,
+                            res_baby,
+                            res_bed_type,
+                            res_option_1,
+                            res_option_2,
+                            res_total,
+                            mem_id) 
+        VALUES ( 
+                #{res_num}, 
+                #{gue_num}, 
+                #{res_in},
+                #{res_out},
+                #{res_adult},
+                #{res_child, jdbcType=INTEGER},
+                #{res_baby, jdbcType=INTEGER},
+                #{res_bed_type},
+                #{res_option_1, jdbcType=VARCHAR},
+                #{res_option_2, jdbcType=VARCHAR},
+                #{res_total},
+                #{mem_id}) 
+    </insert>
+
+
+</mapper>

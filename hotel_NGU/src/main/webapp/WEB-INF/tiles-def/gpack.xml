@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+	<definition name="gpList" extends="main3">
+		<put-attribute name="title" value="패키지목록"/>
+		<put-attribute name="body" value="/WEB-INF/views/gpack/gpList.jsp"/>
+	</definition>
+	
+	<definition name="gpWrite" extends="main3">
+		<put-attribute name="title" value="패키지목록"/>
+		<put-attribute name="body" value="/WEB-INF/views/gpack/gpWrite.jsp"/>
+	</definition>
+	
+	<definition name="gpDetail" extends="main3">
+		<put-attribute name="title" value="패키지목록"/>
+		<put-attribute name="body" value="/WEB-INF/views/gpack/gpDetail.jsp"/>
+	</definition>
+	
+	<definition name="gpModify" extends="main3">
+		<put-attribute name="title" value="패키지목록"/>
+		<put-attribute name="body" value="/WEB-INF/views/gpack/gpModify.jsp"/>
+	</definition>
+	
+</tiles-definitions>

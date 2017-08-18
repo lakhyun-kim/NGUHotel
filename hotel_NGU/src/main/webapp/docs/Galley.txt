@@ -1,0 +1,35 @@
+create table h_gallery(
+	h_gallery_seq number not null primary key,
+	h_gallery_type varchar2(30) not null,
+	h_gallery_filename1 varchar2(100) not null,
+	h_gallery_filename2 varchar2(100),
+	h_gallery_filename3 varchar2(100),
+	h_gallery_filename4 varchar2(100),
+	h_gallery_filename5 varchar2(100),
+	h_gallery_filename6 varchar2(100),
+	h_gallery_filename7 varchar2(100),
+	h_gallery_filename8 varchar2(100),
+	h_gallery_filename9 varchar2(100),
+	h_gallery_filename10 varchar2(100),
+	h_gallery_filename11 varchar2(100),
+	h_gallery_filename12 varchar2(100),
+	h_gallery_upload1 blob not null,
+	h_gallery_upload2 blob,
+	h_gallery_upload3 blob,
+	h_gallery_upload4 blob,
+	h_gallery_upload5 blob,
+	h_gallery_upload6 blob,
+	h_gallery_upload7 blob,
+	h_gallery_upload8 blob,
+	h_gallery_upload9 blob,
+	h_gallery_upload10 blob,
+	h_gallery_upload11 blob,
+	h_gallery_upload12 blob,
+	h_gallery_subject varchar2(100) not null,
+    h_gallery_content varchar2(100),
+	mem_id varchar2(15) not null,
+	
+	constraint gallery_hotel_fk1 foreign key (mem_id) references h_member (mem_id)
+);
+
+create sequence h_gallery_seq;

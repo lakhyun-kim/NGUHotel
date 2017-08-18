@@ -14,4 +14,9 @@
     	<put-attribute name="body" value="/WEB-INF/views/reservation/reservation_step2.jsp"/>
     </definition>
     
+    <definition name="reservation_result" extends="main"><!-- main 상속 -->
+    	<put-attribute name="title" value="step_result"/>
+    	<put-attribute name="body" value="/WEB-INF/views/reservation/reservation_result.jsp"/>
+    </definition>
+    
 </tiles-definitions>

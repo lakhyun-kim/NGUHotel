@@ -1,0 +1,1 @@
+<img src="${pageContext.request.contextPath}/resources/img/0bin7.PNG">

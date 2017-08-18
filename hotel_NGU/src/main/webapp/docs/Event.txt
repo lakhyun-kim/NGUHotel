@@ -1,0 +1,30 @@
+create table h_event(
+	event_seq number not null primary key,
+	event_price1 varchar2(20),
+	event_price2 varchar2(20),
+	event_date1 varchar2(20) not null,
+	event_date2 varchar2(20) not null,
+	event_division varchar2(20) not null,
+	event_subject varchar2(200) not null,
+	event_content1 varchar2(400) not null,
+	event_content2 varchar2(400),
+	event_content3 varchar2(400),
+	event_content4 varchar2(400),
+	event_content5 varchar2(400),
+	event_filename1 varchar2(100) not null,
+	event_filename2 varchar2(100),
+	event_filename3 varchar2(100),
+	event_filename4 varchar2(100),
+	event_filename5 varchar2(100),
+	event_upload1 blob not null,
+	event_upload2 blob,
+	event_upload3 blob,
+	event_upload4 blob,
+	event_upload5 blob,
+	
+	mem_id varchar2(15) not null,
+	constraint event_hotel_fk1 foreign key (mem_id) references h_member (mem_id)
+	
+);
+
+create sequence h_event_seq;

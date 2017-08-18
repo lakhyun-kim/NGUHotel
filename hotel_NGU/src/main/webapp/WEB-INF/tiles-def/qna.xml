@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="qna_write" extends="main"><!-- main 상속 -->
+    	<put-attribute name="title" value="문의하기"/>
+    	<put-attribute name="body" value="/WEB-INF/views/qna/qna_write.jsp"/>
+    </definition> 
+    
+    <definition name="qna_list" extends="main"><!-- main 상속 -->
+    	<put-attribute name="title" value="문의리스트"/>
+    	<put-attribute name="body" value="/WEB-INF/views/qna/qna_list.jsp"/>
+    </definition>
+    
+    <definition name="qna_detail" extends="main"><!-- main 상속 -->
+    	<put-attribute name="title" value="문의리스트"/>
+    	<put-attribute name="body" value="/WEB-INF/views/qna/qna_detail.jsp"/>
+    </definition>
+    
+    <definition name="qna_done" extends="main"><!-- main 상속 -->
+    	<put-attribute name="title" value="문의완료"/>
+    	<put-attribute name="body" value="/WEB-INF/views/qna/qna_done.jsp"/>
+    </definition>  
+</tiles-definitions>

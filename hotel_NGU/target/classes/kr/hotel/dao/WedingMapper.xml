@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<!-- 인터페이스 명칭하고 똑같아야한다 -->
+<!-- 네임스페이스는 MemberMapper.xml과 맵핑되는 
+     MemberMapper 인터페이스명을 package 포함해서 명시함.
+     불일치시 오류 발생 -->
+<mapper namespace="kr.hotel.dao.WedingMapper"> 
+    <!-- 
+    id는 MemberMapper의 연동하고자는 메서드명
+    parameterType은 파라미터로 전달되는 객체의 타입(java.util.Map)
+    또는 알리아스(map)
+    resultType은 반환되는 객체의 타입(kr.spring.member.domain.MemberCommand)
+    또는 알리아스(memberCommand)
+     --> 
+	
+	<select id="list" parameterType="map" resultType="WedingCommand">
+		SELECT
+			wed_seq,
+			<![CDATA[
+				REPLACE(REPLACE(wed_title,'<','&lt;'),'>','&gt;') wed_title,
+			]]>
+			wed_realtitle,
+			wed_retitle,
+			mem_id,
+			wed_topname,
+			wed_midname,
+			wed_lowname,
+			wed_divide
+		FROM(SELECT
+				a.*,
+				rownum rnum
+			 FROM(SELECT
+			 		*
+			 	  FROM h_weding<!-- 검색부분!!  여기 쓰고 카운터 쪽에서도 써야됨!! 아래 -->
+			 	  	<where>
+			 	  		<if test="keyword != '' and keyfield =='wed_title'">
+			 	  			wed_title like '%' || #{keyword} || '%'
+			 	  		</if>
+			 	  		<if test="keyword != '' and keyfield == 'mem_id'">
+			 	  			mem_id like '%' || #{keyword} || '%'
+			 	  		</if>
+			 	  		<if test="keyword != '' and keyfield == 'all'">
+			 	  			wed_title like '%' || #{keyword} || '%' or
+			 	  			mem_id like '%' || #{keyword} || '%' or
+			 	  		</if>
+			 	  	</where>
+			 	  ORDER BY wed_seq DESC)a)
+			 
+		<![CDATA[
+		WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>
+	</select>
+	
+	<select id="getRowCount" parameterType="map" resultType="integer">
+		SELECT
+			count(*)
+		FROM h_weding<!-- 여기다 똑같이 써야됨!! -->
+		<where>
+ 	  		<if test="keyword != '' and keyfield =='wed_title'">
+ 	  			wed_title like '%' || #{keyword} || '%'
+ 	  		</if>
+ 	  		<if test="keyword != '' and keyfield == 'mem_id'">
+ 	  			mem_id like '%' || #{keyword} || '%'
+ 	  		</if>
+ 	  		<if test="keyword != '' and keyfield == 'all'">
+ 	  			wed_title like '%' || #{keyword} || '%' or
+ 	  			mem_id like '%' || #{keyword} || '%' or
+ 	  		</if>
+ 	</where>
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

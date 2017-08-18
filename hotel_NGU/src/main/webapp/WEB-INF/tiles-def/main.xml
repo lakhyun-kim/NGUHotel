@@ -5,14 +5,8 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-    <definition name="main" template="/WEB-INF/views/template/layout.jsp">
-    	<put-attribute name="title" value="N.G.U Hotel"/>
-    	<put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
-    	<put-attribute name="body" value="/WEB-INF/views/main/main.jsp"/>
-    	<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/> 
-    </definition>
-    
-    <definition name="main2" template="/WEB-INF/views/template/layout2.jsp">
+    <!-- 회원관리 -->
+    <definition name="memMain" template="/WEB-INF/views/template/layout2.jsp">
     	<put-attribute name="title" value="N.G.U Hotel"/>
     	<put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
     	<put-attribute name="menu" value="/WEB-INF/views/template/memberMenu.jsp"/>
@@ -20,6 +14,66 @@
     	<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/> 
     </definition>
     
+	<!-- 메인페이지 -->
+    <definition name="main" template="/WEB-INF/views/template/layout.jsp">
+    	<put-attribute name="title" value="N.G.U Hotel"/>
+    	<put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
+    	<put-attribute name="body" value="/WEB-INF/views/main/main.jsp"/>
+    	<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/> 
+    </definition>
+    <!-- 객실정보 -->
+    <definition name="main2" template="/WEB-INF/views/template/layout2.jsp">
+      <put-attribute name="title" value="Spring Home Demo"/>
+      <put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
+      <put-attribute name="body" value="/WEB-INF/views/main/main.jsp"/>
+      <put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
+      <put-attribute name="menu" value="/WEB-INF/views/template/gueleftbar.jsp"/>
+    </definition>
+    <!-- 객실패키지 -->
+    <definition name="main3" template="/WEB-INF/views/template/layout2.jsp">
+      <put-attribute name="title" value="Spring Home Demo"/>
+      <put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
+      <put-attribute name="body" value="/WEB-INF/views/main/main.jsp"/>
+      <put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
+      <put-attribute name="menu" value="/WEB-INF/views/template/gpleftbar.jsp"/>
+    </definition>
+    
+    <!-- 라이프스타일 -->
+	<definition name="main5" template="/WEB-INF/views/template/layout2.jsp">
+		<put-attribute name="title" value="Spring Home Demo"/>
+		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/views/main/main.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/views/template/lifeleft.jsp"/>
+	</definition>
+
+    <!-- 웨딩&연회 -->
+	<definition name="main6" template="/WEB-INF/views/template/layout2.jsp">
+		<put-attribute name="title" value="Spring Home Demo"/>
+		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/views/main/main.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/views/template/wedleft.jsp"/>
+	</definition>
+	
+	<!-- event -->
+	<definition name="event" template="/WEB-INF/views/template/layout2.jsp">
+		<put-attribute name="title" value="Spring Home Demo"/>
+		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/views/main/main.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/views/template/eventleft.jsp"/>
+	</definition>
+	
+	<!-- gallery -->
+	<definition name="gallery" template="/WEB-INF/views/template/layout2.jsp">
+		<put-attribute name="title" value="Spring Home Demo"/>
+		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/views/main/main.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/views/template/galleryleft.jsp"/>
+	</definition>
+	
     <definition name="pageError" extends="main"><!-- main 상속 -->
     	<put-attribute name="title" value="에러페이지"/>
     	<put-attribute name="body" value="/WEB-INF/views/error/pageError.jsp"/>

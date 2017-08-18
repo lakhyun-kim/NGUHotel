@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>    
+	<definition name="gallery_list" extends="gallery"><!-- main 상속 -->
+    	<put-attribute name="title" value="갤러리 목록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/gallery/gallery_list.jsp"/>
+    </definition> 
+    
+    <definition name="gallery_movie" extends="gallery"><!-- main 상속 -->
+    	<put-attribute name="title" value="갤러리 동영상"/>
+    	<put-attribute name="body" value="/WEB-INF/views/gallery/gallery_movie.jsp"/>
+    </definition>
+    
+    <definition name="gallery_write" extends="gallery"><!-- main 상속 -->
+    	<put-attribute name="title" value="갤러리 등록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/gallery/gallery_write.jsp"/>
+    </definition> 
+    
+    <definition name="gallery_detail" extends="gallery"><!-- main 상속 -->
+    	<put-attribute name="title" value="갤러리 상세내용"/>
+    	<put-attribute name="body" value="/WEB-INF/views/gallery/gallery_detail.jsp"/>
+    </definition>
+    
+    <definition name="gallery_update" extends="gallery"><!-- main 상속 -->
+    	<put-attribute name="title" value="갤러리 상세내용"/>
+    	<put-attribute name="body" value="/WEB-INF/views/gallery/gallery_update.jsp"/>
+    </definition>
+    
+</tiles-definitions>

@@ -27,6 +27,13 @@
 	   			<beans:value>/WEB-INF/tiles-def/main.xml</beans:value>
 	   			<beans:value>/WEB-INF/tiles-def/member.xml</beans:value>
 	   			<beans:value>/WEB-INF/tiles-def/reservation.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/lifestyle.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/weding.xml</beans:value>
+	   			<beans:value>/WEB-INF/tiles-def/guest.xml</beans:value>
+	   			<beans:value>/WEB-INF/tiles-def/gpack.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/event.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/gallery.xml</beans:value>
+	   			<beans:value>/WEB-INF/tiles-def/qna.xml</beans:value>
 	   		</beans:list>
 	   	</beans:property>
 	</beans:bean>
@@ -95,11 +102,62 @@
 			<mapping path="/member/pointList.do"/>
 			<mapping path="/member/memResConfirm.do"/>
 			<mapping path="/member/qnaList.do"/>
+			<mapping path="/qna/qna_detail.do"/>
+			<mapping path="/qna/qna_update.do"/>
+			<mapping path="/qna/qna_delete.do"/>
 			<beans:bean class="kr.hotel.interceptor.LoginCheckInterceptor" />
 		</interceptor>
+		<!-- 라이프스타일 -->
+		<interceptor>
+			<mapping path="/lifestyle/detail.do"/>
+			<mapping path="/lifestyle/list.do"/>
+		<beans:bean class="kr.hotel.interceptor.LifeStyleMenuInterceptor"/>
+		</interceptor>
+		<!-- 웨딩&연회 -->
+		<interceptor>
+			<mapping path="/weding/list.do"/>
+			<mapping path="/weding/detail.do"/>
+		<beans:bean class="kr.hotel.interceptor.WedingMenuInterceptor"/>
+		</interceptor>
+		<!-- 객실정보 -->
+		<interceptor>
+	        <mapping path="/guest/list.do"/>
+	        <mapping path="/guest/gueDetail.do"/>
+	        <beans:bean class="kr.hotel.interceptor.GuestMenuInterceptor" />
+	    </interceptor>
+	    <!-- 객실패키지 -->
+	    <interceptor>
+	        <mapping path="/gpack/list.do"/>
+	        <mapping path="/gpack/gpDetail.do"/>
+			<mapping path="/event/event_list.do"/>
+			<mapping path="/event/event_detail.do"/>
+	        <beans:bean class="kr.hotel.interceptor.SPMenuInterceptor" />
+	    </interceptor>    
 		<!-- 관리자 체크 -->
 		<interceptor>
 			<mapping path="/member/memberList.do"/>
+			<mapping path="/lifestyle/write.do"/>
+			<mapping path="/lifestyle/update.do"/>
+			<mapping path="/lifestyle/delete.do"/>
+			<mapping path="/weding/write.do"/>
+			<mapping path="/weding/update.do"/>
+			<mapping path="/weding/delete.do"/>
+	        <mapping path="/guest/gueWrite.do"/>
+	        <mapping path="/guest/gueUpdate.do"/>
+	        <mapping path="/guest/gueDelete.do"/>
+	        <mapping path="/gpack/gpWrite.do"/>
+	        <mapping path="/gpack/gpUpdate.do"/>
+	        <mapping path="/gpack/gpDelete.do"/>
+			<mapping path="/event/event_write.do"/>
+			<mapping path="/event/event_update.do"/>
+			<mapping path="/event/event_delete.do"/>
+			<mapping path="/gallery/gallery_write.do"/>
+			<mapping path="/gallery/gallery_update.do"/>
+			<mapping path="/gallery/gallery_delete.do"/>
+			<mapping path="/qna/qna_list.do"/>
+			<mapping path="/qna/qna_write_reply.do"/>
+			<mapping path="/qna/qna_update_reply.do"/>
+			<mapping path="/qna/qna_delete_reply.do"/>
 			<beans:bean class="kr.hotel.interceptor.AdminCheckInterceptor" />
 		</interceptor>
 	</interceptors>

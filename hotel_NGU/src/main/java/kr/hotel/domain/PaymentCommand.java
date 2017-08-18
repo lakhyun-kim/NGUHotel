@@ -14,7 +14,6 @@ public class PaymentCommand {
 	private String pay_card_mon;
 	private String pay_card_year;
 	private int res_num;
-	private int res_cancel;
 	
 	
 	public String getPay_num() {
@@ -89,19 +88,14 @@ public class PaymentCommand {
 	public void setRes_num(int res_num) {
 		this.res_num = res_num;
 	}
-	public int getRes_cancel() {
-		return res_cancel;
-	}
-	public void setRes_cancel(int res_cancel) {
-		this.res_cancel = res_cancel;
-	}
+	
 	@Override
 	public String toString() {
 		return "PaymentCommand [pay_num=" + pay_num + ", mem_id=" + mem_id + ", pay_cardtype=" + pay_cardtype
 				+ ", pay_cardnum=" + pay_cardnum + ", pay_p_cell=" + pay_p_cell + ", pay_h_cell=" + pay_h_cell
 				+ ", pay_lastname=" + pay_lastname + ", pay_firstname=" + pay_firstname + ", pay_email=" + pay_email
 				+ ", pay_card_mon=" + pay_card_mon + ", pay_card_year=" + pay_card_year + ", res_num=" + res_num
-				+ ", res_cancel=" + res_cancel + "]";
+				+ "]";
 	}
 	
 	

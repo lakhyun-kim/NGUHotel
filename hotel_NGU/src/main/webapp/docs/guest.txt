@@ -1,0 +1,45 @@
+create table h_guest(
+   gue_num number not null primary key,
+   gue_filename varchar2(100),
+   gue_uploadfile blob,
+   gue_title varchar2(50) not null,
+   gue_stitle varchar2(100) not null,
+   gue_type varchar2(50) not null,
+   gue_size varchar2(50) not null,
+   gue_date date not null,
+   gue_sel number(10) not null,
+   gue_ltopfile blob,
+   gue_lbotfile blob,
+   gue_rtopfile blob,
+   gue_rbotfile blob,
+   gue_ltopfilename varchar2(100),
+   gue_lbotfilename varchar2(100),
+   gue_rtopfilename varchar2(100),
+   gue_rbotfilename varchar2(100),
+   mem_id varchar2(15) not null
+);
+
+create sequence guest_seq;
+
+create table gue_slide(
+   sli_fname1 varchar2(50),
+   sli_fname2 varchar2(50),
+   sli_fname3 varchar2(50),
+   sli_fname4 varchar2(50),
+   sli_thname1 varchar2(50),
+   sli_thname2 varchar2(50),
+   sli_thname3 varchar2(50),
+   sli_thname4 varchar2(50),
+   sli_file1 blob,
+   sli_file2 blob,
+   sli_file3 blob,
+   sli_file4 blob,
+   sli_thum1 blob,
+   sli_thum2 blob,
+   sli_thum3 blob,
+   sli_thum4 blob,
+   gue_num number not null,
+   mem_id varchar2(15),
+   constraint fk_gue_num foreign key(gue_num) references h_guest(gue_num),
+   constraint fk_mem_id foreign key(mem_id) references h_member(mem_id)
+);

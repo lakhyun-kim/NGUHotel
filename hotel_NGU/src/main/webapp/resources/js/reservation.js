@@ -1,3 +1,5 @@
+
+
 //캘린더 예약
  $.datepicker.regional['kr'] = {
 		 
@@ -16,6 +18,7 @@
    		 check_in = $( '#check_in' )
         .datepicker({
           minDate:0,
+        
           defaultDate: '+1w',
           changeMonth: true,
           numberOfMonths: 2
@@ -202,7 +205,8 @@
 		 });
 	 
 		//reservation.jsp 체크인 체크아웃 날짜 유효성 검사
-		$('#search').click(function(){
+		//'#search'
+		$('#search').on('click',function(){
 			if($('#check_in').val() ==''){
 				alert('체크인 날짜를 선택 해주세요.');
 				$('#check_in').focus();
@@ -213,17 +217,226 @@
 				$('#check_out').focus();
 				return;
 			}
+			var check_in =  $('#check_in').val();
+			var check_out = $('#check_out').val();
+			
+			$('#js_roomlist').empty();
+			
+			//검색 버튼 클릭시 예약가능한 객실 리스트 출력
+			$.ajax({
+				type:'get',
+				url:'reservationSearch.do',
+				cache:false,
+				data:{check_in:check_in, check_out:check_out},
+				dataType:'json',
+				success:function(data){
+					
+					var list = data.list;
+					var i=0;
+					
+					$.each(list, function(i){
+						
+						
+						var output = '<tr>';
+						output += '<td class="res_td1">'+list[i].gue_num+'</td>';
+						output += '<td class="res_title">'+list[i].gue_title+'</td>';
+						output += '<td class="res_td">'+list[i].gue_size+'</td>';
+						output += '<td class="res_sel">'+list[i].gue_sel+'</td>';
+						output += '<td>'+'<input type="button" class="res_ser" value="예약하기" data-num="'+list[i].gue_num+'" data-price="'+list[i].gue_sel+'" data-name="'+list[i].gue_title+'">'+'</td>';
+						output += '</tr>';	
+					
+		
+						
+						$('#js_roomlist').append(output);
+						
+					});
+					
+	
+					}	
+			});
+			
+			
 			
 			//앞 표면 페이지를 감춤
 			$('.surface').hide();
 			
+			
+			// 날짜 선택시 예약된 방의 날짜와 비교해서 검색된 리스트 에서 제외
+			
+			
+			
+			
+			
 			//객실 리스트 출력
 			$('.list').css('display','block');
+
 			
 		});
+		
+		/* ***********step1************ */
+		var gue_title;
+		var gue_sel;
+		var gue_num;
+		var rsv_bed_type;
+		var bool;
+		/*'.res_ser'*/
+		$(document).on('click', '.res_ser', function(){
+			gue_title = $(this).attr('data-name');
+			gue_sel = $(this).attr('data-price');
+			gue_num = $(this).attr('data-num');
+			
+			$('#res_room_type').val(gue_title);
+			$('#cost').val(gue_sel);
+			$('#gue_num').val(gue_num);
+			
+			//침대 타입 설정
+			if($(':input:radio[name=res_bed_type]:checked').val() == null){
+		    	  alert('침대의 타입을 선택 해주세요.');
+		    	  
+		    	  return false;
+		    }if($(':input:radio[name=res_bed_type]:checked').val()=='Double' || $(':input:radio[name=res_bed_type]:checked').val() =='Twin'){
+			    	  rsv_bed_type = $(':input:radio[name=res_bed_type]:checked').val();
+			    	  
+		    	  alert('침대 타입이 정상적으로 선택 되었습니다. 아래에 선택 버튼을 눌러주세요.');
+		    	  bool='false';
+		      }
+		      
+		      
+		});
+		
+		
+		
+		$('#reservation_form').submit(function(){
+		
+			if(rsv_bed_type==null){
+				alert('침대 타입을 선택 하신후 예약하기 버튼을 눌러주세요.');
+				return false;
+				
+			}
+			var gue_sel = $(this).attr('data-gue_sel');
+			var gue_title = $(this).attr('data-gue_title');
+			var gue_num = $(this).attr('data-gue_num');
+			
+			if(res_title==null){
+		    	alert('예약하기 버튼을 눌러주세요.');
+		    	return false;
+		    	
+		    }else if(res_title != null){
+		    	
+		    	$('#res_room_type').val(gue_title);
+				$('#cost').val(gue_sel);
+				
+		    }
+			
+			if($(':input:radio[name=res_bed_type]:checked').val() == null){
+		    	  alert('침대의 타입을 선택 해주세요.');
+		    	  
+		    	  return false;
+		    
+		    }
+			
+			if($(':input:radio[name=res_bed_type]:checked').val()=='Double' || $(':input:radio[name=res_bed_type]:checked').val() =='Twin'){
+		    	  rsv_bed_type = $(':input:radio[name=res_bed_type]:checked').val();
+	        }
+		    
+	
+		});
+		
+		
+		
+		
+		/* ** 예약자가 선택한 항목들에 대한 데이터 출력 ** */
+	    var check_in = $('#in_day').text();
+	    var check_out = $('#out_day').text();
+	    
+	    // "2017-08-12"으로 된 날짜를 '-'로 쪼개기
+	    var arr_in = check_in.split('-');
+	    	var arr_out = check_out.split('-');
+	    
+	    
+	    // 월에서 1을 뺀 이유는 자바스크립트에서 Date 객체의 월은 우리가 사용하는 월보다 1이 작기 때문이다.
+	    var in_date = new Date(arr_in[0], Number(arr_in[1])-1, arr_in[2]);
+	    var out_date = new Date(arr_out[0], Number(arr_out[1])-1, arr_out[2]);
+
+	    // 1000을 나누면 초, 60을 또 나누면 분, 60을 또 나누면 시간, 24를 또 나누면 일 단위의 차이가 됨.
+	    var total_day = (out_date.getTime() - in_date.getTime())/1000/60/60/24;
+	    
+	    $('#total_day').text(total_day);
+	      
+	    
+	    //요금 총합 처리
+	    var res_total = 0;
+	    var op1=0;
+	    var op2=0;
+	    
+	    // 총 요금의 합계
+		
+		var cost = Number($('#cost').text());
+		var total_day = Number($('#total_day').text());
+		
+		
+		 
+		// (객실가격 * 숙박일수(total_day)) + 옵션1 + 옵션2
+		
+	    //옵션1,2 
+	    $('#res_option_1').on('click',function(){
+			  if($('input[id=res_option_1]:checked').is(':checked')==true){
+				   $('input[id=res_option_1]:checked').each(function() {
+				    var option1 = $(this).val();
+				    $('#option_1').text(option1);
+				    op1 = 30000;
+				    $('#total_price').text(res_total);
+				   
+				    $('#res_option_3').val(option1);
+				    
+			   });
+				  
+			  }else if($('input[id=res_option_1]:checked').is('checked')==false){
+				  op1 = 0;
+				  $('#option_1').text('선택 안함');
+				  $('#res_option_3').val('');
+				  
+			  }
+			  res_total = cost * total_day + op1 + op2;
+			  $('#total_price').text(res_total);
+		});
+	    
+		$('#res_option_2').on('click',function(){
+			  if($('input[id=res_option_2]:checked').is(':checked')==true){
+				   $('input[id=res_option_2]:checked').each(function() {
+				    var option2 = $(this).val();
+				    $('#option_2').text(option2);
+				   op2 = 30000;
+				   $('#res_option_4').val(option2);
+				   
+				   
+			   });
+				   
+			  }else if($('input[id=res_option_2]:checked').is('checked')==false){
+				  op2 = 0;
+			
+				  $('#option_2').text('선택 안함');
+				  $('#res_option_4').val('');
+				 
+			  }  
+			  res_total = cost * total_day + op1 + op2;
+			  $('#total_price').text(res_total);
+		});
+		
+		// (객실가격 * 숙박일수(total_day)) + 옵션1 + 옵션2
+		res_total = cost * total_day + op1 + op2;
+		$('#total_price').text(res_total);
+
 	 
 	 /* *************STEP2************* */
 		$('#step2_form').submit(function(){
+			
+			$('#rsv_bed_type').text(rsv_bed_type);
+			
+			$('#res_room_type').val(gue_title);
+			
+			$('#cost').val(gue_sel);
+			
 			//step2 투숙자 정보 유효성 검사
 			if($('#pay_lastname').val() == ''){
 				alert('성 을 입력하세요.');
@@ -319,72 +532,28 @@
 		      }
 		      
 		    
-		      
+
+				var res_total1;
+				res_total1 = $('#total_price').text();
+		      //submit시 총금액 저장
+		      $('#res_total').val(res_total1);
+		  	  
+				
 		      
 		      
 		      
 		      
 		});
+		
+		$('#step_result_form')
+		
+		
+		
 		
 		//개인정보 이용 동의서 읽기만 가능
 		$('#agree_area1').attr('readonly', true);
 		$('#agree_area2').attr('readonly', true);
 		
-		
-		
-		 /* ** 예약자가 선택한 항목들에 대한 데이터 출력 ** */
-	    var check_in = $('#in_day').text();
-	    var check_out = $('#out_day').text();
-	    
-	    // "2017-08-12"으로 된 날짜를 '-'로 쪼개기
-	    var arr_in = check_in.split('-');
-	    var arr_out = check_out.split('-');
-	    
-	    
-	    // 월에서 1을 뺀 이유는 자바스크립트에서 Date 객체의 월은 우리가 사용하는 월보다 1이 작기 때문이다.
-	    var in_date = new Date(arr_in[0], Number(arr_in[1])-1, arr_in[2]);
-	    var out_date = new Date(arr_out[0], Number(arr_out[1])-1, arr_out[2]);
-
-	    // 1000을 나누면 초, 60을 또 나누면 분, 60을 또 나누면 시간, 24를 또 나누면 일 단위의 차이가 됨.
-	    var total_day = (out_date.getTime() - in_date.getTime())/1000/60/60/24;
-	    
-	    $('#total_day').text(total_day);
-	      
-	    //옵션1,2 
-	    $('#res_option_1').on('click',function(){
-			  if($('input[name=res_option_1]:checked').is(':checked')==true){
-				   $('input[name=res_option_1]:checked').each(function() {
-				    var test = $(this).val();
-				    $('#option_1').text(test);
-				   
-			   });
-			  }else if($('input[name=res_option_1]:checked').is('checked')==false){
-				  
-				  $('#option_1').text('선택 안함');
-		  }
-	   
-		});
-	    
-		$('#res_option_2').on('click',function(){
-			  if($('input[name=res_option_2]:checked').is(':checked')==true){
-				   $('input[name=res_option_2]:checked').each(function() {
-				    var test = $(this).val();
-				    $('#option_2').text(test);
-				   
-			   });
-			  }else if($('input[name=res_option_2]:checked').is('checked')==false){
-				  
-				  $('#option_2').text('선택 안함');
-			  }  
-		});
-		
-		// 총 요금의 합계
-		
-		// (객실가격 * 숙박일수(total_day)) + 옵션1 + 옵션2
-		//
-
-
-	  
 	 
  });
  
@@ -393,7 +562,7 @@
 	    $( "#accordion" ).accordion({
 	      collapsible: true
 	    });
-	  } );
+	  });
  
  
  //숫자만 쓸수 있도록 지정
