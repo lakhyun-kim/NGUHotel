@@ -3,8 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/event.css" type="text/css">
+<div class="page-main-style">
 <h2><img src="${pageContext.request.contextPath}/resources/images/eventtitle.PNG"></h2>
-<div style="width:70%;">
 		<div>
 			<hr class="bigtitle" > 
 		</div>        
@@ -82,9 +82,9 @@
 			</c:if>
 		</c:forEach> 
 
-	<c:if test="${!empty user_id}">
+	<c:if test="${user_auth == 2}">
 		<div class="write-btn">
-			<input type="button" value="글쓰기" onclick="location.href='event_write.do'">
+			<input type="button" value="글쓰기" class="myButton1" onclick="location.href='event_write.do'">
 		</div>
 	</c:if>
 </div>

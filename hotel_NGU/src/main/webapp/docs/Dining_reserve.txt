@@ -1,0 +1,15 @@
+create table h_din_reserve(
+	seq number not null primary key,
+	
+	din_res_date varchar2 (20) not null,
+	din_res_time varchar2 (20) not null,
+	din_res_person number (3) not null,
+	din_res_name varchar2 (20) not null,
+	din_res_phone varchar2 (30) not null,
+	din_res_email varchar2 (30) not null,
+	din_res_require clob,
+	din_res_status number (1) not null,
+	din_seq number not null
+	);
+	
+	create sequence h_din_reserve_seq;

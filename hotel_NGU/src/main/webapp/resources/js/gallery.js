@@ -1,18 +1,19 @@
 $(document).ready(function(){
 	$('.pop-up').hide();
-	$('#gallery_form').submit(function(){
-		if($('#subject').val() == '') {
+	$('#gallery_form, #update_form').submit(function(){
+		if($('#h_gallery_subject').val() == '') {
 			alert('제목을 입력하세요!');
-			$('#subjectcheck').focus();
+			$('#h_gallery_subject').focus();
 			return false;
 		}
-		if($('#content').val().length == 0){
+		if($('#h_gallery_content').val().length == 0){
 			alert('내용을 입력하세요');
-			$('#content1').focus();
+			$('#h_gallery_content').focus();
 			return false;
 		}
-		if($('#h_gallery_upload1').val() == ''){
+		if($('#upload1').val() == ''){
 			alert('메인이미지를 넣으세요');
+			$('#upload1').focus();
 			return false;
 		}
 	});

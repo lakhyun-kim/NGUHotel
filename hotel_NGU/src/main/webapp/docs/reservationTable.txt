@@ -17,7 +17,7 @@ create table h_reservation(
     
     constraint h_reservation_pk primary key (res_num),
     constraint h_reservation_fk1 foreign key (mem_id) references h_member (mem_id),
-    constraint h_reservation_fk2 foreign key (gue_num) references h_guest (gue_num)
+    constraint h_reservation_fk2 foreign key (gue_num) references h_guest_store (gue_num)
 
 );
 

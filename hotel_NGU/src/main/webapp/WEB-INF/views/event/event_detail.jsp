@@ -20,7 +20,7 @@
  		float:left;
  	}
 </style>    
-<div style="width:70%;">
+<div class="page-main-style">
 	<input type="hidden" name="seq" value="${event.event_seq}" id="seq">
 	<input type="hidden" name="id" value="${event.mem_id }">
 	<h2><img src="${pageContext.request.contextPath}/resources/images/eventtitle.PNG"></h2>
@@ -88,15 +88,14 @@
 	</c:if>
 	<br>
 	<br>
-</div>
 	<div class="align-right">
-		<c:if test="${!empty user_id}">
-			<input type="button" value="수정"
+		<c:if test="${user_auth == 2}">
+			<input type="button" value="수정" class="myButton1"
 			    onclick="location.href='event_update.do?event_seq=${event.event_seq}'">
-			<input type="button" value="삭제"
+			<input type="button" value="삭제" class="myButton1"
 			    onclick="location.href='event_delete.do?event_seq=${event.event_seq}'">
 		</c:if>
-			<input type="button" value="목록"
+			<input type="button" value="목록" class="myButton1"
 			    onclick="location.href='event_list.do'">    
 	</div>
 <br>
@@ -134,4 +133,5 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div>

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/guest.js"></script>
 <style>
 table{
    width: 100%;
@@ -61,8 +63,8 @@ th{
 					<label for="gue_title">제목</label>
 				</th>
 				<td>	
-					<form:input path="gue_title"/>
-					<form:errors path="gue_title" cssClass="error-color"/>
+					<form:input path="gue_title" id="gue_title"/>
+					<div id="gue_title-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>	
@@ -70,26 +72,26 @@ th{
 					<label for="gue_stitle">부제목</label>
 				</th>
 				<td>	
-					<form:input path="gue_stitle"/>
-					<form:errors path="gue_stitle" cssClass="error-color"/>
+					<form:input path="gue_stitle" id="gue_stitle"/>
+					<div id="gue_stitle-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>	
 				<th>
-					<label for="gue_type">침대타입</label>
+					<label for="gue_type" id="gue_type">침대타입</label>
 				</th>
 				<td>	
 					<form:input path="gue_type"/>
-					<form:errors path="gue_type" cssClass="error-color"/>
+					<div id="gue_type-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>	
 				<th>
-					<label for="gue_size">방사이즈</label>
+					<label for="gue_size" id="gue_size">방사이즈</label>
 				</th>
 				<td>	
 					<form:input path="gue_size"/>
-					<form:errors path="gue_size" cssClass="error-color"/>
+					<div id="gue_size-err" style="color: red;"></div>
 				</td>
 			<tr>
 			<tr>	
@@ -240,8 +242,8 @@ th{
 		<table>
 			<tr>
 				<td>
-					<input type="submit" value="수정">
-					<input type="button" value="목록"
+					<input type="submit" value="수정" class="myButton1">
+					<input type="button" value="목록" class="myButton1"
 					           onclick="location.href='list.do'">
 				</td>
 			</tr>

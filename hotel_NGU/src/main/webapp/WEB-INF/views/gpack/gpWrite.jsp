@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/gpack.js"></script>
 <style>
 table{
    width: 100%;
@@ -16,7 +17,7 @@ th{
 }
 
 </style>
-<div style="width: 60%; float: left;">
+<div class="page-main-style">
 	<h2>패키지 등록</h2>
 	<hr width="100%" class="color" style="border:solid 2px"><br>
 	<form:form commandName="command" action="gpWrite.do" enctype="multipart/form-data" id="gpWrite_form">
@@ -42,6 +43,7 @@ th{
 				</th>
 				<td>	
 					<input type="file" name="gpa_upload" id="gpa_upload">
+					<div id="gpa_upload-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>	
@@ -50,7 +52,7 @@ th{
 				</th>
 				<td>	
 					<form:input path="gpa_title"/>
-					<form:errors path="gpa_title" cssClass="error-color"/>
+					<div id="gpa_title-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>	
@@ -59,7 +61,7 @@ th{
 				</th>
 				<td>	
 					<form:input path="gpa_term"/>
-					<form:errors path="gpa_term" cssClass="error-color"/>
+					<div id="gpa_term-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>	
@@ -68,7 +70,7 @@ th{
 				</th>
 				<td>	
 					<form:input path="gpa_money"/>
-					<form:errors path="gpa_money" cssClass="error-color"/>
+					<div id="gpa_money-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>	
@@ -77,16 +79,16 @@ th{
 				</th>
 				<td>	
 					<form:input path="cnt1"/>
-					<form:errors path="cnt1" cssClass="error-color"/>
+					<div id="cnt1-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>	
 				<th>
-					<label for="cnt12"><em style="color:#F33">*</em>내용2</label>
+					<label for="cnt2"><em style="color:#F33">*</em>내용2</label>
 				</th>
 				<td>	
 					<form:input path="cnt2"/>
-					<form:errors path="cnt2" cssClass="error-color"/>
+					<div id="cnt2-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>	
@@ -95,7 +97,7 @@ th{
 				</th>
 				<td>	
 					<form:input path="cnt3"/>
-					<form:errors path="cnt3" cssClass="error-color"/>
+					<div id="cnt3-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>	
@@ -103,7 +105,8 @@ th{
 					<label for="gpa_dmload"><em style="color:#F33">*</em>세부상단</label>
 				</th>
 				<td>	
-					<input type="file" name="gpa_dmload" id="de_img">
+					<input type="file" name="gpa_dmload" id="gpa_dmload">
+					<div id="gpa_dmload-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>	
@@ -111,7 +114,8 @@ th{
 					<label for="gpa_dpload"><em style="color:#F33">*</em>세부중단</label>
 				</th>
 				<td>	
-					<input type="file" name="gpa_dpload" id="de_img">
+					<input type="file" name="gpa_dpload" id="gpa_dpload">
+					<div id="gpa_dpload-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>	
@@ -119,15 +123,16 @@ th{
 					<label for="gpa_rtload"><em style="color:#F33">*</em>세부하단</label>
 				</th>
 				<td>	
-					<input type="file" name="gpa_rtload" id="de_img">
+					<input type="file" name="gpa_rtload" id="gpa_rtload">
+					<div id="gpa_rtload-err" style="color: red;"></div>
 				</td>
 			</tr>
 		</table>
 		<table>
 			<tr>
 				<td>
-					<input type="submit" value="등록">
-					<input type="button" value="목록"
+					<input type="submit" value="등록" class="myButton1">
+					<input type="button" value="목록" class="myButton1"
 					           onclick="location.href='list.do'">
 				</td>
 			</tr>	

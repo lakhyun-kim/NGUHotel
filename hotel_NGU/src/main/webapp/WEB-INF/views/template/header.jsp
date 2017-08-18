@@ -25,7 +25,7 @@
 	<ul class="bottom-menu">
 		<li class="m1" style="border-left:none;">
 			<a href="${pageContext.request.contextPath}/gpack/list.do">스페셜오퍼</a>
-			<ul class="bottomDown">
+			<ul class="bottomDown" style="padding-left:410px;">
 				<li>
 					<a href="${pageContext.request.contextPath}/gpack/list.do" style="border-left:none">객실패키지</a> 
 				</li>
@@ -36,7 +36,7 @@
 		</li>
 		<li class="m1">
 			<a href="${pageContext.request.contextPath}/guest/list.do">객실</a>
-			<ul class="bottomDown" style="padding-left:310px;">
+			<ul class="bottomDown" style="padding-left:585px;">
 				<li>
 					<a href="${pageContext.request.contextPath}/gpack/list.do" style="border-left:none">스탠다드</a> 
 				</li>
@@ -50,7 +50,7 @@
 		</li>
 		<li class="m1">
 			<a href="${pageContext.request.contextPath}/dining/list.do">다이닝</a>
-			<ul class="bottomDown" style="padding-left:440px;">
+			<ul class="bottomDown" style="padding-left:715px;">
 				<li>
 					<a href="${pageContext.request.contextPath}/gpack/list.do" style="border-left:none">레스토랑</a> 
 				</li>
@@ -64,46 +64,46 @@
 		</li>
 		<li class="m1">
 			<a href="${pageContext.request.contextPath}/lifestyle/list.do">라이프스타일</a>
-			<ul class="bottomDown" style="padding-left:585px;">
+			<ul class="bottomDown" style="padding-left:860px;">
 				<li>
-					<a href="${pageContext.request.contextPath}/gpack/list.do" style="border-left:none">야외수영장</a> 
+					<a href="${pageContext.request.contextPath}/lifestyle/detail.do?seq=6" style="border-left:none">야외수영장</a> 
 				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/event/event_list.do">피트니스</a> 
+					<a href="${pageContext.request.contextPath}/lifestyle/detail.do?seq=11">피트니스</a> 
 				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/event/event_list.do">스파</a> 
+					<a href="${pageContext.request.contextPath}/lifestyle/detail.do?seq=13">스파</a> 
 				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/event/event_list.do">조각공원</a> 
+					<a href="${pageContext.request.contextPath}/lifestyle/detail.do?seq=12">조각공원</a> 
 				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/event/event_list.do">쇼핑</a> 
+					<a href="${pageContext.request.contextPath}/lifestyle/detail.do?seq=15">쇼핑</a> 
 				</li>
 			</ul>   
 		</li>
 		<li class="m1">
 			<a href="${pageContext.request.contextPath}/weding/list.do">웨딩&amp;연회</a>
-			<ul class="bottomDown" style="padding-left:778px;">
+			<ul class="bottomDown" style="padding-left:1055px;">
 				<li>
-					<a href="${pageContext.request.contextPath}/gpack/list.do" style="border-left:none">웨딩</a> 
+					<a href="${pageContext.request.contextPath}/weding/detail.do?seq=2" style="border-left:none">웨딩</a> 
 				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/event/event_list.do">기업연회</a> 
+					<a href="${pageContext.request.contextPath}/weding/detail.do?seq=5">기업연회</a> 
 				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/event/event_list.do">가족연회</a> 
+					<a href="${pageContext.request.contextPath}/weding/detail.do?seq=21">가족연회</a> 
 				</li>
 			</ul>   
 		</li>
 		<li class="m1">
 			<a href="${pageContext.request.contextPath}/gallery/gallery_list.do">갤러리</a>
-			<ul class="bottomDown" style="padding-left:952px;">
+			<ul class="bottomDown" style="padding-left:1225px;">
 				<li>
-					<a href="${pageContext.request.contextPath}/gpack/list.do" style="border-left:none">사진</a> 
+					<a href="${pageContext.request.contextPath}/gallery/gallery_list.do" style="border-left:none">사진</a> 
 				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/event/event_list.do">동영상</a> 
+					<a href="${pageContext.request.contextPath}/gallery/gallery_movie.do">동영상</a> 
 				</li>
 			</ul>   
 		</li>

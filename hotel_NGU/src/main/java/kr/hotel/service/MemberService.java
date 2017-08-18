@@ -42,5 +42,7 @@ public interface MemberService {
 	public List<MemberPointCommand> getMemberPointList(Map<String, Object> map);
 	@Transactional(readOnly=true)
 	public int getMemberPointCount(String mem_id);
-	
+
+	// 포인트 1개 검색
+	public MemberPointCommand selectMemberPoint(String mem_id);
 }

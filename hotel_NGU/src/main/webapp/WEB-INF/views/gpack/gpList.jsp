@@ -63,7 +63,7 @@ $.datepicker.regional['kr'] = {
 
 
 </script>
-<div class="containor">
+<div class="containor page-main-style" style="font-family:none;">
 	<div>
 	   <p style="font: 22pt Dotum,'돋움',sans-serif; margin: 0; padding: 0; color: #814900; font-weight: bold;"> 
 	    객실 패키지	
@@ -72,7 +72,9 @@ $.datepicker.regional['kr'] = {
 	   <div style="text-align: right; margin-bottom: 80px;">
 		   <input type="hidden" name="mem_id" value="${mem_id }" id="mem_id">
 		   <input type="hidden" name="gpa_seq" value="${gpa_seq }" id="gpa_seq">
-		   <input type="button" value="패키지등록" onclick="location.href='gpWrite.do'">
+		   <c:if test="${user_auth == 2}">
+		   		<input type="button" value="패키지등록" class="myButton1" onclick="location.href='gpWrite.do'">
+		   </c:if>
 	   </div>
 	</div>
 	<div class="dateRes">

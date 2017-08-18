@@ -1,0 +1,37 @@
+create table h_dining(
+	seq number not null primary key,
+	din_title varchar2 (30) not null,
+	din_subtitle varchar2 (60) not null,
+	din_class number (2) not null,
+	din_loc varchar2 (15) not null,
+	din_phone varchar2(50) not null,
+	din_uf1 blob not null,
+	din_fn1 varchar2 (100) not null,
+	din_time1 varchar2 (60) not null,
+	din_time2 varchar2 (60) not null,
+	din_seat number (3) not null,
+	din_uf2 blob not null,
+	din_fn2 varchar2 (100) not null,
+	din_uf3 blob not null,
+	din_fn3 varchar2 (100) not null,
+    din_uf4 blob not null,
+    din_fn4 varchar2 (100) not null,
+    din_uf5 blob not null,
+    din_fn5 varchar2 (100) not null,
+    din_uf6 blob not null,
+    din_fn6 varchar2 (100) not null,
+    din_uf7 blob not null,
+    din_fn7 varchar2 (100) not null,
+    din_uf8 blob not null,
+    din_fn8 varchar2 (100) not null,
+    din_uf9 blob not null,
+    din_fn9 varchar2 (100) not null,
+    din_uf10 blob not null,
+    din_fn10 varchar2 (100) not null,
+    din_uf11 blob not null,
+    din_fn11 varchar2 (100) not null,
+	mem_id varchar2 (15) 
+	);
+		
+	create sequence h_dining_seq;
+	

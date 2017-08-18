@@ -2,9 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>    
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/weding.js"></script>
 
-
-<div style="width:60%; float:left;">
+<div class="page-main-style">
 	<h2>웨딩 & 연회 작성</h2>		
 	<hr width="100%" class="color" style="border:solid 2px"><br>			
 	

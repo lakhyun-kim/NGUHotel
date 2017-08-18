@@ -57,5 +57,13 @@ public interface ReservationService {
 		
 		@Transactional(readOnly=true)
 		public List<ReservationCommand> Rsvlist();
-		
+		//삭제를 위한 검색
+      @Transactional(readOnly=true)
+      public List<GuestRoomCommand> sel_room_list(int res_num);
+      
+      public void delete_room(int res_num);
+      
+      public void delete_pay(int res_num);
+      
+      public void delete_reservation(int res_num);
 }

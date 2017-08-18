@@ -103,7 +103,7 @@ $(function(){
     });
 });
 </script>
-<div class="containor">
+<div class="containor page-main-style" style="font-family:none;">
 	<div style="width: 800px; height: 111px;">
 	   <p style="font: 19pt Dotum,'돋움',sans-serif; margin: 0; padding: 0; color: #3e2b2c; font-weight: bold;"> 
 	    세계적인 디자이너 피터 리미디오스가 담당한 서울신라 호텔 객실은<br>
@@ -112,9 +112,11 @@ $(function(){
 	   <p style="font: 10.5pt Dotum,'돋움',sans-serif;">
 	   '시대를 아우르는 모던함(Timeless Modern)'을 모토로, 시간이 흐를수록 더욱 빛나는 절제된 디자인을 선보입니다.
 	   </p>
-	   <div style="text-align: right; margin-bottom: 80px;">
-		   <input type="button" value="객실등록" onclick="location.href='gueWrite.do'">
-	   </div>
+	   <c:if test="${user_auth == 2}">
+		   <div style="text-align: right; margin-bottom: 80px;">
+			   <input type="button" value="객실등록" class="myButton1" onclick="location.href='gueWrite.do'">
+		   </div>
+	   </c:if>
 	</div>
 	<c:if test="${count == 0}">
 	<div>등록된 게시물이 없습니다.</div>

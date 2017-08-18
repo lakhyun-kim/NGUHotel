@@ -23,8 +23,8 @@ public class QnaServiceImpl implements QnaService{
 	}
 
 	@Override
-	public void update(QnaCommand qna) {
-		qnaMapper.update(qna);
+	public void update(QnaCommand h_qna_seq) {
+		qnaMapper.update(h_qna_seq);
 	}
 
 	@Override

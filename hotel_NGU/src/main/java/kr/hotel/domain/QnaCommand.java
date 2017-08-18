@@ -4,7 +4,6 @@ public class QnaCommand {
 
 	private int h_qna_seq;
 	private String h_qna_type;
-	private String h_qna_call;
 	private String h_qna_subject;
 	private String h_qna_content;
 	private String h_qna_email;
@@ -24,12 +23,6 @@ public class QnaCommand {
 	}
 	public void setH_qna_type(String h_qna_type) {
 		this.h_qna_type = h_qna_type;
-	}
-	public String getH_qna_call() {
-		return h_qna_call;
-	}
-	public void setH_qna_call(String h_qna_call) {
-		this.h_qna_call = h_qna_call;
 	}
 	public String getH_qna_subject() {
 		return h_qna_subject;
@@ -81,8 +74,7 @@ public class QnaCommand {
 	}
 	@Override
 	public String toString() {
-		return "QnaCommand [h_qna_seq=" + h_qna_seq + ", h_qna_type=" + h_qna_type + ", h_qna_call=" + h_qna_call
-				+ ", h_qna_subject=" + h_qna_subject + ", h_qna_content=" + h_qna_content + ", h_qna_email="
+		return "QnaCommand [h_qna_seq=" + h_qna_seq + ", h_qna_type=" + h_qna_type +", h_qna_subject=" + h_qna_subject + ", h_qna_content=" + h_qna_content + ", h_qna_email="
 				+ h_qna_email + ", h_qna_phone=" + h_qna_phone + ", h_qna_phone2=" + h_qna_phone2 + ", h_qna_firstname="
 				+ h_qna_firstname + ", h_qna_lastname=" + h_qna_lastname + ", mem_id=" + mem_id + "]";
 	}

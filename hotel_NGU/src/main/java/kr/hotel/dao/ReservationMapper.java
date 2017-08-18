@@ -3,11 +3,10 @@ package kr.hotel.dao;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
 
-import kr.hotel.domain.GuestCommand;
 import kr.hotel.domain.GuestRoomCommand;
 import kr.hotel.domain.GueststoreCommand;
 import kr.hotel.domain.PaymentCommand;
@@ -66,6 +65,22 @@ public interface ReservationMapper {
 	@Select("SELECT * FROM h_reservation ORDER BY res_num DESC")
 	public List<ReservationCommand> Rsvlist();
 	
+	   @Select("SELECT res_num FROM h_guest_room WHERE res_out < sysdate")
+	   public List<GuestRoomCommand> sel_room_list(int res_num);
+	   
+	   
+	   
+	   @Delete("DELETE FROM h_guest_room WHERE res_num=#{res_num}")
+	   public void delete_room(int res_num);
+	   
+	   
+	   @Delete("DELETE FROM h_payment WHERE res_num=#{res_num}")
+	   public void delete_pay(int res_num);
+	   
+	   
+	   @Delete("DELETE FROM h_reservation WHERE res_num=#{res_num}")
+	   public void delete_reservation(int res_num);
+	   
 }
 
 

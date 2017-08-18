@@ -6,12 +6,13 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/lifestyle.js"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css">
 
-
 <div class="page-main-style">
    <div align="left"><img src="${pageContext.request.contextPath}/resources/img/abantitle.PNG"></div>
-   <div class="align-right">
-      <input type="button" value="글쓰기" onclick="location.href='write.do'">
-   </div>
+   <c:if test="${user_auth == 2}">
+	   <div class="align-right"><br>
+	      <input class="myButton1" type="button" value="글쓰기" onclick="location.href='write.do'">
+	   </div>
+   </c:if>
    <c:if test="${count ==0}">
       <div class="align-center">등록된 게시물이 없습니다.</div>
    </c:if>
@@ -149,11 +150,13 @@
          </div>
       
       <div class="llow">
+      	<br>
+      		<img src="${pageContext.request.contextPath}/resources/img/show6.PNG">
+      	<br>
          <c:forEach var="lifestyle" items="${list}">         
          <%-- ${lifestyle.lif_midname}<br> --%>
             <c:if test="${lifestyle.lif_divide ==5}">
             <div style="float: left; width: 50%;">
-               <img src="${pageContext.request.contextPath}/resources/img/show6.PNG">
                <c:if test="${fn:endsWith(lifestyle.lif_topname,'.jpg') ||
                     fn:endsWith(lifestyle.lif_topname,'.JPG') ||
                     fn:endsWith(lifestyle.lif_topname,'.gif') ||

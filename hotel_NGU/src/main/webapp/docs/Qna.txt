@@ -1,0 +1,26 @@
+create table h_qna(
+	h_qna_seq number not null primary key,
+	h_qna_type varchar2(50) not null,
+	h_qna_subject varchar2(30) not null,
+	h_qna_content varchar2(200) not null,
+    h_qna_firstname varchar2(20) not null,
+	h_qna_lastname varchar2(20) not null,
+	h_qna_email varchar2(20) not null,
+	h_qna_phone varchar2(20) not null,
+	h_qna_phone2 varchar2(20),
+	mem_id varchar2(15) not null,	
+	constraint qna_hotel_fk1_1 foreign key (mem_id) references h_member (mem_id)	
+);
+
+create sequence h_qna_seq;
+
+create table qna_reply(
+	qna_re_seq number(12) not null primary key,
+	qna_re_content varchar2(300),
+	qna_re_date date not null,
+	mem_id varchar2(20) not null,
+	
+	constraint qna_reply_hotel_fk1_1 foreign key (mem_id) references h_member (mem_id)
+);
+
+create sequence qna_reply_seq;

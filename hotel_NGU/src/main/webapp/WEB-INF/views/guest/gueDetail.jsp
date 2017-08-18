@@ -87,12 +87,14 @@ function layer_open(el){
 </script>
 <input type="hidden" name="mem_id" value="${guest1.mem_id}" id="mem_id">
 <input type="hidden" name="gue_num" value="${guest1.gue_num}" id="gue_num">
-<div class="container">
+<div class="containor page-main-style" style="font-family:none">
 	<span class="detitle" style="color: #9c723f; font: 15pt Dotum,'돋움',sans-serif; font-weight: bold; max-height: 52px; max-width: 866px;">
-  	${guest1.gue_title}
+  	${guest1.gue_title}&nbsp;
 	</span>
-	<input type="button" value="수정" onclick="location.href='gueUpdate.do?gue_num=${guest1.gue_num}'">
-	<input type="button" value="삭제" onclick="location.href='gueDelete.do?gue_num=${guest1.gue_num}'">
+	<c:if test="${user_auth == 2}">
+		<input type="button" value="수정" class="myButton1" onclick="location.href='gueUpdate.do?gue_num=${guest1.gue_num}'">
+		<input type="button" value="삭제" class="myButton1" onclick="location.href='gueDelete.do?gue_num=${guest1.gue_num}'">
+	</c:if><br><br>
    <div class="row">
       <div class="col-md-9">
          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -210,6 +212,7 @@ function layer_open(el){
 		</c:if>
 	 </div>
    </div>
+</div>                
    <!-------------------------------------------------팝업 레이어  ------------------------------------------------------------->
    <div class="layer">
 	   <div class="bg"></div>
@@ -232,4 +235,3 @@ function layer_open(el){
 	   </div>
 	</div>
 	<!-------------------------------------------------팝업 레이어  ------------------------------------------------------------->
-</div>                

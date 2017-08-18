@@ -25,13 +25,15 @@ div.gpUD{
 </style>
 <input type="hidden" name="mem_id" value="${gp.mem_id}" id="mem_id">
 <input type="hidden" name="gpa_seq" value="${gp.gpa_seq}" id="gpa_seq">
-<div class="gpcont">
+<div class="gpcont page-main-style">
 	<span class="detitle" style="color: #9c723f; font: 18pt Dotum,'돋움',sans-serif; max-height: 52px; max-width: 866px;">
   	객실 패키지
 	</span>
 	<div class="gpUD">
-	<input type="button" value="수정" onclick="location.href='gpUpdate.do?gpa_seq=${gp.gpa_seq}'">
-	&nbsp;<input type="button" value="삭제" onclick="location.href='gpDelete.do?gpa_seq=${gp.gpa_seq}'">
+	<c:if test="${user_auth == 2}">
+		<input type="button" class="myButton1" value="수정" onclick="location.href='gpUpdate.do?gpa_seq=${gp.gpa_seq}'">
+		&nbsp;<input type="button" class="myButton1" value="삭제" onclick="location.href='gpDelete.do?gpa_seq=${gp.gpa_seq}'">
+	</c:if>
 	</div>
 	<hr style="height:4px; width: 100%; background:#432c10;">
 	<div class="gplisres">

@@ -79,10 +79,10 @@ private Logger log = Logger.getLogger(this.getClass());
 		return mav;
 	}
 	
-	//°´½Ç ÀÛ¼º
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½
 	@RequestMapping(value="/guest/gueWrite.do", method=RequestMethod.GET)
 	public String GuestWriteForm(HttpSession session, Model model){
-		//Â÷ÈÄ °ü¸®ÀÚ¸¸ °¡´ÉÇÏ°Ô º¯°æÇØ¾ßÇÏ´Â ºÎºÐ
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½Ï´ï¿½ ï¿½Îºï¿½
 		String mem_id = (String)session.getAttribute("user_id");
 		
 		if(log.isDebugEnabled()){
@@ -110,7 +110,7 @@ private Logger log = Logger.getLogger(this.getClass());
 		
 		return "redirect:/guest/list.do";
 	}
-	//ÀÌ¹ÌÁö Ãâ·Â
+	//ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	@RequestMapping("guest/imageView.do")
 	public ModelAndView gueImage(@RequestParam("gue_num") int gue_num,
 			                     @RequestParam(value="file",defaultValue="0") int file){
@@ -139,7 +139,7 @@ private Logger log = Logger.getLogger(this.getClass());
 		}
 		return mav;
 	}
-	//½½¶óÀÌµå ÀÌ¹ÌÁöºä
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping("guest/slideView.do")
 	public ModelAndView sliImage(@RequestParam("gue_num") int gue_num,
 			                     @RequestParam(value="slifile") int slifile){
@@ -193,7 +193,7 @@ private Logger log = Logger.getLogger(this.getClass());
 		
 		return mav;
 	}
-	//¼öÁ¤ºÎºÐ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½
 	@RequestMapping(value="/guest/gueUpdate.do",method=RequestMethod.GET)
 	public String updateForm(@RequestParam("gue_num") int gue_num,Model model,HttpSession session){
 		GuestCommand guestCommand1 = gueService.selectGuest(gue_num);
@@ -247,9 +247,9 @@ private Logger log = Logger.getLogger(this.getClass());
 			return "gueModify";
 		}
 		
-		//Àü¼ÛµÈ ÆÄÀÏÀÌ ¾øÀ» °æ¿ì
+		//ï¿½ï¿½ï¿½Ûµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		if(guestCommand.getGue_upload().isEmpty()){
-			//±âÁ¸ Á¤º¸¼ÂÆÃ
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			guestCommand.setGue_uploadfile(guest1.getGue_uploadfile());
 			guestCommand.setGue_filename(guest1.getGue_filename());
 		}

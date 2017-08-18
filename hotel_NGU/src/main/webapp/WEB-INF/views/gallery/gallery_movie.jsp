@@ -38,8 +38,8 @@ $(document).ready(function(){
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap-theme.min.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/gallery.css" type="text/css">
+<div class="page-main-style">
 <h2><img src="${pageContext.request.contextPath}/resources/images/movie.PNG"></h2>
-<div style="width:70%;">
 		<div>
 			<hr class="bigtitle" > 
 		</div>     

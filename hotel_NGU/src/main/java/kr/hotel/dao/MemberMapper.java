@@ -53,4 +53,7 @@ public interface MemberMapper {
 	@Delete("DELETE FROM h_point WHERE mem_id=#{mem_id}")
 	public void deleteMemberPoint(String mem_id);
 	
+	// 포인트 1개 검색
+	@Select("SELECT * FROM h_point WHERE mem_id=#{mem_id}")
+	public MemberPointCommand selectMemberPoint(String mem_id);
 }

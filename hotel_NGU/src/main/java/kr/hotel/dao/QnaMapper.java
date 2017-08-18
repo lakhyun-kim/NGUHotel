@@ -15,20 +15,22 @@ import kr.hotel.domain.QnareplyCommand;
 
 public interface QnaMapper {
 
-	//È¸¿ø ±Û µî·Ï
+	//È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
 	@Insert("INSERT INTO h_qna(h_qna_seq,h_qna_type,h_qna_subject,h_qna_content,h_qna_firstname,h_qna_lastname,h_qna_email,h_qna_phone,h_qna_phone2,mem_id)"
 			+ "VALUES (h_qna_seq.nextval,#{h_qna_type},#{h_qna_subject},#{h_qna_content},#{h_qna_firstname},#{h_qna_lastname},#{h_qna_email},#{h_qna_phone},#{h_qna_phone2},#{mem_id})")
 	public void insert(QnaCommand qna);
-	//È¸¿ø ±Û ¼öÁ¤
-	public void update(QnaCommand qna);
-	//È¸¿ø ±Û »èÁ¦
+	//È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	@Update("UPDATE h_qna SET h_qna_type=#{h_qna_type},h_qna_subject=#{h_qna_subject},h_qna_content=#{h_qna_content},h_qna_firstname=#{h_qna_firstname},h_qna_lastname=#{h_qna_lastname},"
+			+ "h_qna_email=#{h_qna_email},h_qna_phone=#{h_qna_phone},h_qna_phone2=#{h_qna_phone2,jdbcType=VARCHAR},mem_id=#{mem_id} WHERE h_qna_seq=#{h_qna_seq}")
+	public void update(QnaCommand h_qna_seq);
+	//È¸ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@Delete("DELETE FROM h_qna WHERE h_qna_seq=#{h_qna_seq}")
 	public void delete(Integer qna_seq);
 	@Transactional(readOnly=true)
-	//È¸¿øÀÇ Á¢¼öµÈ ¹®ÀÇ ¸®½ºÆ®
+	//È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 	@Select("SELECT * FROM h_qna")
 	public List<QnaCommand> list();
-	//È¸¿øÀÇ Á¢¼öµÈ ¹®ÀÇ ³»¿ë
+	//È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@Select("SELECT * FROM h_qna WHERE h_qna_seq=#{h_qna_seq}")
 	public QnaCommand detail(Integer seq);
 	
@@ -36,7 +38,7 @@ public interface QnaMapper {
 	public MemberCommand selectMember(String mem_id);
 	
 	
-	//°ü¸®ÀÚ ´ñ±Û
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	@Select("SELECT * FROM qna_reply WHERE h_qna_seq=#{h_qna_seq}")
 	public List<QnareplyCommand> qna_reply_list(Map<String, Object> map);
 	@Insert("INSERT INTO qna_reply(qna_reply_seq,qna_re_content,qna_re_date,mem_id,h_qna_seq) VALUES(qna_reply_seq.nextval,#{qna_re_content},sysdate,#{mem_id},#{h_qna_seq}) ")

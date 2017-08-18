@@ -2,13 +2,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.min.css" type="text/css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap-theme.min.css" type="text/css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css">
-
 <script>
 $(function(){
     $("#t1").click(function(){
@@ -64,17 +62,19 @@ $(function(){
 });
 </script>
 
-<div>
+<div class="page-main-style">
 <div class="viewtop">
 <input type="hidden" name="mem_id" value="${lifestyle.mem_id}" id="mem_id">
 <input type="hidden" name="lif_seq" value="${lifestyle.lif_seq}" id="lif_seq">
 <div class="container" >
    <span class="detitle" style="color: #9c723f; font: 15pt Dotum,'돋움',sans-serif; font-weight: bold; max-height: 52px; max-width: 866px;">
-     ${lifestyle.lif_realtitle}
+     ${lifestyle.lif_realtitle}&nbsp;
    </span>
-   <input type="button" value="수정" onclick="location.href='update.do?seq=${lifestyle.lif_seq}'">
-   <input type="button" value="삭제" onclick="location.href='delete.do?seq=${lifestyle.lif_seq}'">
-   
+   <c:if test="${user_auth == 2}">
+		   <input type="button" value="수정" class="myButton1" onclick="location.href='update.do?seq=${lifestyle.lif_seq}'">
+		   <input type="button" value="삭제" class="myButton1" onclick="location.href='delete.do?seq=${lifestyle.lif_seq}'">
+	</c:if>
+		   <br><br>
    <div class="row">
    <c:if test="${lifestyle.lif_divide ==1}">
       <div class="col-md-9">
@@ -273,18 +273,46 @@ $(function(){
    </div>
    </div>
    <c:if test="${lifestyle.lif_title eq '어번 아일랜드'}">
-   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+   <br><br><br><br>
+   </c:if>
+   
+   <c:if test="${lifestyle.lif_title eq '카바나'}">
+   <br><br><br><br>
+   </c:if>
+   
+   <c:if test="${lifestyle.lif_title eq '실내 수영장'}">
+   <br><br><br><br><br><br><br><br>
    </c:if>
    
    <c:if test="${lifestyle.lif_title eq '실내 체육관'}">
-   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>   
+   <br><br><br><br><br>
+   </c:if> 
+   
+   <c:if test="${lifestyle.lif_title eq '실내 골프장'}">
+   <br><br><br><br><br>
+   </c:if>  
+   
+   <c:if test="${lifestyle.lif_title eq '사우나'}">
+   <br><br><br><br><br><br><br><br><br>
+   </c:if>
+   
+   <c:if test="${lifestyle.lif_title eq '조깅코스'}">
+   <br><br><br><br><br>
    </c:if>  
    
    <c:if test="${lifestyle.lif_title eq '겔랑 스파'}">
-   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+   <br><br><br><br>
    </c:if> 
    
    <c:if test="${lifestyle.lif_title eq '조각공원'}">
-   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+   <br><br><br><br>
+   </c:if>
+   
+   <c:if test="${lifestyle.lif_title eq '아케이드'}">
+   <br><br><br><br>
+   </c:if>
+   
+   <c:if test="${lifestyle.lif_title eq '신라면세점'}">
+   <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
    </c:if>
 </div>

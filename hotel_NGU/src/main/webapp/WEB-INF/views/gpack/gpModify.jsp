@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/gpack.js"></script>
 <style>
 table{
    width: 100%;
@@ -58,8 +60,8 @@ th{
 					<label for="gpa_title">제목</label>
 				</th>
 				<td>	
-					<form:input path="gpa_title"/>
-					<form:errors path="gpa_title" cssClass="error-color"/>
+					<form:input path="gpa_title" id="gpa_title"/>
+					<div id="gpa_title-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>	
@@ -67,8 +69,8 @@ th{
 					<label for="gpa_term">패키지기간</label>
 				</th>
 				<td>	
-					<form:input path="gpa_term"/>
-					<form:errors path="gpa_term" cssClass="error-color"/>
+					<form:input path="gpa_term"  id="gpa_term"/>
+					<div id="gpa_term-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>	
@@ -76,8 +78,8 @@ th{
 					<label for="gpa_money">패키지금액</label>
 				</th>
 				<td>	
-					<form:input path="gpa_money"/>
-					<form:errors path="gpa_money" cssClass="error-color"/>
+					<form:input path="gpa_money" id="gpa_money"/>
+					<div id="gpa_money-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>	
@@ -85,8 +87,8 @@ th{
 					<label for="cnt1">내용1</label>
 				</th>
 				<td>	
-					<form:input path="cnt1"/>
-					<form:errors path="cnt1" cssClass="error-color"/>
+					<form:input path="cnt1"  id="cnt1"/>
+					<div id="cnt1-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>	
@@ -94,8 +96,8 @@ th{
 					<label for="cnt2">내용2</label>
 				</th>
 				<td>	
-					<form:input path="cnt2"/>
-					<form:errors path="cnt2" cssClass="error-color"/>
+					<form:input path="cnt2"  id="cnt2"/>
+					<div id="cnt2-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>	
@@ -103,8 +105,8 @@ th{
 					<label for="cnt3">내용3</label>
 				</th>
 				<td>	
-					<form:input path="cnt3"/>
-					<form:errors path="cnt3" cssClass="error-color"/>
+					<form:input path="cnt3" id="cnt3"/>
+					<div id="cnt3-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>	
@@ -147,8 +149,8 @@ th{
 		<table>
 			<tr>
 				<td>
-					<input type="submit" value="수정">
-					<input type="button" value="목록"
+					<input type="submit" value="수정" class="myButton1">
+					<input type="button" value="목록" class="myButton1"
 					           onclick="location.href='list.do'">
 			    </td>
 			</tr>           

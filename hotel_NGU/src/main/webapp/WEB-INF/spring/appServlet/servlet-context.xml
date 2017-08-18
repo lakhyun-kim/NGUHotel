@@ -34,6 +34,7 @@
 				<beans:value>/WEB-INF/tiles-def/event.xml</beans:value>
 				<beans:value>/WEB-INF/tiles-def/gallery.xml</beans:value>
 	   			<beans:value>/WEB-INF/tiles-def/qna.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/dining.xml</beans:value>
 	   		</beans:list>
 	   	</beans:property>
 	</beans:bean>
@@ -111,28 +112,45 @@
 		<interceptor>
 			<mapping path="/lifestyle/detail.do"/>
 			<mapping path="/lifestyle/list.do"/>
+			<mapping path="/lifestyle/write.do"/>
+			<mapping path="/lifestyle/update.do"/>
 		<beans:bean class="kr.hotel.interceptor.LifeStyleMenuInterceptor"/>
 		</interceptor>
 		<!-- 웨딩&연회 -->
 		<interceptor>
 			<mapping path="/weding/list.do"/>
 			<mapping path="/weding/detail.do"/>
+			<mapping path="/weding/write.do"/>
+			<mapping path="/weding/update.do"/>
 		<beans:bean class="kr.hotel.interceptor.WedingMenuInterceptor"/>
 		</interceptor>
 		<!-- 객실정보 -->
 		<interceptor>
 	        <mapping path="/guest/list.do"/>
 	        <mapping path="/guest/gueDetail.do"/>
+	        <mapping path="/guest/gueWrite.do"/>
+	        <mapping path="/guest/gueUpdate.do"/>
 	        <beans:bean class="kr.hotel.interceptor.GuestMenuInterceptor" />
 	    </interceptor>
 	    <!-- 객실패키지 -->
 	    <interceptor>
 	        <mapping path="/gpack/list.do"/>
 	        <mapping path="/gpack/gpDetail.do"/>
+	        <mapping path="/gpack/gpWrite.do"/>
+	        <mapping path="/gpack/gpUpdate.do"/>
 			<mapping path="/event/event_list.do"/>
 			<mapping path="/event/event_detail.do"/>
 	        <beans:bean class="kr.hotel.interceptor.SPMenuInterceptor" />
-	    </interceptor>    
+	    </interceptor>
+	    <!-- 다이닝 -->
+		<interceptor>
+			<mapping path="/dining/list.do"/>
+			<mapping path="/dining/detail.do"/>
+			<mapping path="/dining/write.do"/>
+			<mapping path="/dining/update.do"/>
+			<mapping path="/dining/result.do"/>
+			<beans:bean class="kr.hotel.interceptor.DiningMenuInterceptor"/>
+		</interceptor>
 		<!-- 관리자 체크 -->
 		<interceptor>
 			<mapping path="/member/memberList.do"/>
@@ -158,6 +176,9 @@
 			<mapping path="/qna/qna_write_reply.do"/>
 			<mapping path="/qna/qna_update_reply.do"/>
 			<mapping path="/qna/qna_delete_reply.do"/>
+			<mapping path="/dining/write.do"/>
+			<mapping path="/dining/update.do"/>
+			<mapping path="/dining/result.do"/>
 			<beans:bean class="kr.hotel.interceptor.AdminCheckInterceptor" />
 		</interceptor>
 	</interceptors>

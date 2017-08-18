@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <div class="bottom">
-	<img style="float:left; margin:10px; padding:10px 10px 10px 250px" src="${pageContext.request.contextPath}/resources/images/logo.png">
+	<img style="float:left; margin:10px; padding:10px 10px 10px 420px" src="${pageContext.request.contextPath}/resources/images/logo.png">
 	<ul class="ulBotton">
 		<li style="border-left:none">
 			<strong>소개</strong>
@@ -30,7 +30,7 @@
 			<a href="#">FAQ</a>
 		</li>
 		<li>
-			<a href="${pageContext.request.contextPath}/qna/qna_list.do">문의하기 </a>
+			<a href="${pageContext.request.contextPath}/qna/qna_write.do">문의하기 </a>
 		</li>
 	</ul> 
 </div>

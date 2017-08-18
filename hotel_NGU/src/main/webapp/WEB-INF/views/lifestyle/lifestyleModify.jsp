@@ -3,7 +3,9 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css">
-<div style="width:60%; float:left;">
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/lifestyle.js"></script>
+<div class="page-main-style">
 	
 	<h2>라이프 스타일 작성</h2>
 	<hr width="100%" class="color" style="border:solid 2px"><br>
@@ -174,8 +176,8 @@
 		<table>
 			<tr>
 				<td>
-					<input type="submit" value="전송">
-					<input type="button" value="목록"
+					<input type="submit" value="전송" class="myButton1">
+					<input type="button" value="목록" class="myButton1"
 			           onclick="location.href='list.do'">
 			    </td>
 			</tr>

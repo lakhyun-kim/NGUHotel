@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="diningList" extends="main4">
+		<put-attribute name="title" value="게시판목록"/>
+		<put-attribute name="body" value="/WEB-INF/views/dining/diningList.jsp"/>
+    </definition>
+
+	<definition name="diningWrite" extends="main4">
+		<put-attribute name="title" value="글쓰기"/>
+		<put-attribute name="body" value="/WEB-INF/views/dining/diningWrite.jsp"/>
+    </definition>
+    
+    <definition name="diningView" extends="main4">
+    	<put-attribute name="title" value="게시글 상세정보"/>
+    	<put-attribute name="body" value="/WEB-INF/views/dining/diningView.jsp"/>
+    </definition>
+    
+      <definition name="diningModify" extends="main4">
+		<put-attribute name="title" value="글수정"/>
+		<put-attribute name="body" value="/WEB-INF/views/dining/diningModify.jsp"/>
+    </definition>
+    
+     <definition name="diningResult" extends="main4">
+		<put-attribute name="title" value="예약확인"/>
+		<put-attribute name="body" value="/WEB-INF/views/dining/diningResult.jsp"/>
+    </definition>
+    
+</tiles-definitions>

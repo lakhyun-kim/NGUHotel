@@ -17,7 +17,7 @@ pageEncoding="UTF-8"%>
     padding: 10px;
   }
 </style>
-<div class="middle-of">
+<div class="middle-of page-main-style">
 	<h2>이벤트 등록</h2>
 	<form action="event_write.do" enctype="multipart/form-data"  id="event_form" method="post">
 	    <input type="hidden" id="mem_id" name="mem_id" value="${command.mem_id }"/>
@@ -47,34 +47,34 @@ pageEncoding="UTF-8"%>
 		<tr>
 			<th style="background-color:#faf9f4;"><label for="event_content1">내용</label></th>
 			<td><textarea rows="5" cols="49" id="event_content1" name="event_content1"></textarea>
-			<input type="button" value="추가" id="addcontent1"></td>	
+			<input type="button" value="추가" id="addcontent1" class="myButton1"></td>	
 		</tr>
 		<tr>
 			<th style="background-color:#faf9f4; display:none;" class="hiddencontent2" ><label for="event_content2">내용</label></th>
 			<td class="hiddencontent2" style="display:none">				
 				<textarea rows="5" cols="49"  name="event_content2" ></textarea>
-				<input type="button" value="추가" id="addcontent2">	
+				<input type="button" value="추가" id="addcontent2" class="myButton1">	
 			</td>
 		</tr>
 		<tr>
 			<th style="background-color:#faf9f4; display:none;" class="hiddencontent3" ><label for="event_content3">내용</label></th>
 			<td class="hiddencontent3" style="display:none">
 				<textarea rows="5" cols="49"  id="event_content3" name="event_content3" ></textarea>
-				<input type="button" value="추가" id="addcontent3" >
+				<input type="button" value="추가" id="addcontent3" class="myButton1">
 			</td>
 		</tr>
 		<tr>
 			<th style="background-color:#faf9f4; display:none;" class="hiddencontent4" ><label for="event_content4">내용</label></th>
 			<td class="hiddencontent4" style="display:none">
 					<textarea rows="5" cols="49"  id="event_content4" name="event_content4" ></textarea>
-					<input type="button" value="추가" id="addcontent4" >
+					<input type="button" value="추가" id="addcontent4" class="myButton1">
 			</td>
 		</tr>
 		<tr>
 			<th style="background-color:#faf9f4; display:none;" class="hiddencontent5" ><label for="event_content5">내용</label></th>
 			<td class="hiddencontent5" style="display:none">
 					<textarea rows="5" cols="49"  id="event_content5" name="event_content5" ></textarea>
-					<input type="button" value="추가" id="addcontent5" >
+					<input type="button" value="추가" id="addcontent5" class="myButton1">
 			</td>
 		</tr>	
 		<tr>
@@ -89,28 +89,28 @@ pageEncoding="UTF-8"%>
 			<th style="background-color:#faf9f4; "><label for="event_uploadfile1">메인파일업로드</label></th>
 			<td>
 				<input type="file" name="event_uploadfile1" id="event_uploadfile1">
-				<input type="button" value="추가" id="addfile1">	
+				<input type="button" value="추가" id="addfile1" class="myButton1">	
 			</td>
 		</tr>
 		<tr>	
 			<th style="background-color:#faf9f4; display:none;" class="hiddenfile2" ><label for="event_uploadfile2">파일업로드</label></th>
 			<td class="hiddenfile2" style="display:none">			
 						<input type="file" name="event_uploadfile2" id="event_uploadfile2">
-						<input type="button" value="추가" id="addfile2">
+						<input type="button" value="추가" id="addfile2" class="myButton1">
 			</td>
 		</tr>
 		<tr>
 			<th style="background-color:#faf9f4; display:none;" class="hiddenfile3" ><label for="event_uploadfile3">파일업로드</label></th>
 			<td class="hiddenfile3" style="display:none">
 				<input type="file" name="event_uploadfile3" id="event_uploadfile3">
-				<input type="button" value="추가" id="addfile3">
+				<input type="button" value="추가" id="addfile3" class="myButton1">
 			</td>
 		</tr>
 		<tr>
 			<th style="background-color:#faf9f4; display:none;" class="hiddenfile4" ><label for="event_uploadfile4">파일업로드</label></th>
 			<td class="hiddenfile4" style="display:none">
 						<input type="file" name="event_uploadfile4" id="event_uploadfile4">
-						<input type="button" value="추가" id="addfile4">
+						<input type="button" value="추가" id="addfile4" class="myButton1">
 			</td>
 		</tr>
 		<tr>
@@ -121,88 +121,12 @@ pageEncoding="UTF-8"%>
 		</tr>
 		<tr>
 			<th>
-			<td align="middle">
-				<input type="submit" value="전송" >
-				<input type="button" value="목록" onclick="location.href='event_list.do'">
+			<td align="center">
+				<input type="submit" value="전송" class="myButton1" >
+				<input type="button" value="목록" class="myButton1" onclick="location.href='event_list.do'">
 			</td>
 			<td>
 		</tr>
 		</table>
 	</form>
 </div>
-
-<%-- sad --%>
-<div class="layer">
-	<div class="bg"></div>
-	<div id="layer2" class="pop-layer">
-		<div class="pop-container">
-			<div class="pop-conts">
-				<!--content //-->
-				<form action="findId.do" id="findId_form" method="post">
-					<img src="">
-				</form>
-				<!--// content-->
-			</div>
-		</div>
-	</div>
-</div>
-
-<%-- sad
-<style type="text/css">
-	.layer {display:none; position:fixed; _position:absolute; top:0; left:0; width:100%; height:100%; z-index:100;}
-		.layer .bg {position:absolute; top:0; left:0; width:100%; height:100%; background:#000; opacity:.5; filter:alpha(opacity=50);}
-		.layer .pop-layer {display:block;}
-
-	.pop-layer {display:none; position: absolute; top: 50%; left: 50%; width: 410px; height:auto;  background-color:#fff; border: 5px solid #865009; z-index: 10;}	
-	.pop-layer .pop-container {padding: 20px 25px;}
-	.pop-layer p.ctxt {color: #666; line-height: 25px;}
-	.pop-layer .btn-r {width: 100%; margin:10px 0 20px; padding-top: 10px; border-top: 1px solid #DDD; text-align:center;}
-
-	a.cbtn {
-	background-color:#7d5d3b;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	padding:10px 20px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #4d3534;}	
-	a.cbtn:hover {background-color:#634b30;}
-	a.cbtn:active {position:relative;top:1px;}
-</style>
-<script type="text/javascript">
-	function layer_open(el){
-
-		var temp = $('#' + el);
-		var bg = temp.prev().hasClass('bg');	//dimmed 레이어를 감지하기 위한 boolean 변수
-
-		if(bg){
-			$('.layer').fadeIn();	//'bg' 클래스가 존재하면 레이어가 나타나고 배경은 dimmed 된다. 
-		}else{
-			temp.fadeIn();
-		}
-
-		// 화면의 중앙에 레이어를 띄운다.
-		if (temp.outerHeight() < $(document).height() ) temp.css('margin-top', '-'+temp.outerHeight()/2+'px');
-		else temp.css('top', '0px');
-		if (temp.outerWidth() < $(document).width() ) temp.css('margin-left', '-'+temp.outerWidth()/2+'px');
-		else temp.css('left', '0px');
-
-		temp.find('a.cbtn').click(function(e){
-			if(bg){
-				$('.layer').fadeOut(); //'bg' 클래스가 존재하면 레이어를 사라지게 한다. 
-			}else{
-				temp.fadeOut();
-			}
-			e.preventDefault();
-		});
-
-		$('.layer .bg').click(function(e){	//배경을 클릭하면 레이어를 사라지게 하는 이벤트 핸들러
-			$('.layer').fadeOut();
-			e.preventDefault();
-		});
-
-	}				
-</script>
- --%>

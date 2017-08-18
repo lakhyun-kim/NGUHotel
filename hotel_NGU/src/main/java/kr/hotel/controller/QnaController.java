@@ -70,6 +70,25 @@ public class QnaController {
 		return "qna_write";
 	}
 	
+	@RequestMapping(value="/qna/qna_update.do",method=RequestMethod.GET)
+	public String form(@RequestParam("h_qna_seq") int h_qna_seq, Model model)throws Exception{
+		QnaCommand qnaCommand = qnaService.detail(h_qna_seq);
+		model.addAttribute("command", qnaCommand);
+		
+		return "qna_update";
+	}
+	
+	@RequestMapping(value="/qna/qna_update.do",method=RequestMethod.POST)
+	public String Form(@ModelAttribute("command")@Valid QnaCommand qnaCommand, BindingResult result,HttpSession session, HttpServletRequest request) throws Exception{
+		
+		if(log.isDebugEnabled()){
+			log.debug("qnacommand:"+qnaCommand);
+		}
+		qnaService.update(qnaCommand);
+		
+		return "redirect:/qna/qna_list.do";
+	}
+	
 	@RequestMapping(value="/qna/qna_write.do", method=RequestMethod.POST)
 	public String submit(@ModelAttribute("command")@Valid QnaCommand qnaCommand,
 								BindingResult result,HttpServletRequest request){
@@ -147,7 +166,7 @@ public class QnaController {
 	@ResponseBody
 	public Map<String, Object> list_reply(@RequestParam("h_qna_seq") int h_qna_seq){
 
-		
+		System.out.println(h_qna_seq);
 		Map<String,Object> map = new HashMap<String, Object>();
 		
 		map.put("h_qna_seq", h_qna_seq);

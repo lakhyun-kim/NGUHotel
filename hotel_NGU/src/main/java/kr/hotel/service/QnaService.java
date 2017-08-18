@@ -14,7 +14,7 @@ public interface QnaService {
 	//회원 글 등록
 	public void insert(QnaCommand qna);
 	//회원 글 수정
-	public void update(QnaCommand qna);
+	public void update(QnaCommand h_qna_seq);
 	//회원 글 삭제
 	public void delete(Integer h_qna_seq);
 	@Transactional(readOnly=true)

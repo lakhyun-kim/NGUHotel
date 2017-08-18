@@ -12,6 +12,7 @@
 	<div class="reservation_result">
 		<div class="reservation_result2">
 			<h1>예약이 완료 되었습니다.</h1>
+			<span>예약번호  : ${reservationCommand.res_num}</span>
 		</div>
 	
 	

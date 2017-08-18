@@ -11,7 +11,6 @@ public class GuestCommand {
 	private String mem_id;
 	private int auth;	
 	private int gue_num;
-	@NotEmpty
 	private String gue_filename;
 	private String gue_ltopfilename;
 	private String gue_lbotfilename;

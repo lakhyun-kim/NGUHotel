@@ -1,11 +1,5 @@
 @CHARSET "UTF-8";
 
-.page-main-style{
-	margin:70px auto;
-	font-family:"돋움";
-	width:900px;
-}
-
 /*목록*/
 table{
 	width: 100%;
@@ -88,16 +82,16 @@ div.allcnt{
 	position:relative;
 	top: 45px;
 	max-width: 535px;
-	height: 1005px;
+	height: auto;
 }
 .rarea{
 	position: absolute;
 	top: 779px;
 	right: 830px;
 	max-width: 331px;
-	height: 619px;
+	height: auto;
 }
 div.viewtop{
 	width:950px;
-	height: 1200px;
+	height: auto;
 }

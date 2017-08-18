@@ -17,7 +17,7 @@ pageEncoding="UTF-8"%>
     padding: 10px;
   }
 </style>
-<div>
+<div class="page-main-style">
 	<h1>갤러리 등록</h1>
 	<form action="gallery_write.do" enctype="multipart/form-data"  id="gallery_form" method="post">
 		<input type="hidden" id="mem_id" name="mem_id" value="${command.mem_id }"/>    
@@ -44,91 +44,91 @@ pageEncoding="UTF-8"%>
 		</tr>
 		<tr>
 			<th style="background-color:#faf9f4;"><label for="upload1">메인파일업로드</label></th>
-			<td><input type="file" name="upload1" id="upload1"><input type="button" value="추가등록" id="addfile1"></td>
+			<td><input type="file" name="upload1" id="upload1"><input type="button" value="추가등록" id="addfile1" class="myButton1"></td>
 		</tr>
 		<tr>
 			<th style="background-color:#faf9f4; display:none;" class="hiddenfile2" >	<label for="upload2">파일업로드</label></th>
 			<td style="display:none;" class="hiddenfile2" >	
 				<input type="file" name="upload2" id="upload2">
-				<input type="button" value="추가등록" id="addfile2">
+				<input type="button" value="추가등록" id="addfile2" class="myButton1">
 			</td>
 		</tr>
 		<tr>
 			<th style="background-color:#faf9f4; display:none;" class="hiddenfile3" ><label for="upload3">파일업로드</label></th>
 			<td style="display:none;" class="hiddenfile3">
 						<input type="file" name="upload3" id="upload3">
-						<input type="button" value="추가등록" id="addfile3">
+						<input type="button" value="추가등록" id="addfile3" class="myButton1">
 			</td>
 		</tr>
 		<tr>
 			<th style="background-color:#faf9f4; display:none;" class="hiddenfile4" ><label for="upload4">파일업로드</label></th>
 			<td class="hiddenfile4" style="display:none">
 						<input type="file" name="upload4" id="upload4">
-						<input type="button" value="추가등록" id="addfile4">
+						<input type="button" value="추가등록" id="addfile4" class="myButton1">
 			</td>
 		</tr>
 		<tr>
 			<th style="background-color:#faf9f4; display:none;" class="hiddenfile5" ><label for="upload5">파일업로드</label></th>
 			<td class="hiddenfile5" style="display:none">
 						<input type="file" name="upload5" id="upload5">
-						<input type="button" value="추가등록" id="addfile5">
+						<input type="button" value="추가등록" id="addfile5" class="myButton1">
 			</td>
 		</tr>
 		<tr>
 			<th style="background-color:#faf9f4; display:none;" class="hiddenfile6" ><label for="upload6">파일업로드</label></th>
 			<td class="hiddenfile6" style="display:none">
 						<input type="file" name="upload6" id="upload6">
-						<input type="button" value="추가등록" id="addfile6">
+						<input type="button" value="추가등록" id="addfile6" class="myButton1">
 			</td>
 		</tr>
 		<tr>
 			<th style="background-color:#faf9f4; display:none;" class="hiddenfile7" ><label for="upload7">파일업로드</label></th>
 			<td class="hiddenfile7" style="display:none">
 						<input type="file" name="upload7" id="upload7">
-						<input type="button" value="추가등록" id="addfile7">
+						<input type="button" value="추가등록" id="addfile7" class="myButton1">
 			</td>
 		</tr>
 		<tr>
 			<th style="background-color:#faf9f4; display:none;" class="hiddenfile8" ><label for="upload8">파일업로드</label></th>
 			<td class="hiddenfile8" style="display:none">
 						<input type="file" name="upload8" id="upload8">
-						<input type="button" value="추가등록" id="addfile8">
+						<input type="button" value="추가등록" id="addfile8" class="myButton1">
 			</td>
 		</tr>
 		<tr>	
 			<th style="background-color:#faf9f4; display:none;" class="hiddenfile9" ><label for="upload9">파일업로드</label></th>
 			<td class="hiddenfile9" style="display:none">
 						<input type="file" name="upload9" id="upload9">
-						<input type="button" value="추가등록" id="addfile9">
+						<input type="button" value="추가등록" id="addfile9" class="myButton1">
 			</td>
 		</tr>
 		<tr>
 			<th style="background-color:#faf9f4; display:none;" class="hiddenfile10" ><label for="upload10">파일업로드</label></th>
 			<td class="hiddenfile10" style="display:none">
 						<input type="file" name="upload10" id="upload10">
-						<input type="button" value="추가등록" id="addfile10">
+						<input type="button" value="추가등록" id="addfile10" class="myButton1">
 			</td>
 		</tr>
 		<tr>	
 			<th style="background-color:#faf9f4; display:none;" class="hiddenfile11" ><label for="upload11">파일업로드</label></th>
 			<td class="hiddenfile11" style="display:none">						
 						<input type="file" name="upload11" id="upload11">
-						<input type="button" value="추가등록" id="addfile11">
+						<input type="button" value="추가등록" id="addfile11" class="myButton1">
 			</td>
 		</tr>
 		<tr>
 			<th style="background-color:#faf9f4; display:none;" class="hiddenfile12" ><label for="upload12">파일업로드</label></th>
 			<td class="hiddenfile12" style="display:none">
 						<input type="file" name="upload12" id="upload12">
-						<input type="button" value="추가등록" id="addfile12">
+						<input type="button" value="추가등록" id="addfile12" class="myButton1">
 			</td>
 		</tr>
 		<tr>				
 			<th>
 			</th>
-			<td align="middle">
-				<input type="submit" value="전송">
-				<input type="button" value="목록"  onclick="location.href='gallery_list.do'">
+			<td align="center">
+				<input type="submit" value="전송" class="myButton1">
+				<input type="button" value="목록"  class="myButton1" onclick="location.href='gallery_list.do'">
 			</td>
 		</tr>
 		</table>

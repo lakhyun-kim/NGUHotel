@@ -2,15 +2,14 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>   
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" type="text/css">
-     
-
-<div style="width:60%; float:left;">
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/lifestyle.js"></script>     
+<div class="page-main-style">
 	
 	<h2>라이프 스타일 작성</h2>
 	<hr width="100%" class="color" style="border:solid 2px"><br>					
-	<form:form commandName="command" action="write.do" enctype="multipart/form-data" id="write_form" align="left">
-		 <form:hidden path="mem_id"/> 
-		<form:errors element="div" cssClass="error-color"/><!-- 글로벌 에러처리 -->
+	<form action="write.do" enctype="multipart/form-data" id="write_form" method="post">
+		 <input type="hidden" id="mem_id" name="mem_id" value="${command.mem_id }"> 
 		 <p align="left"><em style="color:#F33">*</em>표시 필수입력 사항</p>
 		 <table>
 			
@@ -19,8 +18,7 @@
 					<label for="lif_realtitle"><em style="color:#F33">*</em>구분제목</label>
 				</th>
 					<td>
-						<form:input path="lif_realtitle"/>
-						<form:errors path="lif_realtitle" cssClass="error-color"/>
+						<input type="text" id="lif_realtitle" name="lif_realtitle">
 					</td>
 			</tr>
 			
@@ -30,8 +28,7 @@
 					<label for="lif_title"><em style="color:#F33">*</em>제목</label>
 				</th>
 					<td>
-						<form:input path="lif_title"/>
-						<form:errors path="lif_title" cssClass="error-color"/>
+						<input type="text" id="lif_title" name="lif_title">
 					</td>
 			</tr>
 			
@@ -40,8 +37,7 @@
 					<label for="lif_retitle"><em style="color:#F33">*</em>부제목</label>
 				</th>
 					<td>
-						<form:input path="lif_retitle"/>
-						<form:errors path="lif_retitle" cssClass="error-color"/>
+						<input type="text" id="lif_retitle" name="lif_retitle">
 					</td>
 			</tr>
 			<tr>
@@ -108,7 +104,7 @@
 					<label for="sliload2">슬라이드2</label>
 				</th>
 					<td>
-						<input type="file" name="sliload2" id="de_img">
+						<input type="file" name="sliload2" id="deimg11">
 					</td>	
 			</tr>
 			
@@ -179,7 +175,7 @@
 			    </td>
 			</tr>
 		 </table>	
-	</form:form>
+	</form>
 	
 
 </div>

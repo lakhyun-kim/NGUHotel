@@ -8,9 +8,11 @@
 
 <div class="page-main-style">
   <div align="left"><img src="${pageContext.request.contextPath}/resources/img/wedding.PNG"></div>
-   <div class="align-right">
-      <input type="button" value="글쓰기" onclick="location.href='write.do'">
-   </div>
+  <c:if test="${user_auth == 2}">
+	   <div class="align-right">
+	      <input type="button" value="글쓰기" class="myButton1" onclick="location.href='write.do'">
+	   </div>
+   </c:if>
    <c:if test="${count ==0}">
    <div class="align-center">등록된 게시물이 없습니다.</div>
    </c:if>

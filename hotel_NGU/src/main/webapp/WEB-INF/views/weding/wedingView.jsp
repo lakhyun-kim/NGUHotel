@@ -65,16 +65,18 @@ $(function(){
     
 });
 </script>
-<div>
+<div class="page-main-style">
 <div class="viewtop">
 <input type="hidden" name="mem_id" value="${weding.mem_id}" id="mem_id">
 <input type="hidden" name="wed_seq" value="${weding.wed_seq}" id="wed_seq">
 <div class="container">
    <span class="detitle" style="color: #9c723f; font: 15pt Dotum,'돋움',sans-serif; font-weight: bold; max-height: 52px; max-width: 866px;">
-     ${weding.wed_retitle}
+     ${weding.wed_retitle}&nbsp;
    </span>
-   <input type="button" value="수정" onclick="location.href='update.do?seq=${weding.wed_seq}'">
-   <input type="button" value="삭제" onclick="location.href='delete.do?seq=${weding.wed_seq}'">
+   <c:if test="${user_auth == 2}">
+	   <input type="button" value="수정" class="myButton1" onclick="location.href='update.do?seq=${weding.wed_seq}'">
+	   <input type="button" value="삭제" class="myButton1" onclick="location.href='delete.do?seq=${weding.wed_seq}'">
+   </c:if>
    <div class="row">
    
       <c:if test="${weding.wed_retitle eq '대형연회장'}">
@@ -280,33 +282,41 @@ $(function(){
       </c:if>
          
     </div>
-   </div>
+   </div>  
 </div>    
 </div>
    
    <c:if test="${weding.wed_retitle eq '웨딩홀'}">
-   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-   </c:if>
-   
-   <c:if test="${weding.wed_retitle eq '대형연회장'}">
-   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-   </c:if>
-   
-   <c:if test="${weding.wed_retitle eq '영빈관'}">
-   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-   </c:if>
-   
-   <c:if test="${weding.wed_retitle eq '소형연회장'}">
-   <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-   </c:if>
-   
-   <c:if test="${weding.wed_retitle eq '가족연회장'}">
-   <br><br><br><br><br><br><br>
-   </c:if>
-   
-   <c:if test="${weding.wed_retitle eq '영빈관2'}">
-   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-   </c:if>
+	<br><br><br><br><br><br><br><br><br>
+	</c:if>
+	
+	<c:if test="${weding.wed_retitle eq '웨딩스타일'}">
+	<br><br><br><br><br>
+	</c:if>
+	
+	<c:if test="${weding.wed_retitle eq '대형연회장'}">
+	<br><br><br><br><br><br><br>
+	</c:if>
+	
+	<c:if test="${weding.wed_retitle eq '영빈관'}">
+	<br><br><br><br><br><br><br>
+	</c:if>
+	
+	<c:if test="${weding.wed_retitle eq '소형연회장'}">
+	<br><br><br><br><br><br><br>
+	</c:if>
+	
+	<c:if test="${weding.wed_retitle eq '가족연회안내'}">
+	<br><br><br><br><br><br><br>
+	</c:if>
+	
+	<c:if test="${weding.wed_retitle eq '가족연회장'}">
+	<br><br><br><br><br><br><br>
+	</c:if>
+	
+	<c:if test="${weding.wed_retitle eq '영빈관2'}">
+	<br><br><br><br><br><br>
+	</c:if>
    
 </div>  
      

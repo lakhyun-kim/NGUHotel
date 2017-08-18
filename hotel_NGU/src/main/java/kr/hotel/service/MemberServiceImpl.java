@@ -78,4 +78,9 @@ public class MemberServiceImpl implements MemberService{
 		return memberMapper.getMemberPointCount(mem_id);
 	}
 
+	@Override
+	public MemberPointCommand selectMemberPoint(String mem_id) {
+		return memberMapper.selectMemberPoint(mem_id);
+	}
+
 }

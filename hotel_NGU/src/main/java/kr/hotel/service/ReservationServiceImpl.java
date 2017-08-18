@@ -98,7 +98,27 @@ public class ReservationServiceImpl implements ReservationService{
 		return reservationMapper.Rsvlist();
 	}
 	
-	
+	@Override
+	   public List<GuestRoomCommand> sel_room_list(int res_num) {
+	      
+	      return reservationMapper.sel_room_list(res_num);
+	   }
+
+	   @Override
+	   public void delete_room(int res_num) {
+	      reservationMapper.delete_room(res_num);
+	   }
+	   @Override
+	   public void delete_reservation(int res_num) {
+	      reservationMapper.delete_reservation(res_num);
+	      
+	   }
+
+	   @Override
+	   public void delete_pay(int res_num) {
+	      reservationMapper.delete_pay(res_num);
+	      
+	   }
 	
 
 }
