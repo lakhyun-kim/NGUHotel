@@ -12,6 +12,7 @@ create table h_reservation(
     res_option_1 varchar2(50),
     res_option_2 varchar2(50),
     res_total number not null,
+    res_point number not null,
     mem_id varchar2(15) not null,
     res_status number(1) default 1 not null,
     

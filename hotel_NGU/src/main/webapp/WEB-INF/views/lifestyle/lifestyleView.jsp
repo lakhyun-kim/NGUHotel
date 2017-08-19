@@ -315,4 +315,8 @@ $(function(){
    <c:if test="${lifestyle.lif_title eq '신라면세점'}">
    <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
    </c:if>
+   
+   <c:if test="${lifestyle.lif_realtitle eq '기타'}">
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	</c:if>
 </div>

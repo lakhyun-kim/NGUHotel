@@ -21,6 +21,7 @@
     	<put-attribute name="body" value="/WEB-INF/views/main/main.jsp"/>
     	<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/> 
     </definition>
+    
     <!-- 객실정보 -->
     <definition name="main2" template="/WEB-INF/views/template/layout2.jsp">
       <put-attribute name="title" value="Spring Home Demo"/>
@@ -82,13 +83,21 @@
 		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
 		<put-attribute name="menu" value="/WEB-INF/views/template/galleryleft.jsp"/>
 	</definition>
-	
+	<!-- 문의하기 -->
 	<definition name="qna" template="/WEB-INF/views/template/layout2.jsp">
 		<put-attribute name="title" value="Spring Home Demo"/>
 		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/views/main/main.jsp"/>
 		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
 		<put-attribute name="menu" value="/WEB-INF/views/template/qnaleft.jsp"/>
+	</definition>
+	<!-- 하단메뉴 소개 -->
+	<definition name="main7" template="/WEB-INF/views/template/layout2.jsp">
+		<put-attribute name="title" value="Spring Home Demo"/>
+		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/views/others/introduce.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>
+		<put-attribute name="menu" value="/WEB-INF/views/template/introduceleft.jsp"/>
 	</definition>
 	
     <definition name="pageError" extends="main"><!-- main 상속 -->

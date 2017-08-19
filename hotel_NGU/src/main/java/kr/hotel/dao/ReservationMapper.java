@@ -14,8 +14,6 @@ import kr.hotel.domain.ReservationCommand;
 
 public interface ReservationMapper {
 
-
-	
 	//예약 insert reservation 테이블, payment 테이블
 
 	public void insertReservation(ReservationCommand reservation);

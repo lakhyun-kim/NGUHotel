@@ -34,7 +34,26 @@ public class ReservationCommand {
 	
 	private int res_status;
 
+	private String gue_title;
+
+	private int res_point;
 	
+	public int getRes_point() {
+		return res_point;
+	}
+
+	public void setRes_point(int res_point) {
+		this.res_point = res_point;
+	}
+
+	public String getGue_title() {
+		return gue_title;
+	}
+
+	public void setGue_title(String gue_title) {
+		this.gue_title = gue_title;
+	}
+
 	public int getRes_num() {
 		return res_num;
 	}

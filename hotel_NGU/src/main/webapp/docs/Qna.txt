@@ -8,7 +8,8 @@ create table h_qna(
 	h_qna_email varchar2(20) not null,
 	h_qna_phone varchar2(20) not null,
 	h_qna_phone2 varchar2(20),
-	mem_id varchar2(15) not null,	
+	h_qna_regdate date not null,
+	mem_id varchar2(15) not null,
 	constraint qna_hotel_fk1_1 foreign key (mem_id) references h_member (mem_id)	
 );
 

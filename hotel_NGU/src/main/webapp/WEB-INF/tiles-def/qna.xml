@@ -29,4 +29,15 @@
     	<put-attribute name="title" value="문의완료"/>
     	<put-attribute name="body" value="/WEB-INF/views/qna/qna_done.jsp"/>
     </definition>  
+    
+      <definition name="qna_phone" extends="qna"><!-- main 상속 -->
+    	<put-attribute name="title" value="문의완료"/>
+    	<put-attribute name="body" value="/WEB-INF/views/qna/qna_phone.jsp"/>
+    </definition>
+    
+     <definition name="qna_faq" extends="qna"><!-- main 상속 -->
+    	<put-attribute name="title" value="문의완료"/>
+    	<put-attribute name="body" value="/WEB-INF/views/qna/qna_faq.jsp"/>
+    </definition>   
+  
 </tiles-definitions>

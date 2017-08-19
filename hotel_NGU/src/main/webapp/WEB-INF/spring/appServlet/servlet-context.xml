@@ -35,6 +35,7 @@
 				<beans:value>/WEB-INF/tiles-def/gallery.xml</beans:value>
 	   			<beans:value>/WEB-INF/tiles-def/qna.xml</beans:value>
 				<beans:value>/WEB-INF/tiles-def/dining.xml</beans:value>
+				<beans:value>/WEB-INF/tiles-def/info.xml</beans:value>
 	   		</beans:list>
 	   	</beans:property>
 	</beans:bean>
@@ -89,7 +90,7 @@
 	</beans:bean> 
 	 
 	<!-- 메인 페이지 설정 -->
-	<view-controller path="/main/main.do" view-name="main"/>
+	<!-- <view-controller path="/main/main.do" view-name="main"/> -->
 	   
 	<interceptors>
 		<!-- 인터셉터를 활용한 로그인 체크 -->

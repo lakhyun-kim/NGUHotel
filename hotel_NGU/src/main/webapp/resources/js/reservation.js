@@ -530,23 +530,61 @@
 		    	  
 		    	  return false;
 		      }
+		      // 포인트 유효성
+		      if($('#mem_point').val()==''){
+		    	  alert('사용할 포인트를 입력하세요');
+		    	  $('#mem_point').focus();
+		    	  return false;		    	  
+		      }
 		      
-		    
+		      
 
 				var res_total1;
 				res_total1 = $('#total_price').text();
 		      //submit시 총금액 저장
 		      $('#res_total').val(res_total1);
 		  	  
-				
-		      
-		      
-		      
-		      
 		});
+
+		// 포인트 체크 클릭 시
+		$('#user_point').click(function() {
+			// 포인트 체크되면 input:text 활성화
+			if($('#user_point').is(':checked')){
+				$('#pointshow').show();
+			} else {
+				$('#pointshow').hide();
+				$('#mem_point').val('0');
+			}
+		});
+
+		var before_total = $('#total_price').text();
 		
-		$('#step_result_form')
+		var now_total = $('#total_price').text();
 		
+		var before_point = $('#before_point').text();
+		
+		$('#mem_point').keyup(function() {
+
+			var input_point = $('#mem_point').val();
+			
+			if(Number(before_point) < Number(input_point)) {
+				alert('사용할 수 포인트를 초과하였습니다.');
+				$('#mem_point').val('');
+				$('#total_price').text(before_total);
+				return false;
+			}
+			
+			if(Number(input_point) > Number(now_total)) {
+				alert('요금합계보다 포인트를 더 쓸 수 없습니다.');
+				$('#mem_point').val('');
+				$('#total_price').text(before_total);
+				return false;
+			}
+			
+			var s = now_total - input_point;
+			$('#total_price').text('');
+			$('#total_price').append(s);
+		});
 		
 		
 		

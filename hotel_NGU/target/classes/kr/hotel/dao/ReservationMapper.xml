@@ -20,6 +20,7 @@
                             res_option_1,
                             res_option_2,
                             res_total,
+                            res_point,
                             mem_id) 
         VALUES ( 
                 #{res_num}, 
@@ -33,6 +34,7 @@
                 #{res_option_1, jdbcType=VARCHAR},
                 #{res_option_2, jdbcType=VARCHAR},
                 #{res_total},
+                #{res_point},
                 #{mem_id}) 
     </insert>
 

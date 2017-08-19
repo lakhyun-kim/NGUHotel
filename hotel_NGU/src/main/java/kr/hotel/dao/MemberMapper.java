@@ -10,6 +10,8 @@ import org.apache.ibatis.annotations.Update;
 
 import kr.hotel.domain.MemberCommand;
 import kr.hotel.domain.MemberPointCommand;
+import kr.hotel.domain.QnaCommand;
+import kr.hotel.domain.ReservationCommand;
 
 public interface MemberMapper {
 
@@ -56,4 +58,27 @@ public interface MemberMapper {
 	// 포인트 1개 검색
 	@Select("SELECT * FROM h_point WHERE mem_id=#{mem_id}")
 	public MemberPointCommand selectMemberPoint(String mem_id);
+	
+	// 마이페이지 예약확인
+	public List<ReservationCommand> selectMemberReservation(Map<String, Object> map);
+	@Select("SELECT count(*) FROM h_reservation WHERE mem_id=#{mem_id}")
+	public int getMemberReservation(String mem_id);
+	
+	// 비회원 예약확인
+	@Select("SELECT * FROM h_payment a LEFT OUTER JOIN h_reservation d ON a.res_num=d.res_num LEFT OUTER JOIN h_guest_room c ON a.res_num=c.res_num WHERE a.res_num=#{res_num} AND a.pay_firstname=#{pay_firstname} AND a.pay_lastname=#{pay_lastname}")
+	public ReservationCommand selectGuestReservation(Map<String, Object> map);
+
+	// 마이페이지 문의내역목록
+	public List<QnaCommand> selectMemberQna(Map<String, Object> map);
+	@Select("SELECT count(*) FROM h_qna WHERE mem_id=#{mem_id}")
+	public int getMemberQna(String mem_id);
+	
+	// 회원 포인트 적립/사용
+	@Update("UPDATE h_member_detail SET mem_point=#{mem_point} WHERE mem_id=#{mem_id}")
+	public void updatePoint(Map<String, Object> map);
+	
+	// 회원 포인트 테이블 insert
+	@Insert("INSERT INTO h_point(mem_poi_num, mem_poi_usesave, mem_poi_history, mem_poi_price, mem_poi_usepoint, mem_poi_savepoint, mem_poi_regdate, mem_id ) VALUES(h_point_seq.nextval, #{mem_poi_usesave}, #{mem_poi_history}, #{mem_poi_price}, #{mem_poi_usepoint, jdbcType=INTEGER}, #{mem_poi_savepoint, jdbcType=INTEGER}, sysdate, #{mem_id})")
+	public void insertPoint(MemberPointCommand memberPointCommand);
+	
 }

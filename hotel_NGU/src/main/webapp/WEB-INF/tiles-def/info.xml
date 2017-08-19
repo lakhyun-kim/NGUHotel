@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+    <definition name="introduce" extends="main7">
+      	<put-attribute name="title" value="호텔 소개"/>
+      	<put-attribute name="body" value="/WEB-INF/views/others/introduce.jsp"/>
+    </definition>
+    
+    <definition name="design" extends="main7">
+      	<put-attribute name="title" value="디자인"/>
+      	<put-attribute name="body" value="/WEB-INF/views/others/design.jsp"/>
+    </definition>
+    
+    <definition name="info" extends="main7">
+      	<put-attribute name="title" value="호텔정보"/>
+      	<put-attribute name="body" value="/WEB-INF/views/others/info.jsp"/>
+    </definition>
+    
+    <definition name="information" extends="main7">
+      	<put-attribute name="title" value="층별안내도"/>
+      	<put-attribute name="body" value="/WEB-INF/views/others/information.jsp"/>
+    </definition>
+    
+    <definition name="come" extends="main7">
+      	<put-attribute name="title" value="오시는 길"/>
+      	<put-attribute name="body" value="/WEB-INF/views/others/come.jsp"/>
+    </definition>
+    
+</tiles-definitions>

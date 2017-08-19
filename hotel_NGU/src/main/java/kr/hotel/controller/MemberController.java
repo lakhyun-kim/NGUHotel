@@ -25,9 +25,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.sun.org.apache.regexp.internal.recompile;
+
 import kr.hotel.domain.MemberCommand;
 import kr.hotel.domain.MemberPointCommand;
+import kr.hotel.domain.QnaCommand;
+import kr.hotel.domain.ReservationCommand;
 import kr.hotel.service.MemberService;
+import kr.hotel.service.ReservationService;
 import kr.hotel.util.PagingUtil;
 
 @Controller
@@ -110,6 +115,7 @@ public class MemberController {
 				// 인증 성공, 로그인 처리
 				session.setAttribute("user_id", member.getMem_id());
 				session.setAttribute("user_auth", member.getAuth());
+				
 				
 				return "redirect:/main/main.do";
 			} else {
@@ -470,26 +476,132 @@ public class MemberController {
 		
 		return mav;
 	}
-
+	
 	// 마이페이지 - 회원(예약확인/취소)
 	@RequestMapping("/member/memResConfirm.do")
-	public String memberResConfirmSubmit() {
+	public ModelAndView memberResConfirmSubmit(@RequestParam(value="pageNum", defaultValue="1") int currentPage, HttpSession session, Model model) {
+
+		String mem_id = (String)session.getAttribute("user_id");
+		// 나의 정보 뽑아옴
+		MemberCommand member = memberService.selectMember(mem_id);
+				
+		Map<String, Object> map = new HashMap<String, Object>();
+
+		// 자기 아이디에서만 뽑아옴
+		map.put("mem_id", mem_id);
 		
-		return "memberResConfirm";
+		int count = memberService.getMemberReservation(mem_id);
+		
+		PagingUtil page = new PagingUtil(currentPage, count, rowCount, pageCount, "memberResConfirm.do");
+
+		map.put("start", page.getStartCount());
+		map.put("end", page.getEndCount());
+
+		List<ReservationCommand> list = null;
+		if(count > 0) {
+			list = memberService.selectMemberReservation(map);
+		}
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("memberResConfirm");
+		mav.addObject("member", member);
+		mav.addObject("list", list);
+		mav.addObject("count", count);
+		mav.addObject("pagingHtml", page.getPagingHtml());
+		
+		return mav;
+	}
+	
+	@Resource
+	private ReservationService reservationService;
+	
+	// 회원, 비회원 예약 취소(삭제)
+	@RequestMapping("/member/deleteReservation.do")
+	public String deleteReservation(@RequestParam int res_num, @RequestParam int res_point, @RequestParam int res_total, HttpSession session) {
+
+		String mem_id = (String)session.getAttribute("user_id");
+		
+		MemberCommand member = memberService.selectMember(mem_id);
+		
+		int after_point = 0;
+		// 적립
+		if(res_point == 0) {
+			after_point = member.getMem_point() - res_total*3/100;
+			
+		} else {
+			// 사용
+			after_point = member.getMem_point() + res_point;
+			
+		}
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("mem_point", after_point);
+		map.put("mem_id", mem_id);
+
+		// 포인트 초기화
+		memberService.updatePoint(map);
+		
+		reservationService.delete_room(res_num);
+		reservationService.delete_pay(res_num);
+		reservationService.delete_reservation(res_num);
+		
+		return "member/userDelete";
 	}
 	
 	// 로그인 - 비회원(예약확인)
 	@RequestMapping("/member/resConfirm.do")
-	public String resConfirmSubmit() {
+	public String resConfirmSubmit(@RequestParam int res_num, @RequestParam String pay_firstname, @RequestParam String pay_lastname, Model model) {
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+
+		map.put("res_num", res_num);
+		map.put("pay_firstname", pay_firstname);
+		map.put("pay_lastname", pay_lastname);
+		
+		ReservationCommand reservationCommand = memberService.selectGuestReservation(map);
+		
+		if(reservationCommand == null) {
+			return "member/resConfirmFail";
+		} else {
+			model.addAttribute("reservation", reservationCommand);
+			model.addAttribute("pay_firstname", pay_firstname);
+			model.addAttribute("pay_lastname", pay_lastname);
+		}
 		
 		return "ResConfirm";
 	}
 
 	// 마이페이지 - 문의내역(목록)
 	@RequestMapping("/member/qnaList.do")
-	public String qnaList() {
+	public ModelAndView qnaList(@RequestParam(value="pageNum", defaultValue="1") int currentPage, HttpSession session, Model model) {
+
+		String mem_id = (String)session.getAttribute("user_id");
+		// 나의 정보 뽑아옴
+		MemberCommand member = memberService.selectMember(mem_id);
+				
+		Map<String, Object> map = new HashMap<String, Object>();
+
+		// 자기 아이디에서만 뽑아옴
+		map.put("mem_id", mem_id);
 		
-		return "memberQnaList";
+		int count = memberService.getMemberQna(mem_id);
+		
+		PagingUtil page = new PagingUtil(currentPage, count, rowCount, pageCount, "memberQnaList.do");
+
+		map.put("start", page.getStartCount());
+		map.put("end", page.getEndCount());
+
+		List<QnaCommand> list = null;
+		if(count > 0) {
+			list = memberService.selectMemberQna(map);
+		}
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("memberQnaList");
+		mav.addObject("member", member);
+		mav.addObject("list", list);
+		mav.addObject("count", count);
+		mav.addObject("pagingHtml", page.getPagingHtml());
+		
+		return mav;
 	}
 	
 }

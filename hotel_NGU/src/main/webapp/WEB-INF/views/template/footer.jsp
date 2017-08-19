@@ -7,16 +7,16 @@
 			<strong>소개</strong>
 		</li>
 		<li>
-			<a href="#">호텔 소개</a>
+			<a class="menu_subject" href="${pageContext.request.contextPath}/others/introduce.do">호텔 소개</a>
 		</li>
 		<li>
-			<a href="#">호텔정보</a>
+			<a class="menu_subject" href="${pageContext.request.contextPath}/others/info.do">호텔정보</a>
 		</li>
 		<li>
-			<a href="#">층별안내도</a>
+			<a class="menu_subject" href="${pageContext.request.contextPath}/others/information.do">층별안내도</a>
 		</li>
 		<li>
-			<a href="#">오시는길</a>
+			<a class="menu_subject" href="${pageContext.request.contextPath}/others/come.do">오시는길</a>
 		</li>
 	</ul>
 	<ul class="ulBotton">
@@ -24,10 +24,10 @@
 			<strong>고객센터</strong>   
 		</li>
 		<li>
-			<a href="#">연락처</a>
+			<a class="menu_subject" href="${pageContext.request.contextPath}/qna/qna_phone.do">연락처</a>
 		</li>
 		<li>
-			<a href="#">FAQ</a>
+			<a class="menu_subject" href="${pageContext.request.contextPath}/qna/qna_faq.do">FAQ</a>
 		</li>
 		<li>
 			<a href="${pageContext.request.contextPath}/qna/qna_write.do">문의하기 </a>
@@ -39,16 +39,16 @@
 		<a href="${pageContext.request.contextPath}/member/login.do">회사 소개</a>
 	</li>
 	<li>
-		<a href="${pageContext.request.contextPath}/member/login.do">사이트맵</a>
+		<a class="rule" href="${pageContext.request.contextPath}/others/AllList.do">사이트맵</a>
 	</li>
 	<li>
-		<a href="${pageContext.request.contextPath}/member/login.do">개인정보처리방침</a>
+		<a class="rule" href="${pageContext.request.contextPath}/others/private.do">개인정보처리방침</a>
 	</li>
 	<li>
-		<a href="${pageContext.request.contextPath}/member/login.do">이메일무단수단금지</a>
+		<a class="rule" href="${pageContext.request.contextPath}/others/email-popup.do">이메일무단수단금지</a>
 	</li>
 	<li>
-		<a href="${pageContext.request.contextPath}/member/login.do">영상정보처리기기 운영방침</a>	 
+		<a class="rule" href="${pageContext.request.contextPath}/others/menual.do">영상정보처리기기 운영방침</a>	 
 	</li>
 </ul>
 

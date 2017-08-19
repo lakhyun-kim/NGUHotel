@@ -24,8 +24,8 @@
 					<input type="text" id="res_num" name="res_num" placeholder="예약번호" style="width:300px;height:20px" onkeydown="onlyNumber(this)"/><br><br>
 				</li>
 				<li>
-					<input type="text" id="mem_firstname" name="mem_firstname" placeholder="firstName(이름)" style="width:146px;height:20px" onkeydown="onlyEngOrKor(this)"> 
-					<input type="text" id="mem_lastname" name="mem_lastname" placeholder="lastName(성)" style="width:146px;height:20px" onkeydown="onlyEngOrKor(this)"><br>
+					<input type="text" id="mem_firstname" name="pay_firstname" placeholder="firstName(이름)" style="width:146px;height:20px" onkeydown="onlyEngOrKor(this)"> 
+					<input type="text" id="mem_lastname" name="pay_lastname" placeholder="lastName(성)" style="width:146px;height:20px" onkeydown="onlyEngOrKor(this)"><br>
 				</li>
 			</ul>
 		</div>

@@ -298,11 +298,12 @@ N.G.U호텔 객실예약과 관련하여 귀사가 아래와 같이 본인의 �
                <li><input type="hidden" id="res_option_4" name="res_option_2"></li>
             
             </ul>
-            <c:if test="${!empty user_id }">
+            <c:if test="${!empty user_id}">
 		         <div class="res_discount">   
 		            <ul>
-		               <li>사용 가능 포인트 : ${command.mem_point}</li>
-		               <li><input type="checkbox" id="" value="">포인트 사용</li>
+		               <li>사용 가능 포인트 : <span id="before_point">${command.mem_point}</span></li>
+		               <li>포인트 사용 <input type="checkbox" id="user_point" name="user_point"></li>
+		               <li><span id="pointshow" style="display: none;">사용할 포인트 <input type="text" id="mem_point" name="mem_point" maxlength="10" size="10" value="0" onkeydown="onlyNumber(this)"></span></li>
 		            </ul>
 		         </div>
          	</c:if>

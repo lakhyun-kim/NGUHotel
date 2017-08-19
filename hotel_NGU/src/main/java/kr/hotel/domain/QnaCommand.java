@@ -1,5 +1,7 @@
 package kr.hotel.domain;
 
+import java.sql.Date;
+
 public class QnaCommand {
 
 	private int h_qna_seq;
@@ -11,7 +13,15 @@ public class QnaCommand {
 	private String h_qna_phone2;
 	private String h_qna_firstname;
 	private String h_qna_lastname;
+	private Date h_qna_regdate;
 	private String mem_id;
+	
+	public Date getH_qna_regdate() {
+		return h_qna_regdate;
+	}
+	public void setH_qna_regdate(Date h_qna_regdate) {
+		this.h_qna_regdate = h_qna_regdate;
+	}
 	public int getH_qna_seq() {
 		return h_qna_seq;
 	}

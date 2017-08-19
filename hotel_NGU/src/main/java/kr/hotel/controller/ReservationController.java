@@ -24,6 +24,7 @@ import kr.hotel.domain.GuestCommand;
 import kr.hotel.domain.GuestRoomCommand;
 import kr.hotel.domain.GueststoreCommand;
 import kr.hotel.domain.MemberCommand;
+import kr.hotel.domain.MemberPointCommand;
 import kr.hotel.domain.PaymentCommand;
 import kr.hotel.domain.ReservationCommand;
 import kr.hotel.service.MemberService;
@@ -170,20 +171,20 @@ public class ReservationController {
                      GueststoreCommand guestCommand,
                      HttpSession session, 
                      Model model,
-                     GuestRoomCommand guestroomCommand){
+                     GuestRoomCommand guestroomCommand, @RequestParam int mem_point){
       
-      
+	   // 포인트 예약테이블에 셋팅
+	   reservationCommand.setRes_point(mem_point);
+	   
       String mem_id = (String)session.getAttribute("user_id");
       
 
       //회원일 경우
       if(mem_id != null){
       
-      
          reservationCommand.setMem_id(mem_id);
       
          System.out.println(reservationCommand);
-         
          
       //회원이 아닌경우
       }else if(mem_id == null){
@@ -191,7 +192,6 @@ public class ReservationController {
          reservationCommand.setMem_id("guest");
          
       }
-      
       
       //reservation 테이블과 payment 테이블의 insert를 순차적으로 진행
       
@@ -208,21 +208,15 @@ public class ReservationController {
       reservationService.insertReservation(reservationCommand);   
       
       //인서트후에 결제정보 테이블에 예약번호를 셋팅한다.   
-      System.out.println("<<res_num>> : " + res_num);               
       paymentCommand.setRes_num(res_num);
       
       
       GueststoreCommand guestroomCommand2 = reservationService.selectGuest(guCommand.getGue_num());
       
-      System.out.println(guestroomCommand2.getGue_title());
       //guest_room 테이블 객실 타이틀 셋팅
       guestroomCommand.setGue_title(guestroomCommand2.getGue_title());
       
-      
-      
       ReservationCommand reservation = reservationService.selectrsv(res_num);   
-      
-      System.out.println(reservation);
       
       //guest_room 테이블에 체크인, 체크아웃 날짜 세팅
       guestroomCommand.setRes_in(reservation.getRes_in());
@@ -239,7 +233,45 @@ public class ReservationController {
       guestroomCommand.setRes_num(reservation.getRes_num());
       reservationService.room_res_insert(guestroomCommand);
       
-      
+	   // 기존 포인트 뺴내옴
+	   MemberCommand member = memberService.selectMember(mem_id);
+	   
+	   MemberPointCommand pointCommand = new MemberPointCommand();
+	   
+	   pointCommand.setMem_id(mem_id);
+	   pointCommand.setMem_poi_history("객실");
+	   pointCommand.setMem_poi_price(reservationCommand.getRes_total());
+	   // 적립/사용 포인트
+	   int after_point = 0;
+	   
+	   if(mem_point == 0) {
+		   pointCommand.setMem_poi_usesave("적립");
+		   
+		   // 회원 포인트 적립
+		   after_point = member.getMem_point() + (reservationCommand.getRes_total() * 3/100);
+
+		   pointCommand.setMem_poi_savepoint(reservationCommand.getRes_total() * 3/100);
+	   } else {
+		   // 사용
+		   pointCommand.setMem_poi_usesave("사용");
+		   pointCommand.setMem_poi_usepoint(mem_point);
+		   
+		   // 회원의 포인트 사용
+		   after_point = member.getMem_point() - mem_point;
+		   
+	   }
+
+	   Map<String, Object> map = new HashMap<String, Object>();
+	   
+	   map.put("mem_point", after_point);
+	   map.put("mem_id", mem_id);
+	   
+	   // 회원 포인트 적립/사용
+	   memberService.updatePoint(map);
+	   
+	   // 포인트 테이블에 insert 합니다.
+	   memberService.insertPoint(pointCommand);
+	   
    
       return "reservation_result";
    
@@ -252,13 +284,7 @@ public class ReservationController {
                         HttpSession session,
                         GuestRoomCommand guestroomCommand
                         ){
-      
-      
-      
-      
-      
-      
-      
+	   
       return "redirect:/main/main.do";
    }
 

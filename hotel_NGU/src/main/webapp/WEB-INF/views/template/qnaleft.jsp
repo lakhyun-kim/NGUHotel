@@ -7,7 +7,10 @@
       <hr width="100%" style="border:solid 2px #432c10">
    </li>
    <li>
-		<a href="${pageContext.request.contextPath}/qna/qna_call.do">연락처<br></a>
+		<a href="${pageContext.request.contextPath}/qna/qna_phone.do">연락처<br></a>
+   </li>
+   <li>
+		<a href="${pageContext.request.contextPath}/qna/qna_faq.do">FAQ</a>
    </li>
    <li>
 		<a href="${pageContext.request.contextPath}/qna/qna_write.do">문의하기</a>

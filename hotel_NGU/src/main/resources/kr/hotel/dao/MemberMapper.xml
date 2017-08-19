@@ -36,4 +36,35 @@
 		WHERE rnum >= #{start} AND rnum <= #{end}
 		]]>
 	</select>
+	<select id="selectMemberReservation" parameterType="map"
+	                              resultType="ReservationCommand">
+		SELECT
+		   *
+		FROM (SELECT
+		        a.*,
+		        rownum rnum
+				FROM(SELECT
+				*
+				FROM h_reservation a LEFT OUTER JOIN h_guest_room d 
+                ON a.res_num = d.res_num WHERE a.mem_id=#{mem_id}
+				ORDER BY a.res_num DESC)a)
+		<![CDATA[
+		WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>
+	</select>
+	<select id="selectMemberQna" parameterType="map"
+	                              resultType="QnaCommand">
+		SELECT
+		   *
+		FROM (SELECT
+		        a.*,
+		        rownum rnum
+				FROM(SELECT
+				*
+				FROM h_qna WHERE mem_id=#{mem_id}
+				ORDER BY h_qna_seq DESC)a)
+		<![CDATA[
+		WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>
+	</select>
 </mapper>

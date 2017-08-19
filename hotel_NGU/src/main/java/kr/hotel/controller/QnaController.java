@@ -59,14 +59,20 @@ public class QnaController {
 	public String form(HttpSession session, Model model){
 		
 		String id = (String)session.getAttribute("user_id");
-		
-		MemberCommand member = memberService.selectMember(id);
-		
+
 		QnaCommand command = new QnaCommand();
-		command.setMem_id(id);
+		
+		if(id == null) {
+			command.setMem_id("guest");
+		} else {
+			MemberCommand member = memberService.selectMember(id);
+			
+			command.setMem_id(id);
+			model.addAttribute("member", member);
+		}
+		
 		model.addAttribute("command",command);
-		member.setMem_id(id);
-		model.addAttribute("member", member);
+		
 		return "qna_write";
 	}
 	
@@ -224,6 +230,17 @@ public class QnaController {
 		return map;
 		
 	}
+
+	// 연락처
+	@RequestMapping("/qna/qna_phone.do")
+	public String phone(){
+		return "qna_phone";
+	}
 	
+	// FAQ
+	@RequestMapping("/qna/qna_faq.do")
+	public String faq(){
+		return "qna_faq";
+	}
 	
 }

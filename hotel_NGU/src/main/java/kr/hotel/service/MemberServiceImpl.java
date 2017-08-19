@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import kr.hotel.dao.MemberMapper;
 import kr.hotel.domain.MemberCommand;
 import kr.hotel.domain.MemberPointCommand;
+import kr.hotel.domain.QnaCommand;
+import kr.hotel.domain.ReservationCommand;
 
 @Service("memberService")
 public class MemberServiceImpl implements MemberService{
@@ -81,6 +83,41 @@ public class MemberServiceImpl implements MemberService{
 	@Override
 	public MemberPointCommand selectMemberPoint(String mem_id) {
 		return memberMapper.selectMemberPoint(mem_id);
+	}
+
+	@Override
+	public List<ReservationCommand> selectMemberReservation(Map<String, Object> map) {
+		return memberMapper.selectMemberReservation(map);
+	}
+
+	@Override
+	public int getMemberReservation(String mem_id) {
+		return memberMapper.getMemberReservation(mem_id);
+	}
+
+	@Override
+	public ReservationCommand selectGuestReservation(Map<String, Object> map) {
+		return memberMapper.selectGuestReservation(map);
+	}
+
+	@Override
+	public List<QnaCommand> selectMemberQna(Map<String, Object> map) {
+		return memberMapper.selectMemberQna(map);
+	}
+
+	@Override
+	public int getMemberQna(String mem_id) {
+		return memberMapper.getMemberQna(mem_id);
+	}
+
+	@Override
+	public void updatePoint(Map<String, Object> map) {
+		memberMapper.updatePoint(map);
+	}
+
+	@Override
+	public void insertPoint(MemberPointCommand memberPointCommand) {
+		memberMapper.insertPoint(memberPointCommand);
 	}
 
 }

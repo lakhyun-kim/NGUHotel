@@ -51,6 +51,7 @@
 						<option value="3">스파</option>
 						<option value="4">조각공원</option>
 						<option value="5">쇼핑</option>
+						<option value="6">기타</option>
 					</select>
 				</td>
 			</tr>

@@ -16,8 +16,8 @@ import kr.hotel.domain.QnareplyCommand;
 public interface QnaMapper {
 
 	//ȸ�� �� ���
-	@Insert("INSERT INTO h_qna(h_qna_seq,h_qna_type,h_qna_subject,h_qna_content,h_qna_firstname,h_qna_lastname,h_qna_email,h_qna_phone,h_qna_phone2,mem_id)"
-			+ "VALUES (h_qna_seq.nextval,#{h_qna_type},#{h_qna_subject},#{h_qna_content},#{h_qna_firstname},#{h_qna_lastname},#{h_qna_email},#{h_qna_phone},#{h_qna_phone2},#{mem_id})")
+	@Insert("INSERT INTO h_qna(h_qna_seq,h_qna_type,h_qna_subject,h_qna_content,h_qna_firstname,h_qna_lastname,h_qna_email,h_qna_phone,h_qna_phone2,h_qna_regdate,mem_id)"
+			+ "VALUES (h_qna_seq.nextval,#{h_qna_type},#{h_qna_subject},#{h_qna_content},#{h_qna_firstname},#{h_qna_lastname},#{h_qna_email},#{h_qna_phone},#{h_qna_phone2},sysdate,#{mem_id})")
 	public void insert(QnaCommand qna);
 	//ȸ�� �� ����
 	@Update("UPDATE h_qna SET h_qna_type=#{h_qna_type},h_qna_subject=#{h_qna_subject},h_qna_content=#{h_qna_content},h_qna_firstname=#{h_qna_firstname},h_qna_lastname=#{h_qna_lastname},"

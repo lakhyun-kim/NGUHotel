@@ -21,7 +21,7 @@
 		</c:if>
 	</ul>
 </div>
-<div class="bottom-1">
+<div class="bottom-1" style="position: relative;z-index:2;">
 	<ul class="bottom-menu">
 		<li class="m1" style="border-left:none;">
 			<a href="${pageContext.request.contextPath}/gpack/list.do">스페셜오퍼</a>

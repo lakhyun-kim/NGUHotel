@@ -65,5 +65,17 @@
 			</c:forEach>
 		</li>
       </ul>
+      
+       기타
+      <ul class="MenuDown">
+		<li>
+			<c:forEach var="lifestyle" items="${side_menu}">
+			<c:if test="${lifestyle.lif_divide ==6}">
+			 <a href="detail.do?seq=${lifestyle.lif_seq}">${lifestyle.lif_title}<br></a>
+			 </c:if>
+			</c:forEach>
+		</li>
+      </ul>
+      
    </li>
 </ul>

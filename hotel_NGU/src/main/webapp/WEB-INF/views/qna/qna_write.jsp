@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.min.js"></script>  
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/qna.js"></script>
 <style>
@@ -22,9 +20,9 @@
   }
 </style>  
 <div class="middle-of page-main-style">
-	<h2>문의 하기</h2>
-	<c:if test="${!empty user_id}">
-	<form action="qna_write.do" id="qna_form" method="post">
+	<h2 class="color">문의 하기</h2>
+	<hr width="100%" class="color" style="border:solid 2px">
+	<form action="qna_write.do" id="qna_form" method="post">	
 	    <input type="hidden" id="mem_id" name="mem_id" value="${command.mem_id }"/>
 	    <table class="mem-register align-left" style="border-top:solid 2px; boder-bottom:solid 2px; width:800px;">    	
 		<tr >
@@ -48,18 +46,18 @@
 		<tr>
 			<th style="background-color:#faf9f4;"><label for="h_qna_content">문의 내용</label></th>
 			<td>
-				<textarea rows="5" cols="47"  id="h_qna_content" name="h_qna_content"></textarea>>
+				<textarea rows="5" cols="47"  id="h_qna_content" name="h_qna_content"></textarea>
 			</td>
 		</tr>
 		<tr>
-			<th style="background-color:#faf9f4;"><label>이름</label></th>
+			<th style="background-color:#faf9f4;"><label for="h_qna_lastname">이름</label></th>
 			<td>			
-				<input type="text" id="h_qna_lastname" name="h_qna_lastname" value="${member.mem_lastname }">
-				<input type="text" id="h_qna_firstname" name="h_qna_firstname" value="${member.mem_firstname }">
+				<input type="text" id="h_qna_lastname" name="h_qna_lastname" placeholder="lastname(성)" value="${member.mem_lastname }">
+				<input type="text" id="h_qna_firstname" name="h_qna_firstname" placeholder="firstname(이름)" value="${member.mem_firstname }">
 			</td>
 		</tr>
 		<tr>
-			<th style="background-color:#faf9f4;"><label for="email">이메일</label></th>
+			<th style="background-color:#faf9f4;"><label for="h_qna_email">이메일</label></th>
 			<td>
 			<input type="text" id="h_qna_email" name="h_qna_email" value="${member.mem_email}">
 			</td>
@@ -76,7 +74,7 @@
 				<input type="text" id="h_qna_phone2" name="h_qna_phone2" value="${member.mem_h_cell}">
 			</td>
 		</tr>
-	</table>
+	</table><br>
 			<strong>필수적 개인정보 수집 및 이용에 대한 동의</strong><br>
 		<textarea rows="5" cols="111">NGU 호텔 고객의 문의 및 의견과 관련하여 귀사가 아래와 같이 본인의 개인정보를 수집 및 이용하는데 동의합니다.
 
@@ -85,9 +83,10 @@
 ② 수집ㆍ이용 목적 | 문의에 대한 안내 및 서비스 제공
 ③ 보유ㆍ이용 기간 | 수집ㆍ이용 동의일로부터 5년간
 ※위 사항에 대한 동의를 거부할 수 있으나, 이에 대한 동의가 없을 경우 문의에 대한 안내 및 서비스 제공과 관련된 제반 절차 진행이 불가능 할 수 있음을 알려드립니다. </textarea>
-	<div align="left">
-	<input type="submit" value="등록"/>
+	<br>
+	<input type="checkbox" id="chkBox" >동의함
+	<div align="center">
+	<input type="submit" class="myButton1" value="등록"/>
 	</div>
 	</form>
-	</c:if>
 </div>

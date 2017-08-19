@@ -178,6 +178,36 @@
             </c:if>
          </c:forEach>
        </div>
+       
+        <div class="lllow">
+      	<br>
+      		
+         <c:forEach var="lifestyle" items="${list}">         
+         <%-- ${lifestyle.lif_midname}<br> --%>
+        	 <c:if test="${lifestyle.lif_divide ==6}">
+        	 <div style="float: left; width: 50%;">
+         		<c:if test="${fn:endsWith(lifestyle.lif_topname,'.jpg') ||
+		              fn:endsWith(lifestyle.lif_topname,'.JPG') ||
+		              fn:endsWith(lifestyle.lif_topname,'.gif') ||
+		              fn:endsWith(lifestyle.lif_topname,'.GIF') ||
+		              fn:endsWith(lifestyle.lif_topname,'.png') ||
+		              fn:endsWith(lifestyle.lif_topname,'.PNG')}">   <!-- 이것들만 이미지로 인정한다 -->
+		         <div>
+		             <a href="detail.do?seq=${lifestyle.lif_seq}"><img src="imageView.do?seq=${lifestyle.lif_seq}&file=4" style="max-width:423px; max-height:158px;"></a> 
+		         </div>
+         		</c:if>
+        		<br>
+			         <span class="detitle" style="color: #797979; font: 13pt Dotum,'돋움',sans-serif; font-weight: bold; max-height: 52px; max-width: 866px;">
+			  			${lifestyle.lif_title}<br>
+					 </span> <span class="detitle" style="color: #797979; font: 9pt Dotum,'돋움',sans-serif; font-weight: bold; max-height: 52px; max-width: 866px;">
+			  			${lifestyle.lif_retitle}<br>
+					 </span>
+					 <br>
+		 	</div>
+         	</c:if>
+         </c:forEach>
+       </div>
+       
      </div>
   </c:if>
   

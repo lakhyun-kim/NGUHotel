@@ -2,5 +2,5 @@
     pageEncoding="UTF-8"%>
 <script>
 	alert('정상적으로 삭제되었습니다.');
-	location.href='${pageContext.request.contextPath}/main/main.do';
+	location.href='${pageContext.request.contextPath}/member/memResConfirm.do';
 </script>

@@ -113,15 +113,16 @@ li{position:relative; height:100%; width:25%; float:left;} */
 	list-style:none;
 	margin:30px auto;
 }
+.ulPoint li{
+	display:inline;
+}
+
 .ulLevel{
 	width:900px;
 	list-style:none;
 	margin:30px auto;
 }
 
-.ulPoint li{
-	display:inline;
-}
 .ulLevel li{
 	display:inline-block;
 	vertical-align:middle;
