@@ -33,8 +33,8 @@ $(document).ready(function(){
 				  		fn:endsWith(dining.din_fn1,'.GIF') ||
 				  		fn:endsWith(dining.din_fn1,'.png') ||
 				  		fn:endsWith(dining.din_fn1,'.PNG')}">
-					<a href="detail.do?seq=${dining.seq}">
-						<img src="imageView.do?seq=${dining.seq}&din_file=1" width="250" height="200">	
+					<a class="loow" href="detail.do?seq=${dining.seq}">
+						<img src="imageView.do?seq=${dining.seq}&din_file=1" width="250" height="200">
 					</a>
 					</c:if>
 					<br>
@@ -54,8 +54,8 @@ $(document).ready(function(){
        				</span>
        				<br>
        				<br>
-					<input type="image" src="${pageContext.request.contextPath}/resources/img/diningreservation.png" class="reserve_btn" data-seq="${dining.seq}">&nbsp;&nbsp;
-					<input type="image" src="${pageContext.request.contextPath}/resources/img/ask.png"><br>
+					<input type="image" src="${pageContext.request.contextPath}/resources/img/diningreservation.png"  class="reserve_btn" data-seq="${dining.seq}">
+					<a href="${pageContext.request.contextPath}/qna/qna_write.do"><input type="image" src="${pageContext.request.contextPath}/resources/img/ask.png"></a><br>
 			  </div>	
 			  </div>
 			</c:if>	
@@ -77,8 +77,8 @@ $(document).ready(function(){
 				  		fn:endsWith(dining.din_fn1,'.GIF') ||
 				  		fn:endsWith(dining.din_fn1,'.png') ||
 				  		fn:endsWith(dining.din_fn1,'.PNG')}">
-					<a href="detail.do?seq=${dining.seq}">
-						<img src="imageView.do?seq=${dining.seq}" width="250" height="200">	
+					<a class="loow" href="detail.do?seq=${dining.seq}">
+						<img src="imageView.do?seq=${dining.seq}&din_file=1" width="250" height="200">	
 					</a>
 					</c:if>
 					<br>
@@ -98,7 +98,7 @@ $(document).ready(function(){
        				</span>
        				<br>
        				<br>
-					<input type="image" src="${pageContext.request.contextPath}/resources/img/diningreservation.png"data-seq="${dining.seq}">&nbsp;&nbsp;
+					<input type="image" src="${pageContext.request.contextPath}/resources/img/diningreservation.png"data-seq="${dining.seq}">
 					<input type="image" src="${pageContext.request.contextPath}/resources/img/ask.png"><br>
 					</div>
 					</div>	
@@ -123,8 +123,8 @@ $(document).ready(function(){
 				  		fn:endsWith(dining.din_fn1,'.PNG')}">
 				  		
 				  		
-					<a href="detail.do?seq=${dining.seq}">
-						<img src="imageView.do?seq=${dining.seq}" width="250" height="200">	
+					<a class="loow" href="detail.do?seq=${dining.seq}">
+						<img src="imageView.do?seq=${dining.seq}&din_file=1" width="250" height="200">
 					</a>
 					</c:if>
 					<br>
@@ -144,7 +144,7 @@ $(document).ready(function(){
        				</span>
        				<br>
        				<br>
-					<input type="image" src="${pageContext.request.contextPath}/resources/img/diningreservation.png" data-seq="${dining.seq}">&nbsp;&nbsp;
+					<input type="image" src="${pageContext.request.contextPath}/resources/img/diningreservation.png" data-seq="${dining.seq}">
 					
 					<input type="image" src="${pageContext.request.contextPath}/resources/img/ask.png"><br>
 					</div>

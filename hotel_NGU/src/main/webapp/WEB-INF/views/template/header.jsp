@@ -38,13 +38,13 @@
 			<a href="${pageContext.request.contextPath}/guest/list.do">객실</a>
 			<ul class="bottomDown" style="padding-left:585px;">
 				<li>
-					<a href="${pageContext.request.contextPath}/gpack/list.do" style="border-left:none">스탠다드</a> 
+					<a href="${pageContext.request.contextPath}/guest/gueDetail.do?gue_num=22" style="border-left:none">스탠다드</a> 
 				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/event/event_list.do">이그제큐티브</a> 
+					<a href="${pageContext.request.contextPath}/guest/gueDetail.do?gue_num=23">이그제큐티브</a> 
 				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/event/event_list.do">스위트</a> 
+					<a href="${pageContext.request.contextPath}/guest/gueDetail.do?gue_num=26">스위트</a> 
 				</li>
 			</ul> 
 		</li>
@@ -52,13 +52,13 @@
 			<a href="${pageContext.request.contextPath}/dining/list.do">다이닝</a>
 			<ul class="bottomDown" style="padding-left:715px;">
 				<li>
-					<a href="${pageContext.request.contextPath}/gpack/list.do" style="border-left:none">레스토랑</a> 
+					<a href="${pageContext.request.contextPath}/dining/detail.do?seq=44" style="border-left:none">레스토랑</a> 
 				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/event/event_list.do">바</a> 
+					<a href="${pageContext.request.contextPath}/dining/detail.do?seq=49">바</a> 
 				</li>
 				<li>
-					<a href="${pageContext.request.contextPath}/event/event_list.do">베이커리</a> 
+					<a href="${pageContext.request.contextPath}/dining/detail.do?seq=47">베이커리</a> 
 				</li>
 			</ul>  
 		</li>
@@ -97,10 +97,10 @@
 			</ul>   
 		</li>
 		<li class="m1">
-			<a href="${pageContext.request.contextPath}/gallery/gallery_list.do">갤러리</a>
+			<a href="${pageContext.request.contextPath}/gallery/gallery_detail.do?h_gallery_seq=21">갤러리</a>
 			<ul class="bottomDown" style="padding-left:1225px;">
 				<li>
-					<a href="${pageContext.request.contextPath}/gallery/gallery_list.do" style="border-left:none">사진</a> 
+					<a href="${pageContext.request.contextPath}/gallery/gallery_detail.do?h_gallery_seq=21" style="border-left:none">사진</a> 
 				</li>
 				<li>
 					<a href="${pageContext.request.contextPath}/gallery/gallery_movie.do">동영상</a> 

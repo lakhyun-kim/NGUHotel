@@ -6,24 +6,24 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/qna.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/qna_reply.js"></script>
 <style>
-	table {
-    width: 100%;
-    border-top: 1px solid #444444;
-    border-collapse: collapse;
-  }
-  th{
-  	width:150px;
-  }
-  th, td {
-    border-bottom: 1px solid #444444;
-    padding: 10px;
-  }
+table{
+	width:98%;
+	margin:0 auto;
+	border-top:1px solid #918f8f;
+	border-collapse:collapse;
+}
+td, th{
+	border-bottom:1px solid #918f8f;
+	padding:10px;
+}
   .middle-of{
   	 margin-left: 0 auto;
   }
 </style>   
-<div class="middle-of page-main-style">
-	<h2>문의 내용</h2>
+<div class="page-main-style">
+<div class="middle-of">
+	<h1 class="color">문의 내용</h1>
+	<hr width="100%" class="color" style="border:solid 2px"><br>
 	<input type="hidden" name="h_qna_seq" value="${qna.h_qna_seq}" id="h_qna_seq">
 	<input type="hidden" name="id" value="${qna.mem_id }">
 	<table class="mem-register align-left" style="border-top:solid 2px; boder-bottom:solid 2px; width:800px;">    	
@@ -77,20 +77,23 @@
 			    onclick="location.href='qna_delete.do?h_qna_seq=${qna.h_qna_seq}'">
 		</c:if>
 			<input type="button" value="목록" class="myButton1" onclick="location.href='qna_list.do'">    
-	</div>
-	<div id="reply_div" style="margin-left:200px;">
-		<span class="reply-title" >댓글 달기</span>
-		<form id="re_form">
-			<input type="hidden" name="h_qna_seq" value="${qna.h_qna_seq}" id="h_qna_seq">
-			<input type="hidden" name="mem_id" value="${qna.mem_id}" id="mem_id">
-			<textarea rows="3" cols="50" name="qna_re_content" id="qna_re_content" class="qna_re_content"
-			   <c:if test="${empty user_id}">disabled="disabled"</c:if>
-			   ><c:if test="${empty user_id}">로그인해야 작성할 수 있습니다.</c:if></textarea>  
-			<c:if test="${!empty user_id}">
-				<div id="re_second" class="align-right"><input type="submit" value="답변" class="myButton1">
-				</div>
-			</c:if>
-		</form>
+	</div><br>
+	<div id="reply_div">
+		<c:if test="${user_auth == 2}">	
+			<span class="reply-title" >댓글 달기</span>
+			<form id="re_form">
+				<input type="hidden" name="h_qna_seq" value="${qna.h_qna_seq}" id="h_qna_seq">
+				<input type="hidden" name="mem_id" value="${qna.mem_id}" id="mem_id">
+				<textarea rows="3" cols="130" name="qna_re_content" id="qna_re_content" class="qna_re_content"
+				   <c:if test="${empty user_id}">disabled="disabled"</c:if>
+				   ><c:if test="${empty user_id}">관리자만 작성할 수 있습니다.</c:if></textarea>  
+				<c:if test="${!empty user_id}">
+					<div id="re_second" class="align-right"><input type="submit" value="답변" class="myButton1">
+					</div>
+				</c:if>
+			</form>
+		</c:if>
 		<div id="output"></div>
 	</div>
+</div>
 </div>

@@ -207,32 +207,32 @@ $(function(){
       
       
       <c:if test="${weding.wed_realtitle eq '영빈관'}">
-      <a href="${pageContext.request.contextPath}/qna/qna_list.do"><img src="${pageContext.request.contextPath}/resources/img/moon.PNG"></a>
+      <a href="${pageContext.request.contextPath}/qna/qna_write.do"><img src="${pageContext.request.contextPath}/resources/img/moon.PNG"></a>
       <a id="popup"><img src="${pageContext.request.contextPath}/resources/img/0bin6.PNG"></a>
       <br>
       </c:if>
       
       <c:if test="${weding.wed_realtitle eq '대형연회장'}">
-      <a href="${pageContext.request.contextPath}/qna/qna_list.do"><img src="${pageContext.request.contextPath}/resources/img/moon.PNG"></a>
+      <a href="${pageContext.request.contextPath}/qna/qna_write.do"><img src="${pageContext.request.contextPath}/resources/img/moon.PNG"></a>
       <a id="popup4"><img src="${pageContext.request.contextPath}/resources/img/doshow.PNG"></a>
       <a id="popup5"><img src="${pageContext.request.contextPath}/resources/img/big12.PNG"></a>
       <br>
       </c:if>
       
       <c:if test="${weding.wed_realtitle eq '소형연회장'}">
-      <a href="${pageContext.request.contextPath}/qna/qna_list.do"><img src="${pageContext.request.contextPath}/resources/img/moon.PNG"></a>
+      <a href="${pageContext.request.contextPath}/qna/qna_write.do"><img src="${pageContext.request.contextPath}/resources/img/moon.PNG"></a>
       <a id="popup6"><img src="${pageContext.request.contextPath}/resources/img/so7.PNG"></a>
       <br>
       </c:if>
       
       <c:if test="${weding.wed_realtitle eq '영빈관2'}">
-      <a href="${pageContext.request.contextPath}/qna/qna_list.do"><img src="${pageContext.request.contextPath}/resources/img/moon.PNG"></a>
+      <a href="${pageContext.request.contextPath}/qna/qna_write.do"><img src="${pageContext.request.contextPath}/resources/img/moon.PNG"></a>
       <a id="popup9"><img src="${pageContext.request.contextPath}/resources/img/2bin5.PNG"></a>
       <br>
       </c:if>
       
       <c:if test="${weding.wed_realtitle eq '가족연회안내'}">
-      <a href="${pageContext.request.contextPath}/qna/qna_list.do"><img src="${pageContext.request.contextPath}/resources/img/moon.PNG"></a>
+      <a href="${pageContext.request.contextPath}/qna/qna_write.do"><img src="${pageContext.request.contextPath}/resources/img/moon.PNG"></a>
       <br>
       </c:if>
       

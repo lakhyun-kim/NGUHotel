@@ -21,16 +21,6 @@ $(document).ready(function(){
 			$('#event_content1').focus();
 			return false;
 		}
-		if($('#event_price1').val() == ''){
-			alert('최소가격을 입력하세요');
-			$('#event_price1').focus();
-			return false;
-		}
-		if($('#event_price2').val() == ''){
-			alert('최소가격을 입력하세요');
-			$('#event_price2').focus();
-			return false;
-		}
 		if($('#event_uploadfile1').val() == ''){
 			alert('메인이미지를 넣으세요');
 			return false;

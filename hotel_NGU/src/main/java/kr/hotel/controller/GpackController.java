@@ -79,7 +79,7 @@ private Logger log = Logger.getLogger(this.getClass());
 		return mav;
 	}
 	
-	//ÆÐÅ°Áö ÀÛ¼º
+	//ï¿½ï¿½Å°ï¿½ï¿½ ï¿½Û¼ï¿½
 	@RequestMapping(value="/gpack/gpWrite.do", method=RequestMethod.GET)
 	public String GpWriteForm(HttpSession session, Model model){
 		
@@ -111,7 +111,7 @@ private Logger log = Logger.getLogger(this.getClass());
 		
 		return "redirect:/gpack/list.do";
 	}
-	//ÀÌ¹ÌÁö Ãâ·Â
+	//ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 	@RequestMapping("gpack/imageView.do")
 	public ModelAndView gpImage(@RequestParam("gpa_seq") int gpa_seq,
 							    @RequestParam(value="file") int file){
@@ -152,7 +152,7 @@ private Logger log = Logger.getLogger(this.getClass());
 		
 		return mav;
 	}
-	//¼öÁ¤ºÎºÐ
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½
 	@RequestMapping(value="/gpack/gpUpdate.do",method=RequestMethod.GET)
 	public String gpUpdateForm(@RequestParam("gpa_seq") int gpa_seq,Model model,HttpSession session){
 		
@@ -190,9 +190,9 @@ private Logger log = Logger.getLogger(this.getClass());
 			return "gpModify";
 		}
 		
-		//Àü¼ÛµÈ ÆÄÀÏÀÌ ¾øÀ» °æ¿ì
+		//ï¿½ï¿½ï¿½Ûµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 		if(gpCommand.getGpa_upload().isEmpty()){
-			//±âÁ¸ Á¤º¸¼ÂÆÃ
+			//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			gpCommand.setGpa_upfile(gp.getGpa_upfile());
 			gpCommand.setGpa_filename(gp.getGpa_filename());
 		}

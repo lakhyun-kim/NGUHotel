@@ -94,7 +94,7 @@ public class DiningController {
 		if(log.isDebugEnabled()){
 			log.debug("<<dining>> : " + dining);
 		}
-	
+		
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("imageView");
 		if(din_file==1){

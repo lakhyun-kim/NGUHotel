@@ -5,10 +5,10 @@
 	margin-top: 65px;
 }
 .groom{
-	margin:20px;
-	padding:5px;
-	width:450px;
-	height:285px;
+	margin:5px;
+	padding:15px;
+	width:445px;
+	height:410px;
 	float:left;
 }
 .groom img{
@@ -16,26 +16,24 @@
 }
 .cntarea{
 	width: 417px;
-	height: 80px;
+	height:150px;
 	margin-top: 10px;
 }
 .cntarea div{
-	float: left;
 }
 .lcnt{
 	position: relative;
-	width: 190px;
-	height: 75px;
+	width: 200px;
+	height: 110px;
 }
 .rcnt{
-	position: relative;
 	left: 90px;
-	top: 0px;
 }
-
-
-
-
+.gueOk{
+	float: left;
+	padding:20px 10px 20px 10px;
+	border-bottom:1px solid #000;
+}
 
 
 

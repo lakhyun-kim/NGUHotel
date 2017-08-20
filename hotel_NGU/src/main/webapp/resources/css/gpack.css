@@ -61,6 +61,7 @@ ul.dateul li{
 }
 div.maincnt{
 	float: left;
+	width:100%;
 }
 div.lcnt{
 	line-height: 30px;
@@ -76,11 +77,12 @@ div.schZone{
 	max-height: 34px;
 }
 div .chupack{
-	width: 866px;
+	width: 32%;
 	height: 347px;
 	padding: 5px;
 	margin-bottom: 40px;
 	float: left;
+	border-bottom: 1px solid #000;
 }
 .chupack img{
 	max-width: 270px;
@@ -88,11 +90,17 @@ div .chupack{
 .cntPack img{
 	max-width: 270px;
 	max-height: 231px;
-	float: left;
 }
-div .cntPack{
-	width:866px;
+.cntPack{
+	float: left;
+	width:896px;
+	height:300px;
 	max-height: 231px;
+	padding:30px 10px 30px 10px;
+	border-bottom:1px solid #000;
+}
+.cntPack:LAST-CHILD{
+	border-bottom:none;
 }
 div.photo{
 	width: 35%;

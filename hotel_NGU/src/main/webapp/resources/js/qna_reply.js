@@ -15,19 +15,14 @@ $(document).ready(function(){
 				$(list).each(function(index,item){
 					var output = '';
 					output += '<div class="item" id="'+item.qna_reply_seq+'">';
-					output += '  <h4>' + item.qna_reply_seq + '</h4>';
-					output += '  <h4>' + item.mem_id + '</h4>';
 					output += '  <div class="sub-item">';
+					output += '    <h2>답변내용</h2>';
 					output += '    <p>' + item.qna_re_content + '</p>';
 					output += '    <div>' + item.qna_re_date;
-					if($('#mem_id').val() && $('#mem_id').val() == item.mem_id){
-						//로그인한 id가 댓글 작성자 id와 같은 경우
-						output += ' <input type="button" value="수정" data-num="'+item.qna_reply_seq+'" data-id="'+item.mem_id+'" class="modify-button">';
-						output += ' <input type="button" value="삭제" data-num="'+item.qna_reply_seq+'" data-id="'+item.mem_id+'" class="delete-button">';
-					}else{
-						//로그인하지 않았거나 작성자 id와 다른 경우
-						output += ' <input type="button" value="수정" disabled="disabled">';
-						output += ' <input type="button" value="삭제" disabled="disabled">';
+					if($('#mem_id').val() == 'admin'){
+						//관리자인경우
+						output += ' <input type="button" value="수정" data-num="'+item.qna_reply_seq+'" data-id="'+item.mem_id+'" class="modify-button myButton1">';
+						output += ' <input type="button" value="삭제" data-num="'+item.qna_reply_seq+'" data-id="'+item.mem_id+'" class="delete-button myButton1">';
 					}
 					
 					output += '      <hr size="1" noshade>';
@@ -116,8 +111,8 @@ $(document).ready(function(){
 		    modifyUI += ' <input type="hidden" name="mem_id" id="muser_id" value="'+id+'">';
 		    modifyUI += ' <textarea rows="3" cols="50" name="qna_re_content" id="mqna_re_content" class="rep-content">'+content+'</textarea>';
 		    modifyUI += ' <div id="mre_second" class="align-right">';
-		    modifyUI += '  <input type="submit" value="수정">';
-		    modifyUI += '  <input type="button" value="취소" class="re-reset">';
+		    modifyUI += '  <input type="submit" value="수정" class="myButton1">';
+		    modifyUI += '  <input type="button" value="취소" class="re-reset myButton1">';
 		    modifyUI += ' </div>';
 		    modifyUI += ' <hr size="1" noshade width="96%">';
 		    modifyUI += '</form>';

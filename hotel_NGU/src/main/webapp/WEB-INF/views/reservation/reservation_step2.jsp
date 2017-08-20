@@ -307,6 +307,9 @@ N.G.U호텔 객실예약과 관련하여 귀사가 아래와 같이 본인의 �
 		            </ul>
 		         </div>
          	</c:if>
+            <c:if test="${empty user_id}">
+            	<input type="hidden" name="mem_point" value="0">
+         	</c:if>
          </div>
          <div class="total_room_price">
             <p>

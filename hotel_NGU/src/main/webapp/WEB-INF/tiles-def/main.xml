@@ -100,6 +100,13 @@
 		<put-attribute name="menu" value="/WEB-INF/views/template/introduceleft.jsp"/>
 	</definition>
 	
+	<definition name="main8" template="/WEB-INF/views/template/layout.jsp">
+		<put-attribute name="title" value="Spring Home Demo"/>
+		<put-attribute name="header" value="/WEB-INF/views/template/header.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/views/others/allList.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/views/template/footer.jsp"/>		
+	</definition>
+	
     <definition name="pageError" extends="main"><!-- main 상속 -->
     	<put-attribute name="title" value="에러페이지"/>
     	<put-attribute name="body" value="/WEB-INF/views/error/pageError.jsp"/>

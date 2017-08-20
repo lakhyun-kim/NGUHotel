@@ -71,4 +71,24 @@ public class OthersController {
 		return "come";
 	}
 	
+	@RequestMapping("/others/allList.do")
+	public String alllist(){
+		return "allList";
+	}
+	
+	@RequestMapping("/others/private.do")
+	public String privacy(){
+		return "privacy";
+	}
+	
+	@RequestMapping("/others/mailPopup.do")
+	public String mailPopup(){
+		return "others/mailPopup";
+	}
+	
+	@RequestMapping("others/menual.do")
+	public String menual(){
+		return "menual";
+	}
+	
 }

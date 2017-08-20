@@ -63,7 +63,8 @@ $.datepicker.regional['kr'] = {
 
 
 </script>
-<div class="containor page-main-style" style="font-family:none;">
+<div class="page-main-style">
+<div class="containor " style="font-family:none; ">
 	<div>
 	   <p style="font: 22pt Dotum,'돋움',sans-serif; margin: 0; padding: 0; color: #814900; font-weight: bold;"> 
 	    객실 패키지	
@@ -73,7 +74,7 @@ $.datepicker.regional['kr'] = {
 		   <input type="hidden" name="mem_id" value="${mem_id }" id="mem_id">
 		   <input type="hidden" name="gpa_seq" value="${gpa_seq }" id="gpa_seq">
 		   <c:if test="${user_auth == 2}">
-		   		<input type="button" value="패키지등록" class="myButton1" onclick="location.href='gpWrite.do'">
+		   		<input type="button" value="글등록" class="myButton1" onclick="location.href='gpWrite.do'">
 		   </c:if>
 	   </div>
 	</div>
@@ -134,12 +135,12 @@ $.datepicker.regional['kr'] = {
 	</c:if>
 	<c:if test="${count > 0}">
 	<div class="maincnt">
+		<div style="text-align:center; font-size: 20px; color: #3e2b2c;">
+			<span>추천 상품</span></div>
+			<hr style="border-top: 1px solid; color: #e3d6c6;"><br><br>
 		<c:forEach var="gpack" items="${list}" begin="0" end="2">
 			<c:if test="${gpack.norr == 0}">
 			<div class="chupack">
-			<div style="text-align:center; font-size: 20px; color: #3e2b2c;">
-			<span>추천 상품</span></div>
-			<hr style="border-top: 1px solid; color: #e3d6c6;"><br><br>
 				<c:if test="${fn:endsWith(gpack.gpa_filename,'.png') ||
 							  fn:endsWith(gpack.gpa_filename,'.PNG')}">
 						<a href="gpDetail.do?gpa_seq=${gpack.gpa_seq}"><img src="imageView.do?gpa_seq=${gpack.gpa_seq}&file=0"></a>
@@ -152,15 +153,13 @@ $.datepicker.regional['kr'] = {
 						<span style="font-weight: bold;">${gpack.gpa_money}</span>
 					</div>
 				</div>
-			<hr style="border-top: 1px solid; color: #e3d6c6;">
 			</div>
 			</c:if>
 		</c:forEach>
+		<div>Total : ${count}</div><br>
 		<c:forEach var="gpack" items="${list}" begin="0" end="4">
 		<c:if test="${gpack.norr == 1 || gpack.norr == 0}">
 			<div class="cntPack">
-				<div>Total : ${count}</div><br>
-				<hr style="border-top: 3px solid; color: #81725f;">
 				<div class="photo">
 					<c:if test="${fn:endsWith(gpack.gpa_filename,'.png') ||
 								  fn:endsWith(gpack.gpa_filename,'.PNG')}">
@@ -189,3 +188,4 @@ $.datepicker.regional['kr'] = {
 	</div>
 	</c:if>
 </div> 
+</div>

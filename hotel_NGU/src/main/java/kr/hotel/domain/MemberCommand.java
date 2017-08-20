@@ -27,7 +27,15 @@ public class MemberCommand {
 	private int mem_point;
 	private int mem_lev_num;
 	private String mem_lev_name;
-
+	private int mem_accumulate;
+	
+	// 누적금액
+	public int getMem_accumulate() {
+		return mem_accumulate;
+	}
+	public void setMem_accumulate(int mem_accumulate) {
+		this.mem_accumulate = mem_accumulate;
+	}
 	// 비밀번호 일치 여부 체크
 	// auth가 0이면 탈퇴회원이므로 로그인, 탈퇴가 불가능
 	public boolean isCheckedPasswd(String userPasswd){

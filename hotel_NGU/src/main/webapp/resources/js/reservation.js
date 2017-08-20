@@ -15,7 +15,7 @@
 		
   $( function() {
     var dateFormat = 'yy-mm-dd',
-   		 check_in = $( '#check_in' )
+   		 check_in = $('#check_in')
         .datepicker({
           minDate:0,
         

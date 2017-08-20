@@ -55,7 +55,7 @@ div.gpUD{
 			</div>	
 		</c:if>
 		<div class="memli">
-			<a href="#"><img src="${pageContext.request.contextPath}/resources/img/memlistbtn.png"></a>
+			<a href="${pageContext.request.contextPath}/reservation/reservation.do"><img src="${pageContext.request.contextPath}/resources/img/memlistbtn.png"></a>
 		</div>
 		<c:if test="${fn:endsWith(gp.gpa_rtname,'.png') ||
 					  fn:endsWith(gp.gpa_rtname,'.PNG')}">

@@ -74,6 +74,23 @@ create table h_guest_store(
 create sequence guest_store_seq;
 
 
+insert into h_guest_store(gue_num, gue_title, gue_type, gue_size, gue_sel) values(guest_store_seq.nextval, '디럭스', '101호', '36 ㎡', 280000);
+insert into h_guest_store(gue_num, gue_title, gue_type, gue_size, gue_sel) values(guest_store_seq.nextval, '비지니스 디럭스', '102호', '40 ㎡', 300000);
+insert into h_guest_store(gue_num, gue_title, gue_type, gue_size, gue_sel) values(guest_store_seq.nextval, '이그제큐티브', '103호', '36 ㎡', 280000);
+insert into h_guest_store(gue_num, gue_title, gue_type, gue_size, gue_sel) values(guest_store_seq.nextval, '이그제큐티브', '104호', '36 ㎡', 280000);
+insert into h_guest_store(gue_num, gue_title, gue_type, gue_size, gue_sel) values(guest_store_seq.nextval, '수페리어', '201호', '36 ㎡', 360000);
+insert into h_guest_store(gue_num, gue_title, gue_type, gue_size, gue_sel) values(guest_store_seq.nextval, '수페리어 스위트', '202호', '140 ㎡', 400000);
+insert into h_guest_store(gue_num, gue_title, gue_type, gue_size, gue_sel) values(guest_store_seq.nextval, '코리안 스위트', '203호', '140 ㎡', 380000);
+insert into h_guest_store(gue_num, gue_title, gue_type, gue_size, gue_sel) values(guest_store_seq.nextval, '코너 스위트', '301호', '145 ㎡', 440000);
+insert into h_guest_store(gue_num, gue_title, gue_type, gue_size, gue_sel) values(guest_store_seq.nextval, '프리미어 스위트', '302호', '140 ㎡', 400000);
+insert into h_guest_store(gue_num, gue_title, gue_type, gue_size, gue_sel) values(guest_store_seq.nextval, '로열 스위트', '303호', '140 ㎡', 350000);
+insert into h_guest_store(gue_num, gue_title, gue_type, gue_size, gue_sel) values(guest_store_seq.nextval, '신라 스위트', '401호', '136 ㎡', 380000);
+insert into h_guest_store(gue_num, gue_title, gue_type, gue_size, gue_sel) values(guest_store_seq.nextval, '프레지덴셜 스위트', '402호', '136 ㎡', 400000);
+insert into h_guest_store(gue_num, gue_title, gue_type, gue_size, gue_sel) values(guest_store_seq.nextval, '로열 디럭스', '403호', '45 ㎡', 300000);
+insert into h_guest_store(gue_num, gue_title, gue_type, gue_size, gue_sel) values(guest_store_seq.nextval, '신라 디럭스', '501호', '42 ㎡', 320000);
+insert into h_guest_store(gue_num, gue_title, gue_type, gue_size, gue_sel) values(guest_store_seq.nextval, '코리안 디럭스', '502호', '40 ㎡', 330000);
+insert into h_guest_store(gue_num, gue_title, gue_type, gue_size, gue_sel) values(guest_store_seq.nextval, '코너 디럭스', '503호', '41 ㎡', 330000);
+
 
 
 

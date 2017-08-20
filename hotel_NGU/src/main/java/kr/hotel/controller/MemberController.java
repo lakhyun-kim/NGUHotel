@@ -116,6 +116,24 @@ public class MemberController {
 				session.setAttribute("user_id", member.getMem_id());
 				session.setAttribute("user_auth", member.getAuth());
 				
+				// 등급 조건
+				int accumulate = member.getMem_accumulate();
+				int lev_num = 0;
+				
+				if(accumulate >= 1000000 && accumulate <= 1999999){
+					lev_num = 1;
+				} else if(accumulate >= 2000000) {
+					lev_num = 2;
+				} else {
+					lev_num = 0;
+				}
+				
+				Map<String, Object> map = new HashMap<String, Object>();
+				
+				map.put("mem_id", member.getMem_id());
+				map.put("mem_lev_num", lev_num);
+				
+				memberService.updateLev(map);
 				
 				return "redirect:/main/main.do";
 			} else {
@@ -520,25 +538,38 @@ public class MemberController {
 
 		String mem_id = (String)session.getAttribute("user_id");
 		
-		MemberCommand member = memberService.selectMember(mem_id);
-		
-		int after_point = 0;
-		// 적립
-		if(res_point == 0) {
-			after_point = member.getMem_point() - res_total*3/100;
+		if(mem_id != null) {
+			MemberCommand member = memberService.selectMember(mem_id);
 			
-		} else {
-			// 사용
-			after_point = member.getMem_point() + res_point;
+			int after_point = 0;
+			// 적립
+			if(res_point == 0) {
+				after_point = member.getMem_point() - res_total*3/100;
+				
+			} else {
+				// 사용
+				after_point = member.getMem_point() + res_point;
+				
+			}
+			Map<String, Object> map = new HashMap<String, Object>();
 			
-		}
-		Map<String, Object> map = new HashMap<String, Object>();
-		
-		map.put("mem_point", after_point);
-		map.put("mem_id", mem_id);
+			map.put("mem_point", after_point);
+			map.put("mem_id", mem_id);
 
-		// 포인트 초기화
-		memberService.updatePoint(map);
+			// 포인트 초기화
+			memberService.updatePoint(map);
+			
+			int accumulate = member.getMem_accumulate() - res_total;
+			
+			Map<String, Object> moneymap = new HashMap<String, Object>();
+			
+			moneymap.put("mem_accumulate", accumulate);
+			moneymap.put("mem_id", mem_id);
+
+			// 누적금액 초기화
+			memberService.updateMoney(moneymap);
+		}
+		
 		
 		reservationService.delete_room(res_num);
 		reservationService.delete_pay(res_num);

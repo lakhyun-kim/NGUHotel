@@ -24,7 +24,7 @@
 					<td><fmt:formatNumber value="${reservation.res_total}" groupingUsed="true"/>원</td>
 					<td>${reservation.res_in}</td>
 					<td>${reservation.res_out}</td>
-					<td><input type="button" class="myButton1" value="취소" onclick="location.href='deleteReservation.do?res_num=${reservation.res_num}'"></td>
+					<td><input type="button" class="myButton1" value="취소" onclick="location.href='deleteReservation.do?res_num=${reservation.res_num}&res_point=0&res_total=0'"></td>
 				</tr>
 			</table>
 	</div>

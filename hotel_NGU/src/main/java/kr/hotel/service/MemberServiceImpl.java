@@ -120,4 +120,14 @@ public class MemberServiceImpl implements MemberService{
 		memberMapper.insertPoint(memberPointCommand);
 	}
 
+	@Override
+	public void updateMoney(Map<String, Object> moneymap) {
+		memberMapper.updateMoney(moneymap);
+	}
+
+	@Override
+	public void updateLev(Map<String, Object> map) {
+		memberMapper.updateLev(map);
+	}
+
 }

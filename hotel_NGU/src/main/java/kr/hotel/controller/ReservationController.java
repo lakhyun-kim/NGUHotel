@@ -173,12 +173,12 @@ public class ReservationController {
                      Model model,
                      GuestRoomCommand guestroomCommand, @RequestParam int mem_point){
       
-	   // 포인트 예약테이블에 셋팅
-	   reservationCommand.setRes_point(mem_point);
-	   
       String mem_id = (String)session.getAttribute("user_id");
-      
 
+      // 공통
+      
+      reservationCommand.setRes_point(mem_point);
+      
       //회원일 경우
       if(mem_id != null){
       
@@ -188,8 +188,9 @@ public class ReservationController {
          
       //회원이 아닌경우
       }else if(mem_id == null){
-         
-         reservationCommand.setMem_id("guest");
+
+   	   // 포인트 예약테이블에 셋팅
+   	   	reservationCommand.setMem_id("guest");
          
       }
       
@@ -233,46 +234,62 @@ public class ReservationController {
       guestroomCommand.setRes_num(reservation.getRes_num());
       reservationService.room_res_insert(guestroomCommand);
       
-	   // 기존 포인트 뺴내옴
-	   MemberCommand member = memberService.selectMember(mem_id);
-	   
+      MemberCommand member = null;
 	   MemberPointCommand pointCommand = new MemberPointCommand();
 	   
-	   pointCommand.setMem_id(mem_id);
-	   pointCommand.setMem_poi_history("객실");
-	   pointCommand.setMem_poi_price(reservationCommand.getRes_total());
-	   // 적립/사용 포인트
-	   int after_point = 0;
+ 	   int after_point = 0;
+ 	   
+      if(mem_id != null) {
+	   	   	// 기존 포인트 뺴내옴
+	   	   	member = memberService.selectMember(mem_id);
+	   	   	pointCommand.setMem_id(mem_id);
+	
+	 	   // 적립/사용 포인트
+	 	   if(mem_point == 0) {
+	 		   pointCommand.setMem_poi_usesave("적립");
+	 		   
+	 		   // 회원 포인트 적립
+	 		   after_point = member.getMem_point() + (reservationCommand.getRes_total() * 3/100);
+	
+	 		   pointCommand.setMem_poi_savepoint(reservationCommand.getRes_total() * 3/100);
+	 	   } else {
+	 		   // 사용
+	 		   pointCommand.setMem_poi_usesave("사용");
+	 		   pointCommand.setMem_poi_usepoint(mem_point);
+	 		   
+	 		   // 회원의 포인트 사용
+	 		   after_point = member.getMem_point() - mem_point;
+	 		   
+	 	   }
+	 	   
+		   pointCommand.setMem_poi_history("객실");
+		   pointCommand.setMem_poi_price(reservationCommand.getRes_total());
+		   
+		   // 회원일 때만 포인트 적립 및 사용
+		   Map<String, Object> map = new HashMap<String, Object>();
+		   
+		   map.put("mem_point", after_point);
+		   map.put("mem_id", mem_id);
+		   
+		   // 회원 포인트 적립/사용
+		   memberService.updatePoint(map);
+	
+		   // 포인트 테이블에 insert 합니다.
+		   memberService.insertPoint(pointCommand);
+		   
+		   //누적 금액 적립
+		   int accumulate = member.getMem_accumulate() + reservationCommand.getRes_total();
+				   
+			// 회원의 사용한 누적금액
+		   Map<String, Object> moneymap = new HashMap<String, Object>();
+		   moneymap.put("mem_accumulate", accumulate);
+		   moneymap.put("mem_id", mem_id);
+		  	   
+		   // 회원 사용 누적금액
+		   memberService.updateMoney(moneymap);
 	   
-	   if(mem_point == 0) {
-		   pointCommand.setMem_poi_usesave("적립");
-		   
-		   // 회원 포인트 적립
-		   after_point = member.getMem_point() + (reservationCommand.getRes_total() * 3/100);
-
-		   pointCommand.setMem_poi_savepoint(reservationCommand.getRes_total() * 3/100);
-	   } else {
-		   // 사용
-		   pointCommand.setMem_poi_usesave("사용");
-		   pointCommand.setMem_poi_usepoint(mem_point);
-		   
-		   // 회원의 포인트 사용
-		   after_point = member.getMem_point() - mem_point;
-		   
 	   }
-
-	   Map<String, Object> map = new HashMap<String, Object>();
 	   
-	   map.put("mem_point", after_point);
-	   map.put("mem_id", mem_id);
-	   
-	   // 회원 포인트 적립/사용
-	   memberService.updatePoint(map);
-	   
-	   // 포인트 테이블에 insert 합니다.
-	   memberService.insertPoint(pointCommand);
-	   
-   
       return "reservation_result";
    
    }

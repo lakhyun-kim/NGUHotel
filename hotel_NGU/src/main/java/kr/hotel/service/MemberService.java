@@ -70,5 +70,11 @@ public interface MemberService {
 	
 	// 회원 포인트 테이블 insert
 	public void insertPoint(MemberPointCommand memberPointCommand);
+
+	// 회원 누적금액 
+	public void updateMoney(Map<String, Object> moneymap);
+	
+	// 회원 등급 변환
+	public void updateLev(Map<String, Object> map);
 	
 }

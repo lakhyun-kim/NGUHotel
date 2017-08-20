@@ -87,7 +87,8 @@ function layer_open(el){
 </script>
 <input type="hidden" name="mem_id" value="${guest1.mem_id}" id="mem_id">
 <input type="hidden" name="gue_num" value="${guest1.gue_num}" id="gue_num">
-<div class="containor page-main-style" style="font-family:none">
+<div class="page-main-style">
+<div class="containor" style="font-family:none">
 	<span class="detitle" style="color: #9c723f; font: 15pt Dotum,'돋움',sans-serif; font-weight: bold; max-height: 52px; max-width: 866px;">
   	${guest1.gue_title}&nbsp;
 	</span>
@@ -96,7 +97,7 @@ function layer_open(el){
 		<input type="button" value="삭제" class="myButton1" onclick="location.href='gueDelete.do?gue_num=${guest1.gue_num}'">
 	</c:if><br><br>
    <div class="row">
-      <div class="col-md-9">
+      <div class="col-md-9" style="width:100%">
          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- 슬라이드 항목 -->
             <div class="carousel-inner">
@@ -235,3 +236,4 @@ function layer_open(el){
 	   </div>
 	</div>
 	<!-------------------------------------------------팝업 레이어  ------------------------------------------------------------->
+</div>

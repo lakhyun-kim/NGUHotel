@@ -96,14 +96,10 @@ private Logger log = Logger.getLogger(this.getClass());
 	}
 	
 	@RequestMapping(value="/guest/gueWrite.do", method=RequestMethod.POST)
-	public String GuestWriteSubmit(@ModelAttribute("command") @Valid GuestCommand gueCommand, BindingResult result, HttpServletRequest request){
+	public String GuestWriteSubmit(GuestCommand gueCommand){
 		
 		if(log.isDebugEnabled()){
 			log.debug("<<gueCommand>> : " + gueCommand);
-		}
-		
-		if(result.hasErrors()){
-			return "gueWrite";
 		}
 		
 		gueService.gueinsert(gueCommand);

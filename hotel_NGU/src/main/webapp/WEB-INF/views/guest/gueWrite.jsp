@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %> 
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/guest.js"></script>
 <style>
@@ -19,9 +18,8 @@ th{
 <div class="page-main-style">
 	<h2>객실등록</h2>
 	<hr width="100%" class="color" style="border:solid 2px"><br>
-	<form:form commandName="command" action="gueWrite.do" enctype="multipart/form-data" id="gueWrite_form" align="left">
-	<form:hidden path="mem_id"/>
-	<form:errors element="div" cssClass="error-color"/>
+	<form action="gueWrite.do" method="post" enctype="multipart/form-data" id="gueWrite_form">
+	<input type="hidden" name="mem_id" id="mem_id" value="${command.mem_id}">
 	<p align="left"><em style="color:#F33">*</em>표시 필수입력 사항</p>
 	<table>
 		<tr>
@@ -35,6 +33,7 @@ th{
 				        <option value="1">이그제큐티브</option>
 				        <option value="2">스위트</option>
 				</select>
+				<div id="sel_form-err" style="color: red;"></div>
 			</td>
 		</tr>
 		<tr>
@@ -51,7 +50,7 @@ th{
 				<label for="gue_title"><em style="color:#F33">*</em>제목</label>
 			</th>
 			<td>
-				<form:input path="gue_title" id="gue_title"/>
+				<input type="text" name="gue_title" id="gue_title"/>
 				<div id="gue_title-err" style="color: red;"></div>
 			</td>
 		</tr>
@@ -60,7 +59,7 @@ th{
 				<label for="gue_stitle"><em style="color:#F33">*</em>부제목</label>
 			</th>
 			<td>	  
-				<form:input path="gue_stitle"/>
+				<input type="text" name="gue_stitle" id="gue_stitle"/>
 				<div id="gue_stitle-err" style="color: red;"></div>
 			</td>
 		</tr>
@@ -69,7 +68,7 @@ th{
 				<label for="gue_type"><em style="color:#F33">*</em>침대타입</label>
 			</th>
 			<td>	
-				<form:input path="gue_type"/>
+				<input type="text" name="gue_type" id="gue_type"/>
 				<div id="gue_type-err" style="color: red;"></div>
 			</td>
 		</tr>
@@ -78,7 +77,7 @@ th{
 				<label for="gue_size"><em style="color:#F33">*</em>방사이즈</label>
 			</th>
 			<td>	
-				<form:input path="gue_size"/>
+				<input type="text" name="gue_size" id="gue_size"/>
 				<div id="gue_size-err" style="color: red;"></div>
 			</td>
 		</tr>
@@ -196,5 +195,5 @@ th{
 			</td>
 		</tr>
 	</table>
-	</form:form>
+	</form>
 </div>

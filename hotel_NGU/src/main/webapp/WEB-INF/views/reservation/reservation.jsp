@@ -9,7 +9,6 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/reservation.js"></script>
 
 
-
 <div>
 <h1>객실 예약</h1>
 <form action="reservation_step2.do" id="reservation_form" method="post">

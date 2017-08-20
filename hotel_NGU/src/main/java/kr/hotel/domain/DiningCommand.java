@@ -470,6 +470,19 @@ public class DiningCommand {
 		return upload11;
 	}
 
+	@Override
+	public String toString() {
+		return "DiningCommand [seq=" + seq + ", din_title=" + din_title + ", din_subtitle=" + din_subtitle
+				+ ", din_class=" + din_class + ", din_loc=" + din_loc + ", din_phone=" + din_phone + ", upload1="
+				+ upload1 + ", upload2=" + upload2 + ", upload3=" + upload3 + ", upload4=" + upload4 + ", upload5="
+				+ upload5 + ", upload6=" + upload6 + ", upload7=" + upload7 + ", upload8=" + upload8 + ", upload9="
+				+ upload9 + ", upload10=" + upload10 + ", upload11=" + upload11 + ", din_fn1=" + din_fn1
+				+ ", din_time1=" + din_time1 + ", din_time2=" + din_time2 + ", din_seat=" + din_seat + ", din_fn2="
+				+ din_fn2 + ", din_fn3=" + din_fn3 + ", mem_id=" + mem_id + ", din_fn4=" + din_fn4 + ", din_fn5="
+				+ din_fn5 + ", din_fn6=" + din_fn6 + ", din_fn7=" + din_fn7 + ", din_fn8=" + din_fn8 + ", din_fn9="
+				+ din_fn9 + ", din_fn10=" + din_fn10 + ", din_fn11=" + din_fn11 + "]";
+	}
+
 	
 	
 

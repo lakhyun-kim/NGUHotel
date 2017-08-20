@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+       
+<tiles-definitions>
+    <definition name="allList" extends="main8">
+      	<put-attribute name="title" value="사이트맵"/>
+      	<put-attribute name="body" value="/WEB-INF/views/others/allList.jsp"/>
+    </definition>
+    
+    <definition name="privacy" extends="main8">
+      	<put-attribute name="title" value="개인정보처리방침"/>
+      	<put-attribute name="body" value="/WEB-INF/views/others/privacy.jsp"/>
+    </definition>
+    
+    <definition name="mailPopup" extends="main8">
+      	<put-attribute name="title" value="이메일무단수단금지"/>
+      	<put-attribute name="body" value="/WEB-INF/views/others/mailPopup.jsp"/>
+    </definition>
+    
+    <definition name="menual" extends="main8">
+      	<put-attribute name="title" value="영상정보처리기기운영방침"/>
+      	<put-attribute name="body" value="/WEB-INF/views/others/menual.jsp"/>
+    </definition>
+    
+    
+    
+</tiles-definitions>

@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<style>
+#mailPopup {cursor: pointer;}
+</style>
+
 <div class="bottom">
 	<img style="float:left; margin:10px; padding:10px 10px 10px 420px" src="${pageContext.request.contextPath}/resources/images/logo.png">
 	<ul class="ulBotton">
@@ -35,17 +39,14 @@
 	</ul> 
 </div>
 <ul class="ulBotton2">
-	<li style="border-left:none">
-		<a href="${pageContext.request.contextPath}/member/login.do">회사 소개</a>
-	</li>
 	<li>
-		<a class="rule" href="${pageContext.request.contextPath}/others/AllList.do">사이트맵</a>
+		<a class="rule" href="${pageContext.request.contextPath}/others/allList.do">사이트맵</a>
 	</li>
 	<li>
 		<a class="rule" href="${pageContext.request.contextPath}/others/private.do">개인정보처리방침</a>
 	</li>
 	<li>
-		<a class="rule" href="${pageContext.request.contextPath}/others/email-popup.do">이메일무단수단금지</a>
+		<a class="rule" id="mailPopup" onclick="window.open('${pageContext.request.contextPath}/others/mailPopup.do', '이메일 주소 무단 수집', 'width=500, height=240, toolbar=no, menubar=no, scrollbars=no, resizable=yes')">이메일무단수단금지</a>
 	</li>
 	<li>
 		<a class="rule" href="${pageContext.request.contextPath}/others/menual.do">영상정보처리기기 운영방침</a>	 

@@ -20,9 +20,8 @@ th{
 <div class="page-main-style">
 	<h2>패키지 등록</h2>
 	<hr width="100%" class="color" style="border:solid 2px"><br>
-	<form:form commandName="command" action="gpWrite.do" enctype="multipart/form-data" id="gpWrite_form">
-	<form:hidden path="mem_id"/>
-	<form:errors element="div" cssClass="error-color"/>
+	<form method="post" action="gpWrite.do" enctype="multipart/form-data" id="gpWrite_form">
+	<input type="hidden" name="mem_id" id="mem_id" value="${command.mem_id}"/>
 		<p align="left"><em style="color:#F33">*</em>표시 필수입력 사항</p>
 		<table>
 			<tr>
@@ -30,11 +29,12 @@ th{
 					<label for="norr"><em style="color:#F33">*</em>추천구분</label>
 				</th>
 				<td>
-					<select name="norr" >
-						<option>객실구분</option>
+					<select name="norr" id="norr_form">
+						<option value="추천구분">추천구분</option>
 				     	<option value="0" >추천 상품</option>
 				        <option value="1">일반</option>
 					</select>
+					<div id="norr-err" style="color: red;"></div>
 				</td>
 			</tr>
 			<tr>		
@@ -51,7 +51,7 @@ th{
 					<label for="gpa_title"><em style="color:#F33">*</em>패키지명</label>
 				</th>
 				<td>	
-					<form:input path="gpa_title"/>
+					<input type="text" name="gpa_title" id="gpa_title"/>
 					<div id="gpa_title-err" style="color: red;"></div>
 				</td>
 			</tr>
@@ -60,7 +60,7 @@ th{
 					<label for="gpa_term"><em style="color:#F33">*</em>패키지 기간</label>
 				</th>
 				<td>	
-					<form:input path="gpa_term"/>
+					<input type="text" name="gpa_term" id="gpa_term"/>
 					<div id="gpa_term-err" style="color: red;"></div>
 				</td>
 			</tr>
@@ -69,7 +69,7 @@ th{
 					<label for="gpa_money"><em style="color:#F33">*</em>패키지 금액</label>
 				</th>
 				<td>	
-					<form:input path="gpa_money"/>
+					<input type="text" name="gpa_money" id="gpa_money"/>
 					<div id="gpa_money-err" style="color: red;"></div>
 				</td>
 			</tr>
@@ -78,7 +78,7 @@ th{
 					<label for="cnt1"><em style="color:#F33">*</em>내용1</label>
 				</th>
 				<td>	
-					<form:input path="cnt1"/>
+					<input type="text" name="cnt1" id="cnt1"/>
 					<div id="cnt1-err" style="color: red;"></div>
 				</td>
 			</tr>
@@ -87,7 +87,7 @@ th{
 					<label for="cnt2"><em style="color:#F33">*</em>내용2</label>
 				</th>
 				<td>	
-					<form:input path="cnt2"/>
+					<input type="text" name="cnt2" id="cnt2"/>
 					<div id="cnt2-err" style="color: red;"></div>
 				</td>
 			</tr>
@@ -96,7 +96,7 @@ th{
 					<label for="cnt3"><em style="color:#F33">*</em>내용3</label>
 				</th>
 				<td>	
-					<form:input path="cnt3"/>
+					<input type="text" name="cnt3" id="cnt3"/>
 					<div id="cnt3-err" style="color: red;"></div>
 				</td>
 			</tr>
@@ -137,5 +137,5 @@ th{
 				</td>
 			</tr>	
 		</table>
-	</form:form>
+	</form>
 </div>

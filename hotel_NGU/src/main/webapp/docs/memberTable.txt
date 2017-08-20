@@ -30,6 +30,7 @@ create table h_member_detail(
 	mem_regdate date not null,
 	mem_point number default 0 not null,
 	mem_lev_num number(2) default 0 not null,
+	mem_accumulate number default 0 not null,
   constraint h_member_detail_pk primary key (mem_id),
   constraint h_member_detail_fk1 foreign key (mem_id) references h_member (mem_id),
   constraint h_member_detail_fk2 foreign key (mem_lev_num) references h_level (mem_lev_num)

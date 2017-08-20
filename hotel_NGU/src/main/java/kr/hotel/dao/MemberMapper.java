@@ -81,4 +81,12 @@ public interface MemberMapper {
 	@Insert("INSERT INTO h_point(mem_poi_num, mem_poi_usesave, mem_poi_history, mem_poi_price, mem_poi_usepoint, mem_poi_savepoint, mem_poi_regdate, mem_id ) VALUES(h_point_seq.nextval, #{mem_poi_usesave}, #{mem_poi_history}, #{mem_poi_price}, #{mem_poi_usepoint, jdbcType=INTEGER}, #{mem_poi_savepoint, jdbcType=INTEGER}, sysdate, #{mem_id})")
 	public void insertPoint(MemberPointCommand memberPointCommand);
 	
+	// 회원 사용 누적금액
+	@Update("UPDATE h_member_detail SET mem_accumulate=#{mem_accumulate} WHERE mem_id=#{mem_id}")
+	public void updateMoney(Map<String, Object> moneymap);
+	
+	// 회원 등급변환
+	@Update("UPDATE h_member_detail SET mem_lev_num=#{mem_lev_num} WHERE mem_id=#{mem_id}")
+	public void updateLev(Map<String, Object> map);
+	
 }
