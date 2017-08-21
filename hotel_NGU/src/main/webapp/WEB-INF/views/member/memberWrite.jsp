@@ -116,7 +116,7 @@
 				<th><em style="color:#F33">*</em> 주소</th>
 				<td>
 					<input type="text" id="sample6_postcode" name="mem_zipcode" placeholder="우편번호" readonly>
-					<input type="button" onclick="sample6_execDaumPostcode()" value="주소 찾기" class="myButton1"><br><br>
+					<input type="button" onclick="sample6_execDaumPostcode()" value="찾기" class="myButton1"><br><br>
 					<input type="text" id="sample6_address" name="mem_addr1" placeholder="주소" style="width:600px" readonly><br><br>
 					<input type="text" id="sample6_address2" name="mem_addr2" placeholder="상세주소" style="width:600px">
 				</td>

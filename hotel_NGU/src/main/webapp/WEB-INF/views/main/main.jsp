@@ -35,7 +35,7 @@
 }
 .packageSlide a.b{
 	position: absolute;
-	top:1930px; 
+	top:1970px; 
 }
 
 .ulMain{
